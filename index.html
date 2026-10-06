@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Coach Leo Cường (Đặng Thái Cường): mười khóa học tâm lý học đời sống về cảm xúc, gia đình, công việc và tiền bạc. Khóa tặng Bánh xe cuộc đời miễn phí.">
+<meta name="description" content="Coach Leo Cường (Đặng Thái Cường): tâm lý học đời sống, triết học hiện đại và kỹ năng. Khóa học Khai Tâm, Tâm Lý Học, Kỹ Năng; khóa tặng Bánh xe cuộc đời; ứng dụng Thiền Khai Tâm.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<title>Coach Leo Cường — Tâm lý học đời sống</title>
+<title>Coach Leo Cường — Tâm lý học, triết học và kỹ năng</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:ital,wght@1,500&display=swap">
 <style>
-/* Bố cục: một cột đọc rộng 1080px; mở bằng ảnh giảng viên + lời hứa, rồi quà tặng, mười khóa, cách học, giảng viên, giá. Hình bánh xe tám nan là dấu riêng của trang. */
+/* Bố cục: một cột đọc rộng 1080px; mở bằng ảnh giảng viên và lời giới thiệu, rồi chủ đề, quà tặng, ba chương trình, ứng dụng, cách học, giảng viên, hình ảnh và truyền thông. */
 :root{
   --bg:#F7F1E5; --surface:#FFFDF8; --band:#EFE5D0; --line:#E2D6BF;
   --ink:#14233F; --muted:#4A566E; --accent:#7A4E14; --accent-ink:#FFFFFF; --gold:#B98A3E;
@@ -94,13 +94,39 @@ section{padding-block:56px}
 .creds li{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
 .creds span{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
 
-.price{background:var(--navy);color:var(--on-navy)}
-.price .sec-head p,.price .eyebrow{color:var(--on-navy-muted)}
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.plan{border:1px solid var(--on-navy-muted);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.plan .amount{font-size:36px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
-.plan p{color:var(--on-navy-muted);font-size:17px}
-.price .cta-row{margin-top:28px}
+.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.topic{padding:22px 24px 22px 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.topic + .topic{padding-left:24px;border-left:1px solid var(--line)}
+.topic h3{font-size:21px}
+.topic p{color:var(--muted);font-size:17px}
+.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.track{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0;text-decoration:none;color:var(--ink)}
+.track .state{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.track h3{font-size:24px}
+.track p{color:var(--muted);font-size:17px}
+.track .go{margin-top:auto;padding-top:8px;font-weight:700;color:var(--accent)}
+.track:hover h3{text-decoration:underline}
+.app{background:var(--navy);color:var(--on-navy)}
+.app .wrap{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+.app img{width:150px;height:150px;border-radius:34px;display:block}
+.app-body{display:flex;flex-direction:column;gap:14px;min-width:0}
+.app-body h2{font-size:clamp(26px,3.6vw,36px)}
+.app-body p{color:var(--on-navy-muted);max-width:40em}
+.app .eyebrow{color:var(--gold)}
+.app .ticks li::before{border-color:var(--gold)}
+.soon{display:inline-block;align-self:flex-start;border:1px solid var(--on-navy-muted);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:600}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gallery img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:8px}
+.sub{font-size:20px;margin:36px 0 16px}
+.tv{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tv a{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);min-width:0}
+.tv .thumb{position:relative}
+.tv img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px}
+.tv .thumb::after{content:"";position:absolute;left:50%;top:50%;width:0;height:0;border-left:18px solid #FFFFFF;border-top:11px solid transparent;border-bottom:11px solid transparent;transform:translate(-40%,-50%);filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
+.tv span{font-size:16px;font-weight:600;line-height:1.4}
+.tv small{font-size:14px;color:var(--muted);font-weight:400;display:block}
+.seen{margin-top:28px;color:var(--muted);font-size:17px}
+.seen b{color:var(--ink)}
 
 .faq-in{max-width:760px}
 details{border-bottom:1px solid var(--line);padding:16px 0}
@@ -116,10 +142,12 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
   .portrait{order:-1;max-width:260px;justify-self:start}
   .gift{grid-template-columns:1fr;gap:20px}
   .wheel{width:260px}
-  .courses{grid-template-columns:1fr}
-  .course:nth-child(odd){border-right:0;padding-right:8px}
-  .course:nth-child(even){padding-left:8px}
-  .how,.about,.plans{grid-template-columns:1fr}
+    .how,.about,.topics,.tracks{grid-template-columns:1fr}
+  .topic,.topic + .topic{padding:18px 0;border-left:0}
+  .topic + .topic{border-top:1px solid var(--line)}
+  .app .wrap{grid-template-columns:1fr;gap:20px}
+  .app img{width:110px;height:110px;border-radius:26px}
+  .gallery,.tv{grid-template-columns:repeat(2,1fr)}
   section{padding-block:40px}
 }
 img{max-width:100%}
@@ -138,14 +166,14 @@ img{max-width:100%}
 <div class="hero">
   <div class="wrap">
     <div class="hero-text">
-      <div class="eyebrow">Tâm lý học đời sống</div>
+      <div class="eyebrow">Tâm lý học · Triết học · Kỹ năng</div>
       <h1>Hiểu mình để sống nhẹ hơn, mỗi ngày mười phút</h1>
-      <p class="lead">Mười khóa học ngắn về cảm xúc, gia đình, công việc và tiền bạc. Mỗi bài là một tình huống đời thường, giải thích bằng tâm lý học, đối chiếu với lời Phật dạy, và kết bằng một việc bạn làm được ngay.</p>
+      <p class="lead">Coach Leo Cường chia sẻ về tâm lý học đời sống, triết học ứng dụng và kỹ năng làm việc, qua video, khóa học và ứng dụng thiền. Mỗi bài bắt đầu từ một tình huống đời thường và kết bằng một việc bạn làm được ngay.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://hoc.leocuong.com/">Bắt đầu miễn phí</a>
-        <a class="btn btn-ghost" href="#khoa-hoc">Xem mười khóa học</a>
+        <a class="btn btn-ghost" href="#khoa-hoc">Xem các khóa học</a>
       </div>
-      <p class="note">Đăng ký tài khoản để học khóa tặng Bánh xe cuộc đời và nghe Thư viện Thiền. Không cần thẻ.</p>
+      <p class="note">Đăng ký tài khoản để học khóa tặng Bánh xe cuộc đời. Không cần thẻ.</p>
     </div>
     <figure class="portrait" style="margin:0">
       <img src="leo.jpg" alt="Chân dung giảng viên Đặng Thái Cường" width="800" height="1000">
@@ -153,6 +181,20 @@ img{max-width:100%}
     </figure>
   </div>
 </div>
+
+<section id="chu-de">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Chủ đề</div>
+      <h2>Ba mảng nội dung của Coach Leo Cường</h2>
+    </div>
+    <div class="topics">
+      <div class="topic"><h3>Tâm Lý Học Đời Sống</h3><p>Cảm xúc, các mối quan hệ, gia đình và tiền bạc, nhìn bằng tâm lý học có bằng chứng và những tình huống thường ngày.</p></div>
+      <div class="topic"><h3>Triết Học Hiện Đại</h3><p>Lời dạy của Đức Phật, Lão Tử và các triết gia Đông – Tây, đọc lại bằng ngôn ngữ hôm nay để ứng dụng vào đời sống.</p></div>
+      <div class="topic"><h3>Kỹ Năng</h3><p>Giao tiếp, bán hàng, tài chính cá nhân, thương hiệu cá nhân và làm việc cùng AI, cho người đi làm và người kinh doanh.</p></div>
+    </div>
+  </div>
+</section>
 
 <section class="band" id="qua-tang">
   <div class="wrap gift">
@@ -181,7 +223,6 @@ img{max-width:100%}
         <li>10 bài học ngắn, khoảng 90 phút</li>
         <li>Bài tự đánh giá 48 câu, có biểu đồ và điểm từng mặt</li>
         <li>Bản đọc kết quả riêng cho bạn, theo phong cách khai vấn</li>
-        <li>Kèm Thư viện Thiền nghe miễn phí</li>
       </ul>
       <div class="cta-row"><a class="btn btn-primary" href="https://hoc.leocuong.com/">Đăng ký và học ngay</a></div>
     </div>
@@ -191,21 +232,26 @@ img{max-width:100%}
 <section id="khoa-hoc">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Bộ khóa học</div>
-      <h2>Mười khóa, mỗi khóa một mặt của đời sống</h2>
-      <p>Mỗi khóa 30 bài, học độc lập, không cần theo thứ tự. Các khóa mở bán lần lượt, bắt đầu từ K01.</p>
+      <div class="eyebrow">Khóa học</div>
+      <h2>Ba chương trình chính</h2>
+      <p>Học bằng video tại học viện hoc.leocuong.com, trên điện thoại hoặc máy tính.</p>
     </div>
-    <div class="courses">
-      <a class="course" href="https://hoc.leocuong.com/khoa/K01"><span class="code">K01</span><h3>Làm Chủ Cảm Xúc, Vượt Qua Nội Hao</h3><p>Giận, buồn, lo âu, mất ngủ, tự trách và những gánh nặng không tên</p></a>
-      <a class="course" href="https://hoc.leocuong.com/khoa/K02"><span class="code">K02</span><h3>Chữa Lành Đứa Trẻ Bên Trong</h3><p>Nhìn lại tuổi thơ để sống nhẹ hôm nay</p></a>
-      <a class="course" href="https://hoc.leocuong.com/khoa/K03"><span class="code">K03</span><h3>Tình Yêu: Tâm Lý Nam – Nữ</h3><p>Yêu đúng người, yêu đúng cách, yêu mà vẫn là mình</p></a>
-      <a class="course" href="https://hoc.leocuong.com/khoa/K04"><span class="code">K04</span><h3>Hôn Nhân Hạnh Phúc</h3><p>Yêu lâu mà vẫn thương, sống chung mà vẫn hiểu</p></a>
-      <a class="course" href="https://hoc.leocuong.com/khoa/K05"><span class="code">K05</span><h3>Cha Mẹ Tỉnh Thức</h3><p>Nuôi con bằng hiểu biết, không bằng đòn roi</p></a>
-      <a class="course" href="https://hoc.leocuong.com/khoa/K06"><span class="code">K06</span><h3>Giao Tiếp và Trí Tuệ Cảm Xúc</h3><p>Hiểu người, nói để được nghe</p></a>
-      <a class="course" href="https://hoc.leocuong.com/khoa/K07"><span class="code">K07</span><h3>Bán Hàng, Đàm Phán</h3><p>Bán bằng sự thấu hiểu, đàm phán mà vẫn giữ quan hệ</p></a>
-      <a class="course" href="https://hoc.leocuong.com/khoa/K08"><span class="code">K08</span><h3>Công Sở, Đồng Nghiệp</h3><p>Sống khỏe giữa sếp, đồng nghiệp và khách hàng</p></a>
-      <a class="course" href="https://hoc.leocuong.com/khoa/K09"><span class="code">K09</span><h3>Tâm Lý Học Về Tiền</h3><p>Sống thảnh thơi với tiền, dù nhiều hay ít</p></a>
-      <a class="course" href="https://hoc.leocuong.com/khoa/K10"><span class="code">K10</span><h3>Sức Mạnh Tiềm Thức</h3><p>Tự ám thị để thay đổi từ bên trong</p></a>
+    <div class="tracks">
+      <a class="track" href="https://hoc.leocuong.com/"><span class="state">Sắp ra mắt</span><h3>Khai Tâm</h3><p>Ứng dụng triết học phương Đông và tâm lý học phương Tây để hiểu gốc rễ của khổ đau và tìm lại sự bình an trong đời sống.</p><span class="go">Xem tại học viện</span></a>
+      <a class="track" href="https://hoc.leocuong.com/"><span class="state">Đang hoàn thiện</span><h3>Tâm Lý Học</h3><p>Tâm lý học đời sống theo từng chủ đề, mở đầu bằng khóa Làm Chủ Cảm Xúc, Vượt Qua Nội Hao.</p><span class="go">Xem tại học viện</span></a>
+      <a class="track" href="https://hoc.leocuong.com/"><span class="state">Đang chuẩn bị</span><h3>Kỹ Năng</h3><p>Các khóa kỹ năng cho công việc và kinh doanh: giao tiếp, bán hàng, tài chính cá nhân, thương hiệu cá nhân và ứng dụng AI.</p><span class="go">Xem tại học viện</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="app" id="app">
+  <div class="wrap">
+    <img src="media/app-thien-khai-tam.png" alt="Biểu tượng ứng dụng Thiền Khai Tâm" width="240" height="240">
+    <div class="app-body">
+      <div class="eyebrow">Ứng dụng</div>
+      <h2>Thiền Khai Tâm</h2>
+      <p>Ứng dụng thiền của Coach Leo Cường trên iPhone và Android: các bài dẫn thiền, khóa học dạng nghe, lời nhắc mỗi ngày và thẻ lời nhắn để bạn dừng lại vài phút giữa một ngày bận rộn.</p>
+      <span class="soon">Sắp ra mắt</span>
     </div>
   </div>
 </section>
@@ -217,7 +263,7 @@ img{max-width:100%}
       <h2>Ngắn, sát đời sống, có thực hành</h2>
     </div>
     <div class="how">
-      <div><h3>Tình huống thật</h3><p>Một nửa số bài đặt tên theo đúng điều bạn đang gặp: khi cơn giận lên, khi trằn trọc không ngủ được, khi khách chê đắt. Mỗi bài 8 đến 12 phút.</p></div>
+      <div><h3>Tình huống thật</h3><p>Một nửa số bài đặt tên theo đúng điều bạn đang gặp: khi cơn giận lên, khi trằn trọc không ngủ được, khi khách chê đắt.</p></div>
       <div><h3>Có nền, có nguồn</h3><p>Tâm lý học là chính, mỗi ý đều dẫn nghiên cứu. Lời Phật dạy và triết học phương Đông được đặt cạnh để đối chiếu.</p></div>
       <div><h3>Dẫn thiền kết hợp thôi miên trị liệu</h3><p>Mỗi khóa có các bài thực hành bằng âm thanh, nghe được khi nhắm mắt, để điều vừa học thấm vào thói quen.</p></div>
     </div>
@@ -245,18 +291,31 @@ img{max-width:100%}
   </div>
 </section>
 
-<section class="price" id="hoc-phi">
+<section class="band" id="hinh-anh">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Học phí</div>
-      <h2>Một mức giá cho mỗi khóa</h2>
-      <p>Thanh toán bằng chuyển khoản quét mã QR hoặc thẻ Visa, Mastercard. Khóa mở ngay sau khi thanh toán.</p>
+      <div class="eyebrow">Hình ảnh và truyền thông</div>
+      <h2>Hơn 15 năm đứng lớp</h2>
+      <p>Một số hình ảnh từ các chương trình đào tạo và những lần Coach Leo Cường trả lời phỏng vấn trên truyền hình.</p>
     </div>
-    <div class="plans">
-      <div class="plan"><h3>Một khóa</h3><div class="amount">999.000đ</div><p>30 bài, truy cập 12 tháng. Mỗi khóa có 5 bài học thử miễn phí.</p></div>
-      <div class="plan"><h3>Trọn bộ mười khóa</h3><div class="amount">4.999.000đ</div><p>Mỗi khóa được 12 tháng tính từ ngày khóa đó mở cho bạn.</p></div>
+    <div class="gallery">
+      <img src="media/hinh-01.jpg" alt="Hội trường một chương trình đào tạo của Coach Leo Cường" width="900" height="600" loading="lazy">
+      <img src="media/hinh-02.jpg" alt="Coach Leo Cường giảng trước học viên" width="900" height="600" loading="lazy">
+      <img src="media/hinh-03.jpg" alt="Buổi thực hành cùng học viên" width="900" height="600" loading="lazy">
+      <img src="media/hinh-04.jpg" alt="Ảnh chụp chung với học viên sau khóa học" width="900" height="600" loading="lazy">
+      <img src="media/hinh-05.jpg" alt="Buổi học ngoài trời" width="900" height="600" loading="lazy">
+      <img src="media/hinh-06.jpg" alt="Học viên trong một hội trường lớn" width="900" height="600" loading="lazy">
+      <img src="media/hinh-07.jpg" alt="Coach Leo Cường trên sân khấu hội nghị" width="900" height="600" loading="lazy">
+      <img src="media/hinh-08.jpg" alt="Toàn cảnh một buổi đào tạo" width="900" height="600" loading="lazy">
     </div>
-    <div class="cta-row"><a class="btn btn-light" href="https://hoc.leocuong.com/">Vào học viện</a></div>
+    <h3 class="sub">Trên truyền hình</h3>
+    <div class="tv">
+      <a href="https://www.youtube.com/watch?v=hK60NZODPzI"><div class="thumb"><img src="media/tv-01.jpg" alt="" width="640" height="360" loading="lazy"></div><span>Diễn đàn CEO<small>Xu hướng tài chính 2020</small></span></a>
+      <a href="https://www.youtube.com/watch?v=2AO1uKrSCvQ"><div class="thumb"><img src="media/tv-02.jpg" alt="" width="640" height="360" loading="lazy"></div><span>VTC14<small>Xu hướng tài chính năm 2019</small></span></a>
+      <a href="https://www.youtube.com/watch?v=Qz-tDazCc0A"><div class="thumb"><img src="media/tv-03.jpg" alt="" width="640" height="360" loading="lazy"></div><span>HTV9<small>Tọa đàm về thương mại điện tử</small></span></a>
+      <a href="https://www.youtube.com/watch?v=hmK_-uq3-F8"><div class="thumb"><img src="media/tv-04.jpg" alt="" width="640" height="360" loading="lazy"></div><span>Phóng sự<small>Các chương trình đào tạo của Leo Cường</small></span></a>
+    </div>
+    <p class="seen">Đã xuất hiện trên: <b>Dân Trí</b> · <b>VTC News</b> · <b>VITV</b> · <b>VTC14</b> · <b>HTV9</b></p>
   </div>
 </section>
 
@@ -264,7 +323,6 @@ img{max-width:100%}
   <div class="wrap"><div class="faq-in">
     <div class="sec-head"><h2>Câu hỏi thường gặp</h2></div>
     <details><summary>Tôi học ở đâu?</summary><p>Tại hoc.leocuong.com, trên điện thoại hoặc máy tính. Đăng nhập bằng Google hoặc bằng liên kết gửi qua email, không cần mật khẩu.</p></details>
-    <details><summary>Hết 12 tháng thì sao?</summary><p>Bạn vẫn giữ tài khoản, cộng đồng và các bài thiền miễn phí. Muốn học lại khóa đã hết hạn thì mua lại khóa đó.</p></details>
     <details><summary>Khóa học có thay cho trị liệu tâm lý không?</summary><p>Không. Khóa học mang tính giáo dục và tự nhìn lại. Nếu bạn buồn bã, mất ngủ hay kiệt sức kéo dài, bạn nên gặp bác sĩ hoặc chuyên gia tâm lý.</p></details>
   </div></div>
 </section>

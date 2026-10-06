@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Khai Tâm, chương trình 90 ngày của Coach Leo Cường: ứng dụng triết học phương Đông và tâm lý học phương Tây để hiểu gốc rễ của khổ đau và tìm lại bình an. Bắt đầu miễn phí với 10 bài Bánh Xe Cuộc Đời.">
+<meta property="og:title" content="Khai Tâm · Chương trình 90 ngày">
+<meta property="og:description" content="Bắt đầu miễn phí với 10 bài Bánh Xe Cuộc Đời, rồi đi tiếp bảy chặng của Khai Tâm.">
+<meta property="og:image" content="https://www.leocuong.com/thumb/KT.jpg">
+<link rel="canonical" href="https://www.leocuong.com/khaitam/">
+<meta property="og:url" content="https://www.leocuong.com/khaitam/">
+<meta property="og:type" content="website">
+<title>Khai Tâm · Chương trình 90 ngày</title>
+<link rel="icon" href="https://hoc.leocuong.com/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;1,500&display=swap">
+<style>html{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Bố cục: một cột đọc 1080px, đi theo mạch bán hàng: nỗi đau → tự soi → đổi cách nhìn (nan và trục) → quà miễn phí → lộ trình → một bài học → giảng viên → học phí → hỏi đáp → lời mời cuối. Thanh mời học thử dính đáy trên điện thoại. */
+:root{
+  --bg:#F7F1E5; --surface:#FFFDF8; --band:#EFE5D0; --line:#E2D6BF;
+  --ink:#14233F; --muted:#4A566E; --accent:#7A4E14; --accent-ink:#FFFFFF; --gold:#B98A3E;
+  --navy:#14233F; --on-navy:#F7F1E5; --on-navy-muted:#C9CFDB; --navy-line:#2C3B5A; --ok:#3F6B55;
+  --sans:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1828; --surface:#172338; --band:#131E32; --line:#2B3A55;
+  --ink:#F2EBDC; --muted:#B4BDCD; --accent:#E0B56E; --accent-ink:#14233F; --gold:#E0B56E;
+  --navy:#0A1220; --on-navy:#F2EBDC; --on-navy-muted:#B4BDCD; --navy-line:#243450; --ok:#8FC3A6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1828; --surface:#172338; --band:#131E32; --line:#2B3A55;
+  --ink:#F2EBDC; --muted:#B4BDCD; --accent:#E0B56E; --accent-ink:#14233F; --gold:#E0B56E;
+  --navy:#0A1220; --on-navy:#F2EBDC; --on-navy-muted:#B4BDCD; --navy-line:#243450; --ok:#8FC3A6; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.65}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible,input:focus-visible+span,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:20px}
+.narrow{max-width:760px}
+section{padding-block:64px}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.h2{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-.01em}
+.sub{font-size:19px;color:var(--muted);max-width:38em}
+.stack{display:flex;flex-direction:column;gap:18px}
+.head{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border-radius:10px;font-weight:700;font-size:18px;text-decoration:none;border:2px solid transparent;text-align:center}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-light{background:var(--on-navy);color:var(--navy)}
+.note{font-size:15px;color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+header.top .btn{min-height:44px;padding:0 18px;font-size:16px}
+
+/* Mở đầu */
+.hero{padding-block:48px 56px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.hero-text{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero h1{font-size:clamp(36px,5.4vw,58px);font-weight:800;letter-spacing:-.02em}
+.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--accent)}
+.hero .lead{font-size:20px;color:var(--muted);max-width:33em}
+.hero-photo{position:relative;min-width:0}
+.hero-photo img{display:block;width:100%;height:auto;border-radius:14px;aspect-ratio:4/5;object-fit:cover}
+.hero-cap{margin-top:12px;font-size:15px;color:var(--muted)}
+.hero-cap b{color:var(--ink);font-weight:700;display:block;font-size:17px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:8px}
+.facts div{padding:16px 14px 16px 0;min-width:0}
+.facts div+div{padding-left:14px;border-left:1px solid var(--line)}
+.facts b{display:block;font-size:26px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.facts span{font-size:14px;color:var(--muted)}
+
+/* Tự soi */
+.check{background:var(--band)}
+.checklist{display:grid;gap:10px}
+.checklist label{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;cursor:pointer}
+.checklist input{appearance:none;flex:none;width:26px;height:26px;margin:1px 0 0;border:2px solid var(--muted);border-radius:6px;background:var(--surface);cursor:pointer;position:relative}
+.checklist input:checked{background:var(--accent);border-color:var(--accent)}
+.checklist input:checked::after{content:"";position:absolute;left:7px;top:2px;width:7px;height:13px;border:solid var(--accent-ink);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.checklist input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.checklist span{font-size:18px;font-weight:500}
+.result{margin-top:22px;background:var(--navy);color:var(--on-navy);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.result p{color:var(--on-navy)}
+.result .small{color:var(--on-navy-muted);font-size:16px}
+.result ul{display:grid;gap:8px}
+.result li{padding-left:18px;position:relative;color:var(--on-navy)}
+.result li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--gold)}
+.result li b{font-weight:700}
+
+/* Nan và trục */
+.axle{background:var(--navy);color:var(--on-navy)}
+.axle .eyebrow{color:var(--gold)}
+.axle .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
+.axle p{color:var(--on-navy-muted)}
+.axle p strong{color:var(--on-navy)}
+.axle .pull{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.4;color:var(--on-navy);border-left:3px solid var(--gold);padding-left:18px}
+.wheel{width:100%;max-width:400px;height:auto;display:block;margin-inline:auto}
+.wheel .rim{fill:none;stroke:var(--on-navy)}
+.wheel .spoke{stroke:var(--on-navy-muted)}
+.wheel .hub{fill:var(--gold)}
+.wheel .hubring{fill:none;stroke:var(--gold)}
+.wheel text{fill:var(--on-navy);font-family:var(--sans);font-size:13px;font-weight:600}
+.wheel .hublabel{fill:var(--gold);font-size:12px;font-weight:700;letter-spacing:.06em}
+
+/* Quà miễn phí */
+.gift-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:36px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+.gift-card h2{font-size:clamp(26px,3.4vw,34px)}
+.ticks{display:grid;gap:12px}
+.ticks li{position:relative;padding-left:32px}
+.ticks li::before{content:"";position:absolute;left:4px;top:.36em;width:9px;height:16px;border:solid var(--ok);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.steps{counter-reset:s;display:grid;gap:14px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.steps li::before{content:counter(s);width:40px;height:40px;border-radius:50%;background:var(--band);color:var(--ink);font-weight:800;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:16px}
+
+/* Lộ trình */
+.stages{display:grid;gap:0;border-top:1px solid var(--line)}
+.stage{border-bottom:1px solid var(--line)}
+.stage summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:120px 1fr auto;gap:18px;align-items:baseline;padding:20px 4px}
+.stage summary::-webkit-details-marker{display:none}
+.stage .no{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.stage .ttl{font-size:21px;font-weight:700;line-height:1.3}
+.stage .ttl small{display:block;font-size:16px;font-weight:400;color:var(--muted);margin-top:4px}
+.stage .cnt{font-size:15px;color:var(--muted);white-space:nowrap}
+.stage .cnt::after{content:" +";font-weight:700;color:var(--accent)}
+.stage[open] .cnt::after{content:" −"}
+.stage .body{padding:0 4px 22px 142px;display:grid;gap:10px;color:var(--muted);font-size:17px}
+.stage .body b{color:var(--ink)}
+.free{display:inline-block;font-size:13px;font-weight:700;background:var(--band);color:var(--ink);border-radius:999px;padding:2px 10px;margin-left:6px;white-space:nowrap}
+
+/* Một bài học */
+.lesson{background:var(--band)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.flow li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.flow .t{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-variant-numeric:tabular-nums}
+.flow b{font-size:18px;line-height:1.3}
+.flow span{font-size:16px;color:var(--muted)}
+.extras{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+.extras h3{font-size:19px;margin-bottom:6px}
+.extras p{font-size:16px;color:var(--muted)}
+
+/* Hợp và chưa hợp */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.fit h3{font-size:20px;margin-bottom:14px}
+.fit .no li::before{width:14px;height:0;border-width:0 0 3px 0;transform:none;top:.75em;left:2px;border-color:var(--muted)}
+
+/* Giảng viên */
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+.about img{width:100%;height:auto;border-radius:14px;display:block}
+.about blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.45;border-left:3px solid var(--gold);padding-left:18px}
+.about p{color:var(--muted)}
+
+/* Học phí */
+.price{background:var(--navy);color:var(--on-navy)}
+.price .eyebrow{color:var(--gold)}
+.price .sub{color:var(--on-navy-muted)}
+.price .wrap{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.plan{background:var(--surface);color:var(--ink);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:18px}
+.plan .name{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.plan .amt{font-size:46px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.plan .amt small{font-size:16px;font-weight:500;color:var(--muted);margin-left:8px}
+.plan .per{color:var(--muted);font-size:16px}
+.plan .btn{width:100%}
+.free-plan{border:1px solid var(--navy-line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:18px}
+.free-plan .name{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.free-plan .amt{font-size:46px;font-weight:800;line-height:1}
+.free-plan .ticks li{color:var(--on-navy)}
+.free-plan .ticks li::before{border-color:var(--gold)}
+.free-plan .btn{width:100%}
+.price-head{grid-column:1/-1;display:flex;flex-direction:column;gap:12px}
+
+/* Hỏi đáp */
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:700;font-size:19px;padding:18px 4px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-weight:700}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 4px 20px;color:var(--muted);max-width:42em}
+
+.final{background:var(--band);text-align:center}
+.final .wrap{display:flex;flex-direction:column;gap:20px;align-items:center}
+.final .sub{margin-inline:auto}
+footer{padding-block:28px 96px;font-size:15px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+footer a{color:var(--muted)}
+
+.dock{display:none}
+@media (max-width:860px){
+  section{padding-block:48px}
+  .hero .wrap,.axle .wrap,.gift-card,.about .wrap,.price .wrap,.fit{grid-template-columns:1fr}
+  .hero-photo{max-width:340px}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(3){padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .facts div:nth-child(4){border-top:1px solid var(--line)}
+  .flow{grid-template-columns:1fr 1fr}
+  .extras{grid-template-columns:1fr}
+  .gift-card{padding:24px}
+  .stage summary{grid-template-columns:1fr auto;gap:4px 12px}
+  .stage .no{grid-column:1/-1}
+  .stage .body{padding-left:4px}
+  .dock{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:7;background:var(--bg);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));gap:12px;align-items:center}
+  .dock .btn{flex:1;min-height:50px;font-size:17px}
+  .dock span{font-size:13px;color:var(--muted);line-height:1.3;flex:none;max-width:9em}
+}
+@media (max-width:480px){.flow{grid-template-columns:1fr}.plan .amt,.free-plan .amt{font-size:40px}}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s ease}.btn:hover{transform:translateY(-1px)}}
+</style>
+</head>
+<body>
+
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top">Khai Tâm · Chương trình 90 ngày</a>
+  <a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Học thử miễn phí</a>
+</div></header>
+
+<main id="top">
+
+<section class="hero"><div class="wrap">
+  <div class="hero-text">
+    <div class="eyebrow">Chương trình 90 ngày của Coach Leo Cường</div>
+    <h1>Cố gắng rất nhiều, mà sao lòng vẫn <em>chưa yên?</em></h1>
+    <p class="lead">Có người đang gây dựng, có người đã đủ đầy, nhưng rất nhiều người trong chúng ta cùng gặp một điều giống nhau: việc bên ngoài thì vẫn chạy, mà bên trong thì hay bồn chồn, dễ mệt, dễ nóng, và không rõ là vì đâu. Khai Tâm là một lộ trình 90 ngày giúp bạn hiểu điều đang diễn ra bên trong mình và biết phải làm gì với nó, bằng triết học phương Đông và tâm lý học phương Tây.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Nhận 10 bài học miễn phí</a>
+      <a class="btn btn-ghost" href="#tu-soi">Tự soi trong một phút</a>
+    </div>
+    <p class="note">Bạn chỉ cần đăng ký tài khoản bằng email. Chưa cần thanh toán và cũng không cần nhập thẻ.</p>
+    <div class="facts">
+      <div><b>70</b><span>bài học</span></div>
+      <div><b>17 giờ 41</b><span>phút video</span></div>
+      <div><b>7</b><span>buổi dẫn thiền</span></div>
+      <div><b>18</b><span>bài học thử miễn phí</span></div>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="leo-chan-dung.jpg" alt="Coach Leo Cường" width="800" height="1000">
+    <p class="hero-cap"><b>Đặng Thái Cường</b>Nhà khai vấn chứng nhận ICF · Tốt nghiệp Viện Thôi Miên HMI, Hoa Kỳ</p>
+  </div>
+</div></section>
+
+<section class="check" id="tu-soi"><div class="wrap narrow">
+  <div class="head">
+    <div class="eyebrow">Tự soi trong một phút</div>
+    <h2 class="h2">Trong một tháng vừa qua, câu nào dưới đây đúng với bạn?</h2>
+    <p class="sub">Bạn cứ đánh dấu vào những câu mình thấy đúng. Ở đây không có câu trả lời đúng hay sai, và trang này cũng không lưu lại lựa chọn của bạn.</p>
+  </div>
+  <div class="checklist" id="checklist">
+    <label><input type="checkbox" id="c1" data-stage="1"><span>Mọi thứ bên ngoài tạm ổn, vậy mà trong lòng tôi vẫn thấy thiêu thiếu và bồn chồn, không rõ là vì đâu.</span></label>
+    <label><input type="checkbox" id="c2" data-stage="2"><span>Tôi đạt được điều mình mong, vui được ít hôm, rồi lại bắt đầu muốn một thứ khác.</span></label>
+    <label><input type="checkbox" id="c3" data-stage="3"><span>Tôi có một chuyện cũ rất muốn buông, mà buông mãi vẫn không được.</span></label>
+    <label><input type="checkbox" id="c4" data-stage="4"><span>Tôi hay tự trách mình, hoặc hay hỏi vì sao chuyện ấy lại rơi đúng vào mình.</span></label>
+    <label><input type="checkbox" id="c5" data-stage="5"><span>Người tôi thương nhất lại chính là người tôi hay nặng lời nhất.</span></label>
+    <label><input type="checkbox" id="c6" data-stage="6"><span>Tôi lo cho công việc và cho mọi người, tới lượt mình thì đã chẳng còn sức.</span></label>
+    <label><input type="checkbox" id="c7" data-stage="7"><span>Tôi đã quyết tâm thay đổi nhiều lần, được vài hôm thì đâu lại vào đấy.</span></label>
+  </div>
+  <div class="result" id="result" aria-live="polite">
+    <p id="result-head"><b>Mỗi câu ở trên ứng với một chặng của Khai Tâm.</b></p>
+    <p class="small" id="result-sub">Khi bạn đánh dấu một câu, bên dưới sẽ hiện ra chặng tương ứng cùng với bài mở đầu của chặng ấy. Tất cả các bài mở đầu đều được học miễn phí.</p>
+    <ul id="result-list"></ul>
+    <a class="btn btn-light" href="https://hoc.leocuong.com/khaitam">Đăng ký và học thử ngay</a>
+  </div>
+</div></section>
+
+<section class="axle"><div class="wrap">
+  <svg class="wheel" viewBox="-60 0 360 250" role="img" aria-label="Bánh xe cuộc đời có tám nan là tám mặt đời sống, ở giữa là cái trục">
+    <circle class="rim" cx="120" cy="125" r="80" stroke-width="3"/>
+    <g class="spoke" stroke-width="2">
+      <line x1="120" y1="45" x2="120" y2="205"/><line x1="40" y1="125" x2="200" y2="125"/>
+      <line x1="63.4" y1="68.4" x2="176.6" y2="181.6"/><line x1="176.6" y1="68.4" x2="63.4" y2="181.6"/>
+    </g>
+    <circle class="hubring" cx="120" cy="125" r="22" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle class="hub" cx="120" cy="125" r="11"/>
+    <text x="120" y="32" text-anchor="middle">Tâm</text>
+    <text x="186" y="58" text-anchor="start">Thân</text>
+    <text x="208" y="129" text-anchor="start">Chính mình</text>
+    <text x="186" y="202" text-anchor="start">Ý nghĩa</text>
+    <text x="120" y="226" text-anchor="middle">Gia đình</text>
+    <text x="54" y="202" text-anchor="end">Quan hệ</text>
+    <text x="32" y="129" text-anchor="end">Công việc</text>
+    <text x="54" y="58" text-anchor="end">Tiền</text>
+    <text class="hublabel" x="120" y="246" text-anchor="middle">Ở GIỮA LÀ CÁI TRỤC</text>
+  </svg>
+  <div class="stack">
+    <div class="eyebrow">Một cách nhìn khác</div>
+    <h2 class="h2">Có thể bạn không hề thiếu cố gắng, mà là cái trục đang bị lệch</h2>
+    <p>Đời sống của mỗi người giống như một bánh xe có tám nan, đó là tâm, thân, chính mình, ý nghĩa, gia đình, các mối quan hệ, công việc và tiền bạc. Phần lớn chúng ta dành rất nhiều năm để chỉnh từng cái nan một, tức là cố kiếm thêm, lo thêm và sửa thêm.</p>
+    <p><strong>Thế nhưng một bánh xe có thể xóc vì các nan không đều, mà cũng có thể xóc vì cái trục ở giữa bị lệch.</strong> Cái trục ấy chính là cách chúng ta nhìn, cách chúng ta nghĩ và cách chúng ta phản ứng trước mọi chuyện. Một khi trục đã lệch thì các nan có đều tới đâu, chiếc xe đi vẫn cứ xóc.</p>
+    <p class="pull">Khai Tâm không dạy bạn kiếm thêm một cái nan nào cả. Chương trình giúp bạn chỉnh lại cái trục.</p>
+  </div>
+</div></section>
+
+<section id="mien-phi"><div class="wrap">
+  <div class="gift-card">
+    <div class="stack">
+      <div class="eyebrow">Phần 1 · Học miễn phí</div>
+      <h2>Bạn bắt đầu bằng Bánh Xe Cuộc Đời, để biết mình đang lệch ở đâu</h2>
+      <p style="color:var(--muted)">Muốn chỉnh cho đúng thì trước hết phải đo. Phần 1 giúp bạn nhìn cho đủ tám mặt của đời sống, chấm điểm từng mặt, rồi chọn ra đúng một mặt để bắt đầu.</p>
+      <ul class="ticks">
+        <li><b>Mười bài học ngắn</b>, tổng cộng khoảng 90 phút, học được trên điện thoại hoặc máy tính</li>
+        <li><b>Một bài tự đánh giá 48 câu</b>, bạn làm trong khoảng mười phút</li>
+        <li><b>Bánh xe của riêng bạn</b>, là một biểu đồ tám mặt có kèm điểm của từng mặt</li>
+        <li><b>Một bản đọc kết quả</b> theo cách của một buổi khai vấn, cho biết mặt nào cần được chăm trước, kèm hai câu hỏi để tự soi và một bước nhỏ cho bảy ngày tới</li>
+      </ul>
+      <div class="cta-row"><a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Đăng ký và học ngay</a></div>
+      <p class="note">Không cần thẻ, và Phần 1 không giới hạn thời gian học.</p>
+    </div>
+    <ol class="steps">
+      <li><div><b>Bạn đăng ký bằng email</b><span>Việc này chỉ mất chừng một phút và chưa cần thanh toán.</span></div></li>
+      <li><div><b>Bạn học Phần 1 và làm bài đánh giá</b><span>Ngay trong buổi đầu tiên, bạn đã có bánh xe của chính mình.</span></div></li>
+      <li><div><b>Bạn học thử bài mở đầu của từng chặng</b><span>Có thêm tám bài miễn phí để bạn biết chương trình có hợp với mình hay không.</span></div></li>
+      <li><div><b>Thấy hợp thì bạn nâng cấp</b><span>Bảy chặng còn lại được mở ngay trong trang học.</span></div></li>
+    </ol>
+  </div>
+</div></section>
+
+<section id="lo-trinh" style="padding-top:8px"><div class="wrap">
+  <div class="head">
+    <div class="eyebrow">Lộ trình 90 ngày</div>
+    <h2 class="h2">Khai Tâm giúp bạn trả lời những câu hỏi nào?</h2>
+    <p class="sub">Chương trình chính gồm 60 bài, chia thành bảy chặng và học trong 12 tuần, mỗi tuần năm bài. Mỗi chặng đi cùng bạn qua một câu hỏi lớn của đời sống. Bạn bấm vào từng chặng để xem sau chặng ấy mình làm được gì.</p>
+  </div>
+  <div class="stages">
+    <details class="stage"><summary><span class="no">Mở đầu</span><span class="ttl">Tấm bản đồ của hành trình<small>Bạn đang đứng ở đâu, và 90 ngày tới sẽ đi qua những gì?</small></span><span class="cnt">2 bài</span></summary>
+      <div class="body"><p>Bạn ký với chính mình một bản cam kết 90 ngày, mở lại bánh xe đã chấm ở Phần 1, chọn ra một mặt để theo dõi, và lập một cuốn sổ tay sẽ đi cùng bạn suốt chương trình.</p><p><b>Học thử:</b> Bài 01 · Khai Tâm là gì? <span class="free">Miễn phí</span></p></div></details>
+    <details class="stage" open><summary><span class="no">Chặng 1</span><span class="ttl">Nhận diện khổ đau<small>Vì sao có đủ rồi mà lòng vẫn bất an?</small></span><span class="cnt">9 bài</span></summary>
+      <div class="body"><p><b>Sau chặng này,</b> bạn gọi được tên điều đang làm mình mệt, biết căng thẳng đang nằm ở đâu trong cơ thể, và có trong tay vài cách để dịu lại chỉ trong ít phút.</p><p><b>Công cụ bạn mang về</b> gồm Nhật ký ba lần chưa yên, Dừng Nhìn Nghe, Bốn bài thở, Bốn việc trước giờ ngủ và Bảng từ vựng cảm xúc.</p><p><b>Học thử:</b> Bài 03 · Vì sao càng đủ đầy càng bất an? <span class="free">Miễn phí</span></p></div></details>
+    <details class="stage"><summary><span class="no">Chặng 2</span><span class="ttl">Gốc rễ của khổ đau<small>Vì sao biết là sai mà mình vẫn lặp lại?</small></span><span class="cnt">8 bài</span></summary>
+      <div class="body"><p><b>Sau chặng này,</b> bạn nhìn ra cái vòng lặp của chính mình, từ lúc muốn, lúc bám, lúc phản ứng cho tới lúc hối, và biết ở chỗ nào thì mình chen vào được.</p><p><b>Công cụ bạn mang về</b> gồm Nhật ký tôi đang muốn gì và để được gì, phép Đổi thước đo, bài Viết mười lăm phút và Phiên tòa cho một niềm tin.</p><p><b>Học thử:</b> Bài 12 · Tham ái: vì sao có rồi vẫn thiếu? <span class="free">Miễn phí</span></p></div></details>
+    <details class="stage"><summary><span class="no">Chặng 3</span><span class="ttl">Bình an nội tâm<small>Buông là buông thế nào, và bao nhiêu thì là đủ?</small></span><span class="cnt">7 bài</span></summary>
+      <div class="body"><p><b>Sau chặng này,</b> bạn phân biệt được chỗ nào nên buông với chỗ nào nên làm, và có một con số đủ của riêng mình.</p><p><b>Công cụ bạn mang về</b> gồm Hai vòng và Con số đủ. Cuối chặng, bạn chấm Bánh xe lần thứ hai để thấy mình đã đi được tới đâu.</p><p><b>Học thử:</b> Bài 20 · Bình an nội tâm là gì? <span class="free">Miễn phí</span></p></div></details>
+    <details class="stage"><summary><span class="no">Chặng 4</span><span class="ttl">Chuyển hóa nhận thức<small>Những ý nghĩ trong đầu mình có phải là sự thật không?</small></span><span class="cnt">8 bài</span></summary>
+      <div class="body"><p><b>Sau chặng này,</b> bạn thôi tin ngay vào mọi ý nghĩ vừa hiện lên, bớt tự trách mình, và biết trong một chuyện thì phần nào là phần mình làm được.</p><p><b>Công cụ bạn mang về</b> gồm Sổ gieo gặt, Bảng phần được trao và phần tôi làm, cùng bài viết năm bước để nói với mình như nói với một người bạn thân.</p><p><b>Học thử:</b> Bài 27 · Luật nhân quả vận hành thế nào? <span class="free">Miễn phí</span></p></div></details>
+    <details class="stage"><summary><span class="no">Chặng 5</span><span class="ttl">Chữa lành các mối quan hệ<small>Vì sao chúng ta dễ làm đau chính người mình thương nhất?</small></span><span class="cnt">9 bài</span></summary>
+      <div class="body"><p><b>Sau chặng này,</b> bạn nói được một điều khó mà không làm đau người nghe, biết dừng lại giữa một cơn giận, và có cách ở bên cha mẹ, bên con cái cho nhẹ nhàng hơn.</p><p><b>Công cụ bạn mang về</b> gồm Năm cửa của lời nói, Bốn bước nói điều khó, Mười lăm phút không điện thoại, và cặp Một việc làm, một câu không nói.</p><p><b>Học thử:</b> Bài 35 · Sức mạnh của lời nói <span class="free">Miễn phí</span></p></div></details>
+    <details class="stage"><summary><span class="no">Chặng 6</span><span class="ttl">Vững vàng giữa cuộc đời<small>Làm sao để đứng vững trước khen chê, tiền bạc và công việc?</small></span><span class="cnt">7 bài</span></summary>
+      <div class="body"><p><b>Sau chặng này,</b> bạn giữ được mình ở chỗ làm, nhìn đồng tiền nhẹ nhàng hơn, làm nghề mà không kiệt sức, và có một câu trả lời cho chặng đường phía trước của mình.</p><p><b>Công cụ bạn mang về</b> gồm Bốn phần thu nhập, ba câu hỏi trước một lời chê và Thư cho mình mười năm sau.</p><p><b>Học thử:</b> Bài 44 · Giữ mình là giữ cho người <span class="free">Miễn phí</span></p></div></details>
+    <details class="stage"><summary><span class="no">Chặng 7</span><span class="ttl">Tỉnh thức mỗi ngày<small>Làm sao giữ được nếp mới khi những cảm xúc cũ quay trở lại?</small></span><span class="cnt">7 bài</span></summary>
+      <div class="body"><p><b>Sau chặng này,</b> bạn có một nếp nhỏ mà ngay cả vào ngày tệ nhất mình vẫn giữ được, và biết phải làm gì khi chuyện cũ tìm về.</p><p><b>Công cụ bạn mang về</b> gồm Bản năm phút, Lời hứa ba tháng, Sổ ghi buổi tối và thang đo cảm xúc từ không tới mười.</p><p><b>Học thử:</b> Bài 51 · Nỗ lực bao nhiêu là vừa? <span class="free">Miễn phí</span></p></div></details>
+    <details class="stage"><summary><span class="no">Kết</span><span class="ttl">Trở về và đi tiếp<small>Sau 90 ngày, điều gì ở mình đã thật sự đổi khác?</small></span><span class="cnt">3 bài</span></summary>
+      <div class="body"><p>Bạn chấm Bánh xe lần thứ ba rồi đặt ba bánh xe cạnh nhau, mở lại tờ giấy mình đã cất đi từ ngày đầu, và viết một Kế hoạch giữ nếp cho những tháng sau đó.</p></div></details>
+  </div>
+</div></section>
+
+<section class="lesson"><div class="wrap">
+  <div class="head">
+    <div class="eyebrow">Một bài học diễn ra thế nào</div>
+    <h2 class="h2">Mỗi bài dài khoảng mười lăm phút, đi từ một câu hỏi tới một việc bạn làm được ngay</h2>
+  </div>
+  <ol class="flow">
+    <li><span class="t">Mở bài</span><b>Một câu hỏi của đời sống</b><span>Mỗi bài được mở ra bằng một chuyện rất thường gặp trong đời sống hằng ngày, chứ không mở bằng lý thuyết.</span></li>
+    <li><span class="t">Khoa học</span><b>Khoa học nói gì</b><span>Bài học dẫn một nghiên cứu tâm lý học có tên tác giả, có năm công bố, và có nói rõ giới hạn của nghiên cứu ấy.</span></li>
+    <li><span class="t">Phương Đông</span><b>Người xưa nói gì</b><span>Bên cạnh đó là lời dạy của Đức Phật, Lão Tử, Trang Tử hay Khổng Tử, được thuật lại bằng lời thường và có ghi nguồn.</span></li>
+    <li><span class="t">Thực hành</span><b>Một công cụ để dùng</b><span>Bài nào cũng khép lại bằng một việc cụ thể, mà mỗi ngày bạn chỉ cần vài phút để làm.</span></li>
+  </ol>
+  <div class="extras">
+    <div><h3>Bảy buổi dẫn thiền</h3><p>Chương trình có bảy buổi thực hành bằng âm thanh, mỗi buổi dài chừng hai mươi phút, kết hợp giữa thiền và thư giãn sâu. Bạn chỉ cần nhắm mắt lại và nghe theo lời dẫn.</p></div>
+    <div><h3>Bài tập cuối mỗi chặng</h3><p>Cuối mỗi chặng có hai mươi câu trắc nghiệm, vừa ôn lại bài học vừa đặt bạn vào những tình huống đời thường. Nộp bài xong, bạn xem được đáp án cùng lời giải thích, và bài không tính đạt hay trượt.</p></div>
+    <div><h3>Ba lần chấm Bánh xe</h3><p>Bạn chấm bánh xe lúc bắt đầu, lúc giữa đường và lúc kết thúc. Ba bánh xe đặt cạnh nhau sẽ cho bạn thấy mình đã đổi khác ở đâu, bằng chính con số của mình.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head">
+    <div class="eyebrow">Nói thật trước khi bạn đăng ký</div>
+    <h2 class="h2">Khai Tâm không hứa rằng học xong thì bạn sẽ hết khổ</h2>
+    <p class="sub">Điều mà chương trình hứa được là bạn sẽ thấy rõ hơn chuyện gì đang diễn ra bên trong mình. Và chỉ riêng việc thấy rõ thôi cũng đã thay đổi được nhiều thứ hơn chúng ta vẫn tưởng.</p>
+  </div>
+  <div class="fit">
+    <div><h3>Chương trình hợp với bạn, nếu</h3>
+      <ul class="ticks">
+        <li>Bạn đang thấy mình cố gắng nhiều mà lòng vẫn chưa yên, dù bạn đang ở chặng nào của cuộc đời</li>
+        <li>Bạn đã nghe nhiều đạo lý rồi, và bây giờ muốn có một lộ trình có thứ tự, có bài tập để làm theo</li>
+        <li>Bạn sẵn lòng dành ra khoảng mười lăm phút mỗi ngày, và viết vài dòng vào mỗi buổi tối</li>
+        <li>Bạn muốn hiểu lời người xưa bằng con mắt của khoa học hôm nay</li>
+      </ul></div>
+    <div><h3>Chương trình chưa hợp, nếu</h3>
+      <ul class="ticks no">
+        <li>Bạn đang tìm một phép màu giúp đổi đời chỉ trong vài ngày</li>
+        <li>Bạn đang tìm một khóa tu, hoặc một lớp giáo lý của riêng một tôn giáo</li>
+        <li>Bạn đang ở trong một giai đoạn khủng hoảng nặng về sức khỏe tinh thần, vì lúc ấy điều bạn cần trước hết là bác sĩ hoặc chuyên gia trị liệu</li>
+      </ul></div>
+  </div>
+</div></section>
+
+<section class="about" style="padding-top:8px"><div class="wrap">
+  <img src="leo-ban-lam-viec.jpg" alt="Đặng Thái Cường tại bàn làm việc" width="1200" height="800">
+  <div class="stack">
+    <div class="eyebrow">Người biên soạn và hướng dẫn</div>
+    <h2 class="h2">Đặng Thái Cường là ai?</h2>
+    <p>Đặng Thái Cường, hay Coach Leo Cường, làm công việc đào tạo từ năm 2010. Anh là nhà khai vấn chứng nhận ICF và tốt nghiệp Viện Thôi Miên HMI tại Hoa Kỳ. Kênh YouTube Đặng Thái Cường hiện có hơn 134.000 người đăng ký.</p>
+    <p>Trên kênh, mỗi tập là một câu chuyện đứng riêng. Còn Khai Tâm thì gom những gì anh đã học và đã dạy lại thành một con đường có thứ tự, trong đó bài sau đứng trên bài trước, có công cụ, có bài tập, và có những chỗ dừng lại để bạn nhìn lại mình.</p>
+    <blockquote>Mỗi ngày chúng ta đều đang nói với mình một điều gì đó. Hãy chọn một câu vừa tầm, tử tế, và nói nó một cách nhẹ nhàng.</blockquote>
+    <p><a href="https://www.leocuong.com/#giang-vien">Xem thêm về Coach Leo Cường</a></p>
+  </div>
+</div></section>
+
+<section class="price" id="hoc-phi"><div class="wrap">
+  <div class="price-head">
+    <div class="eyebrow">Học phí</div>
+    <h2 class="h2">Bạn học trước 18 bài, thấy hợp rồi mới nâng cấp</h2>
+    <p class="sub">Bạn không cần phải tin vào lời giới thiệu. Bạn cứ học Phần 1 và bài mở đầu của từng chặng, rồi tự mình quyết định.</p>
+  </div>
+  <div class="free-plan">
+    <div class="name">Bước 1 · Học thử</div>
+    <div class="amt">0đ</div>
+    <ul class="ticks">
+      <li>Trọn Phần 1 Bánh Xe Cuộc Đời, gồm mười bài</li>
+      <li>Bài đánh giá 48 câu và bánh xe của riêng bạn</li>
+      <li>Tám bài mở đầu, của phần Mở đầu và của bảy chặng</li>
+    </ul>
+    <a class="btn btn-light" href="https://hoc.leocuong.com/khaitam">Đăng ký học miễn phí</a>
+  </div>
+  <div class="plan">
+    <div class="name">Bước 2 · Trọn chương trình 90 ngày</div>
+    <div class="amt">999.000đ<small>giá mở bán</small></div>
+    <p class="per">Tính ra chưa tới 17.000đ cho mỗi bài giảng. Bạn thanh toán một lần và không phải trả thêm khoản nào khác.</p>
+    <ul class="ticks">
+      <li>Toàn bộ 60 bài của bảy chặng, trong đó có bảy buổi dẫn thiền</li>
+      <li>Bài tập cuối mỗi chặng và ba lần chấm Bánh xe</li>
+      <li>Quyền truy cập 12 tháng, muốn học lại bao nhiêu lần cũng được</li>
+      <li>Các bài giảng và chuyên đề bổ sung về sau, mà người đã đăng ký được nhận thêm, không phải trả thêm</li>
+    </ul>
+    <p class="note"><b>Học phí sẽ được nâng dần theo thời gian</b>, khi chương trình có thêm bài giảng. Đăng ký sớm thì bạn được mức giá mở bán.</p>
+    <a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Bắt đầu với 10 bài miễn phí</a>
+    <p class="note">Khi muốn nâng cấp, bạn chuyển khoản qua mã QR ngay trong trang học, và hệ thống sẽ tự mở khóa khi nhận được tiền.</p>
+  </div>
+</div></section>
+
+<section class="faq" id="hoi-dap"><div class="wrap narrow">
+  <div class="head">
+    <div class="eyebrow">Hỏi đáp</div>
+    <h2 class="h2">Những câu hỏi mà bạn có thể đang nghĩ tới</h2>
+  </div>
+  <details><summary>Chương trình này phù hợp với những ai?</summary><p>Khai Tâm dành cho những ai muốn hiểu rõ hơn về chính mình và sống nhẹ nhàng hơn, dù bạn đang đi làm, đang lo cho gia đình hay đã nghỉ ngơi. Bạn không cần có nền tảng gì về tâm lý học hay Phật học để theo được chương trình.</p></details>
+  <details><summary>Tôi đang sống khá ổn thì có cần học không?</summary><p>Phần lớn các công cụ trong Khai Tâm là để dùng vào những ngày bình thường, chứ không phải đợi tới lúc có chuyện. Lúc đang ổn cũng là lúc dễ học nhất, bởi vì khi ấy chúng ta còn đủ bình tĩnh để nhìn lại mình.</p></details>
+  <details><summary>Tôi đã xem kênh YouTube rồi, khóa học có gì khác?</summary><p>Trên kênh, mỗi tập đứng riêng một mình. Còn Khai Tâm là một lộ trình, trong đó bài sau dùng lại điều bài trước đã dạy, mỗi bài có một công cụ để làm, và mỗi chặng có bài tập cùng một buổi dẫn thiền. Các ví dụ đời thường trong khóa cũng được viết mới, không lặp lại những ví dụ đã dùng trên kênh.</p></details>
+  <details><summary>Đây có phải là một khóa học về tôn giáo không?</summary><p>Không phải. Khai Tâm dùng triết học phương Đông, gồm Phật học và Đạo gia, cùng với tâm lý học phương Tây như những công cụ để hiểu mình và sống nhẹ hơn. Bạn không cần phải theo một tôn giáo nào để học.</p></details>
+  <details><summary>Tôi không rành công nghệ thì học có được không?</summary><p>Được. Bạn chỉ cần mở trang hoc.leocuong.com trên điện thoại hoặc máy tính, đăng nhập bằng email, rồi bấm vào bài học để xem, không phải cài thêm ứng dụng nào. Video có phụ đề và chữ trên màn hình được làm lớn cho dễ đọc.</p></details>
+  <details><summary>Tôi có phải học đúng 90 ngày không?</summary><p>Không bắt buộc. Lộ trình gợi ý là mỗi tuần năm bài, nhưng bạn hoàn toàn có thể học theo nhịp của riêng mình trong thời gian truy cập 12 tháng.</p></details>
+  <details><summary>Mỗi ngày tôi cần dành ra bao nhiêu thời gian?</summary><p>Một bài giảng dài khoảng mười lăm phút. Phần thực hành thì thường chỉ là vài phút trong ngày, cộng với một hai dòng ghi vào sổ vào mỗi buổi tối.</p></details>
+  <details><summary>Tôi thanh toán bằng cách nào, có cần thẻ không?</summary><p>Bạn không cần thẻ. Khi muốn học trọn chương trình, bạn bấm nút Nâng cấp trong trang học rồi chuyển khoản qua mã QR của ngân hàng. Hệ thống sẽ tự mở khóa các chặng khi nhận được tiền.</p></details>
+  <details><summary>Hết 12 tháng thì sao?</summary><p>Quyền học Khai Tâm kéo dài 12 tháng, tính từ ngày bạn nâng cấp. Sau thời gian đó, tài khoản của bạn vẫn còn, cùng với Phần 1 Bánh Xe Cuộc Đời và kết quả các lần chấm bánh xe.</p></details>
+  <details><summary>Khóa học có thay được cho trị liệu tâm lý không?</summary><p>Không. Đây là một chương trình học và thực hành để tự nhìn lại mình. Nếu bạn đang gặp khó khăn nặng về sức khỏe tinh thần, bạn hãy tìm đến bác sĩ hoặc chuyên gia trị liệu.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap narrow">
+  <h2 class="h2">Bước đầu tiên chỉ mất của bạn một phút, và không tốn một đồng nào</h2>
+  <p class="sub">Bạn đăng ký, học mười bài của Bánh Xe Cuộc Đời và xem bánh xe của chính mình. Nếu thấy đó đúng là điều mình đang cần, thì bảy chặng của Khai Tâm đã chờ sẵn ngay bên dưới.</p>
+  <a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Nhận 10 bài học miễn phí</a>
+  <p class="note">Bạn chỉ cần email, và chưa cần thanh toán.</p>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Đặng Thái Cường · leocuong.com</span>
+  <span><a href="https://www.leocuong.com/">Coach Leo Cường</a> · <a href="https://hoc.leocuong.com/">Học viện</a> · <a href="https://www.youtube.com/@LeoCuong">YouTube</a></span>
+</div></footer>
+
+<div class="dock">
+  <span>10 bài miễn phí, chỉ cần email</span>
+  <a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Học thử ngay</a>
+</div>
+<script>
+(function(){
+  var S={
+    1:["Chặng 1 · Nhận diện khổ đau","Bài 03 · Vì sao càng đủ đầy càng bất an?"],
+    2:["Chặng 2 · Gốc rễ của khổ đau","Bài 12 · Tham ái: vì sao có rồi vẫn thiếu?"],
+    3:["Chặng 3 · Bình an nội tâm","Bài 20 · Bình an nội tâm là gì?"],
+    4:["Chặng 4 · Chuyển hóa nhận thức","Bài 27 · Luật nhân quả vận hành thế nào?"],
+    5:["Chặng 5 · Chữa lành các mối quan hệ","Bài 35 · Sức mạnh của lời nói"],
+    6:["Chặng 6 · Vững vàng giữa cuộc đời","Bài 44 · Giữ mình là giữ cho người"],
+    7:["Chặng 7 · Tỉnh thức mỗi ngày","Bài 51 · Nỗ lực bao nhiêu là vừa?"]
+  };
+  var box=document.getElementById('checklist'),head=document.getElementById('result-head'),sub=document.getElementById('result-sub'),list=document.getElementById('result-list');
+  if(!box) return;
+  function render(){
+    var on=[].slice.call(box.querySelectorAll('input:checked')).map(function(i){return i.getAttribute('data-stage')});
+    list.textContent='';
+    if(!on.length){
+      head.innerHTML='<b>Mỗi câu ở trên ứng với một chặng của Khai Tâm.</b>';
+      sub.textContent='Khi bạn đánh dấu một câu, bên dưới sẽ hiện ra chặng tương ứng cùng bài mở đầu của chặng ấy. Tất cả các bài mở đầu đều được học miễn phí.';
+      return;
+    }
+    head.innerHTML='<b>Bạn đã đánh dấu '+on.length+' trên 7 câu.</b>';
+    sub.textContent=on.length>=4
+      ? 'Khi nhiều mặt cùng lên tiếng một lúc, vấn đề thường nằm ở cái trục chứ không nằm ở riêng một nan nào. Bạn nên bắt đầu từ Phần 1 để nhìn được cả bánh xe của mình, rồi học thử những bài dưới đây.'
+      : 'Đây là những chặng nói đúng vào điều bạn đang gặp. Bài mở đầu của mỗi chặng đều được học miễn phí.';
+    on.forEach(function(k){
+      var li=document.createElement('li'),b=document.createElement('b');
+      b.textContent=S[k][0]; li.appendChild(b); li.appendChild(document.createTextNode('. Học thử: '+S[k][1])); list.appendChild(li);
+    });
+  }
+  box.addEventListener('change',render); render();
+})();
+</script>
+</body>
+</html>

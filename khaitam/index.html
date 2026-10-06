@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Khai Tâm, chương trình 90 ngày của Coach Leo Cường: ứng dụng triết học phương Đông và tâm lý học phương Tây để hiểu gốc rễ của khổ đau và tìm lại bình an. Bắt đầu miễn phí với 10 bài Bánh Xe Cuộc Đời.">
+<meta property="og:title" content="Khai Tâm · Chương trình 90 ngày">
+<meta property="og:description" content="Bắt đầu miễn phí với 10 bài Bánh Xe Cuộc Đời, rồi đi tiếp bảy chặng của Khai Tâm.">
+<meta property="og:image" content="https://www.leocuong.com/thumb/KT.jpg">
+<meta property="og:type" content="website">
+<title>Khai Tâm · Chương trình 90 ngày</title>
+<link rel="icon" href="https://hoc.leocuong.com/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:ital,wght@1,500&display=swap">
+<style>
+/* Bố cục: một cột đọc rộng 1080px; lời mời nhận 10 bài miễn phí, khóa tặng, lộ trình chín phần, cách học, giảng viên, học phí, hỏi đáp. */
+:root{
+  --bg:#F7F1E5; --surface:#FFFDF8; --band:#EFE5D0; --line:#E2D6BF;
+  --ink:#14233F; --muted:#4A566E; --accent:#7A4E14; --accent-ink:#FFFFFF; --gold:#B98A3E;
+  --navy:#14233F; --on-navy:#F7F1E5; --on-navy-muted:#C9CFDB;
+  --sans:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1828; --surface:#172338; --band:#131E32; --line:#2B3A55;
+  --ink:#F2EBDC; --muted:#B4BDCD; --accent:#E0B56E; --accent-ink:#14233F; --gold:#E0B56E;
+  --navy:#0A1220; --on-navy:#F2EBDC; --on-navy-muted:#B4BDCD; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1828; --surface:#172338; --band:#131E32; --line:#2B3A55;
+  --ink:#F2EBDC; --muted:#B4BDCD; --accent:#E0B56E; --accent-ink:#14233F; --gold:#E0B56E;
+  --navy:#0A1220; --on-navy:#F2EBDC; --on-navy-muted:#B4BDCD; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:20px}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:10px;font-weight:700;font-size:18px;text-decoration:none;border:2px solid transparent}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-light{background:var(--on-navy);color:var(--navy)}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-weight:700;font-size:19px;color:var(--ink);text-decoration:none}
+header.top .btn{min-height:44px;padding:0 18px;font-size:16px}
+
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:56px}
+.hero h1{font-size:clamp(34px,5vw,54px);font-weight:700;letter-spacing:-.01em}
+.hero .lead{font-size:20px;color:var(--muted);max-width:34em}
+.hero-text{display:flex;flex-direction:column;gap:20px;min-width:0}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.note{font-size:16px;color:var(--muted)}
+.portrait{position:relative;justify-self:center;width:100%;max-width:380px}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:14px}
+.portrait figcaption{margin-top:12px;font-size:16px;color:var(--muted)}
+.portrait figcaption b{color:var(--ink);display:block;font-size:18px}
+
+section{padding-block:56px}
+.band{background:var(--band)}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;max-width:40em}
+.sec-head h2{font-size:clamp(26px,3.6vw,36px)}
+.sec-head p{color:var(--muted)}
+
+.gift{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+.wheel{width:310px;height:auto;max-width:100%}
+.wheel .rim,.wheel .spoke{stroke:var(--ink);fill:none}
+.wheel .hub{fill:var(--accent)}
+.wheel text{font-family:var(--sans);font-size:11px;font-weight:600;fill:var(--ink)}
+.gift-body{display:flex;flex-direction:column;gap:16px;min-width:0}
+.gift-body h3{font-size:26px}
+.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ticks li{padding-left:28px;position:relative}
+.ticks li::before{content:"";position:absolute;left:4px;top:.5em;width:12px;height:7px;border-left:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);transform:rotate(-45deg)}
+
+.courses{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
+.course{display:grid;grid-template-columns:56px 1fr;gap:6px 14px;padding:18px 8px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);min-width:0}
+.course:nth-child(odd){border-right:1px solid var(--line);padding-right:20px}
+.course:nth-child(even){padding-left:20px}
+.course .code{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.course h3{font-size:19px;font-weight:600}
+.course p{grid-column:2;color:var(--muted);font-size:16px}
+.course:hover h3{text-decoration:underline}
+
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.how div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.how h3{font-size:20px}
+.how p{color:var(--muted);font-size:17px}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-text{display:flex;flex-direction:column;gap:16px;min-width:0}
+.about-photo{display:block;width:100%;height:auto;border-radius:14px;margin-bottom:8px}
+.quote{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.45;border-left:3px solid var(--gold);padding-left:18px}
+.creds{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.creds li{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.creds span{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+
+.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.topic{padding:22px 24px 22px 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.topic + .topic{padding-left:24px;border-left:1px solid var(--line)}
+.topic h3{font-size:21px}
+.topic p{color:var(--muted);font-size:17px}
+.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.track{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0;text-decoration:none;color:var(--ink)}
+.track .state{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.track h3{font-size:24px}
+.track p{color:var(--muted);font-size:17px}
+.track .go{margin-top:auto;padding-top:8px;font-weight:700;color:var(--accent)}
+.track:hover h3{text-decoration:underline}
+.app{background:var(--navy);color:var(--on-navy)}
+.app .wrap{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+.app img{width:150px;height:150px;border-radius:34px;display:block}
+.app-body{display:flex;flex-direction:column;gap:14px;min-width:0}
+.app-body h2{font-size:clamp(26px,3.6vw,36px)}
+.app-body p{color:var(--on-navy-muted);max-width:40em}
+.app .eyebrow{color:var(--gold)}
+.app .ticks li::before{border-color:var(--gold)}
+.soon{display:inline-block;align-self:flex-start;border:1px solid var(--on-navy-muted);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:600}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gallery img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:8px}
+.sub{font-size:20px;margin:36px 0 16px}
+.tv{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tv a{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);min-width:0}
+.tv .thumb{position:relative}
+.tv img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px}
+.tv .thumb::after{content:"";position:absolute;left:50%;top:50%;width:0;height:0;border-left:18px solid #FFFFFF;border-top:11px solid transparent;border-bottom:11px solid transparent;transform:translate(-40%,-50%);filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
+.tv span{font-size:16px;font-weight:600;line-height:1.4}
+.tv small{font-size:14px;color:var(--muted);font-weight:400;display:block}
+.seen{margin-top:28px;color:var(--muted);font-size:17px}
+.seen b{color:var(--ink)}
+
+.faq-in{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:600;font-size:19px}
+details p{margin-top:10px;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:16px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px;padding-block:36px}
+  .portrait{order:-1;max-width:260px;justify-self:start}
+  .gift{grid-template-columns:1fr;gap:20px}
+  .wheel{width:260px}
+    .how,.about,.topics,.tracks{grid-template-columns:1fr}
+  .topic,.topic + .topic{padding:18px 0;border-left:0}
+  .topic + .topic{border-top:1px solid var(--line)}
+  .app .wrap{grid-template-columns:1fr;gap:20px}
+  .app img{width:110px;height:110px;border-radius:26px}
+  .gallery,.tv{grid-template-columns:repeat(2,1fr)}
+  section{padding-block:40px}
+}
+img{max-width:100%}
+
+.road{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.road li{display:grid;grid-template-columns:150px 1fr auto;gap:8px 24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.road .step{font-weight:700;color:var(--accent);font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.road h3{font-size:21px}
+.road p{color:var(--muted);font-size:17px;margin-top:4px}
+.road .n{color:var(--muted);font-size:16px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.road .free .n{color:var(--accent);font-weight:700}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.price-box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.price-box .amount{font-size:44px;font-weight:700;line-height:1.1;color:var(--accent)}
+.price-box .amount small{font-size:17px;font-weight:600;color:var(--muted)}
+.hero .portrait img{aspect-ratio:4/5}
+@media (max-width:820px){
+  .road li{grid-template-columns:1fr auto}
+  .road .step{grid-column:1/-1}
+  .price{grid-template-columns:1fr;gap:24px}
+  .price-box .amount{font-size:36px}
+}
+</style>
+</head>
+<body id="top">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Khai Tâm · Chương trình 90 ngày</a>
+    <a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Học miễn phí</a>
+  </div>
+</header>
+
+<section class="hero" style="padding-block:0">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="eyebrow">Chương trình 90 ngày của Coach Leo Cường</div>
+      <h1>Chỉnh từng mặt của đời sống mãi mà lòng vẫn chưa yên?</h1>
+      <p class="lead">Tám mặt của đời sống giống tám nan của một bánh xe, còn tâm là cái trục. Khai Tâm là chương trình 90 ngày giúp bạn chỉnh lại cái trục ấy, bằng triết học phương Đông và tâm lý học phương Tây.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Nhận 10 bài miễn phí</a>
+        <a class="btn btn-ghost" href="#lo-trinh">Xem lộ trình</a>
+      </div>
+      <p class="note">Bạn chỉ cần đăng ký tài khoản bằng email. Chưa cần thanh toán.</p>
+    </div>
+    <figure class="portrait" style="margin:0">
+      <img src="https://www.leocuong.com/leo.jpg" alt="Coach Leo Cường" width="800" height="1000">
+      <figcaption><b>Đặng Thái Cường</b>Nhà khai vấn chứng nhận ICF · Tốt nghiệp Viện Thôi Miên HMI, Hoa Kỳ</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band" id="qua-tang">
+  <div class="wrap gift">
+    <svg class="wheel" viewBox="-50 0 340 240" role="img" aria-label="Bánh xe cuộc đời tám mặt">
+      <circle class="rim" cx="120" cy="120" r="78" stroke-width="3"/>
+      <circle class="rim" cx="120" cy="120" r="46" stroke-width="1" stroke-dasharray="3 5"/>
+      <g class="spoke" stroke-width="2">
+        <line x1="120" y1="42" x2="120" y2="198"/><line x1="42" y1="120" x2="198" y2="120"/>
+        <line x1="64.8" y1="64.8" x2="175.2" y2="175.2"/><line x1="175.2" y1="64.8" x2="64.8" y2="175.2"/>
+      </g>
+      <circle class="hub" cx="120" cy="120" r="9"/>
+      <text x="120" y="30" text-anchor="middle">Tâm</text>
+      <text x="184" y="54" text-anchor="start">Thân</text>
+      <text x="204" y="124" text-anchor="start">Chính mình</text>
+      <text x="184" y="196" text-anchor="start">Ý nghĩa</text>
+      <text x="120" y="218" text-anchor="middle">Gia đình</text>
+      <text x="56" y="196" text-anchor="end">Quan hệ</text>
+      <text x="36" y="124" text-anchor="end">Việc</text>
+      <text x="56" y="54" text-anchor="end">Tiền</text>
+    </svg>
+    <div class="gift-body">
+      <div class="eyebrow">Phần 1 · Học miễn phí</div>
+      <h3>Bánh Xe Cuộc Đời: biết mình đang lệch ở đâu để chỉnh đúng chỗ</h3>
+      <p>Bạn cố gắng nhiều mà vẫn mệt. Có thể bạn không thiếu nỗ lực, mà bánh xe đang lệch. Phần này giúp bạn nhìn đủ tám mặt của đời sống và chọn một mặt để bắt đầu.</p>
+      <ul class="ticks">
+        <li>10 bài học ngắn, khoảng 90 phút</li>
+        <li>Bài tự đánh giá 48 câu, có biểu đồ và điểm từng mặt</li>
+        <li>Bản đọc kết quả riêng cho bạn, theo phong cách khai vấn</li>
+      </ul>
+      <div class="cta-row"><a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Đăng ký và học ngay</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="lo-trinh">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Lộ trình</div>
+      <h2>Từ Bánh Xe Cuộc Đời đến bảy chặng của Khai Tâm</h2>
+      <p>Chương trình chính gồm 60 bài, học trong 12 tuần, mỗi tuần 5 bài. Bài mở đầu của mỗi chặng được học miễn phí.</p>
+    </div>
+    <ol class="road">
+      <li class="free"><span class="step">Phần 1</span><div><h3>Bánh Xe Cuộc Đời</h3><p>Nhìn đủ tám mặt của đời sống, làm bài tự đánh giá và chọn một mặt để bắt đầu.</p></div><span class="n">10 bài · miễn phí</span></li>
+      <li><span class="step">Mở đầu</span><div><h3>Tấm bản đồ của hành trình</h3><p>Khai Tâm là gì và bạn đang mất cân bằng ở đâu.</p></div><span class="n">2 bài</span></li>
+      <li><span class="step">Chặng 1</span><div><h3>Nhận diện khổ đau</h3><p>Vì sao càng đủ đầy càng bất an, căng thẳng nằm ở đâu trong cơ thể, cách gọi đúng tên cảm xúc.</p></div><span class="n">9 bài</span></li>
+      <li><span class="step">Chặng 2</span><div><h3>Gốc rễ của khổ đau</h3><p>Tham ái, bản ngã, lo âu, cảm xúc bị đè nén và lý do ta biết sai mà vẫn lặp lại.</p></div><span class="n">8 bài</span></li>
+      <li><span class="step">Chặng 3</span><div><h3>Bình an nội tâm</h3><p>Buông, chấp nhận và thay đổi, biết đủ, nhìn vô thường như một tin tốt.</p></div><span class="n">7 bài</span></li>
+      <li><span class="step">Chặng 4</span><div><h3>Chuyển hóa nhận thức</h3><p>Nhân quả, số phận và lựa chọn, ý nghĩ không phải là sự thật, tự trắc ẩn.</p></div><span class="n">8 bài</span></li>
+      <li><span class="step">Chặng 5</span><div><h3>Chữa lành các mối quan hệ</h3><p>Lời nói, lắng nghe, cơn giận, hôn nhân, cha mẹ già, mất mát và tha thứ.</p></div><span class="n">9 bài</span></li>
+      <li><span class="step">Chặng 6</span><div><h3>Vững vàng giữa cuộc đời</h3><p>Chỗ làm, khen chê, đồng tiền, làm nghề mà không kiệt sức, nửa sau cuộc đời.</p></div><span class="n">7 bài</span></li>
+      <li><span class="step">Chặng 7</span><div><h3>Tỉnh thức mỗi ngày</h3><p>Nỗ lực bao nhiêu là vừa, từ mong cầu đến cam kết, khi cảm xúc cũ quay trở lại.</p></div><span class="n">7 bài</span></li>
+      <li><span class="step">Kết</span><div><h3>Trở về và đi tiếp</h3><p>Nhìn lại hành trình 90 ngày và lời chào cuối khóa.</p></div><span class="n">3 bài</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Cách học</div>
+      <h2>Mỗi ngày một bài, mỗi chặng một lần dừng lại</h2>
+    </div>
+    <div class="how">
+      <div><h3>Bài giảng khoảng 15 phút</h3><p>Mỗi bài đi từ một câu hỏi của đời sống, đặt nghiên cứu tâm lý học cạnh lời dạy của Đức Phật, Lão Tử, Trang Tử, rồi kết bằng một việc bạn làm được ngay.</p></div>
+      <div><h3>Dẫn thiền kết hợp thôi miên trị liệu</h3><p>Chương trình có bảy bài thực hành bằng âm thanh. Bạn chỉ cần nhắm mắt và nghe, để điều vừa học dần thành thói quen.</p></div>
+      <div><h3>Tổng kết và tự khai vấn</h3><p>Cuối mỗi chặng có một bài tổng kết, phần lớn kèm câu hỏi khai vấn, để bạn tự nhìn lại mình trước khi đi tiếp.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="giang-vien">
+  <div class="wrap about">
+    <div class="about-text">
+      <div class="eyebrow">Giảng viên</div>
+      <h2 style="font-size:clamp(26px,3.6vw,36px)">Đặng Thái Cường</h2>
+      <p>Đặng Thái Cường (Coach Leo Cường) làm đào tạo từ năm 2010. Anh là nhà khai vấn chứng nhận ICF và tốt nghiệp Viện Thôi Miên HMI, Hoa Kỳ. Kênh YouTube Đặng Thái Cường có hơn 134.000 người đăng ký.</p>
+      <p>Khai Tâm gom lại những gì anh đã học, đã dạy và đã chia sẻ trên kênh thành một lộ trình có thứ tự, có bài tập và có công cụ đi kèm.</p>
+      <p><a href="https://www.leocuong.com/#giang-vien">Xem thêm về Coach Leo Cường</a></p>
+    </div>
+    <div style="min-width:0"><img class="about-photo" src="https://www.leocuong.com/leo-ban-lam-viec.jpg" alt="Đặng Thái Cường tại bàn làm việc" width="1200" height="800" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="band" id="hoc-phi">
+  <div class="wrap price">
+    <div class="sec-head" style="margin-bottom:0">
+      <div class="eyebrow">Học phí</div>
+      <h2>Học miễn phí trước, nâng cấp khi bạn thấy hợp</h2>
+      <p>Phần 1 và bài mở đầu của mỗi chặng không mất phí. Khi muốn đi trọn chương trình, bạn nâng cấp ngay trong trang học và thanh toán bằng chuyển khoản qua mã QR. Hệ thống tự mở khóa khi nhận được tiền.</p>
+    </div>
+    <div class="price-box">
+      <div class="eyebrow">Khai Tâm · Chương trình 90 ngày</div>
+      <div class="amount">999.000đ <small>giá mở bán</small></div>
+      <ul class="ticks">
+        <li>Toàn bộ 60 bài của bảy chặng, truy cập 12 tháng</li>
+        <li>Giá sẽ được nâng dần theo thời gian</li>
+        <li>Chương trình tiếp tục được bổ sung bài giảng và chuyên đề; người đã đăng ký nhận thêm mà không phải trả thêm</li>
+      </ul>
+      <a class="btn btn-primary" href="https://hoc.leocuong.com/khaitam">Bắt đầu với 10 bài miễn phí</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap faq-in">
+    <div class="sec-head">
+      <div class="eyebrow">Hỏi đáp</div>
+      <h2>Câu hỏi thường gặp</h2>
+    </div>
+    <details><summary>Đây có phải khóa học về tôn giáo không?</summary><p>Không. Khai Tâm dùng triết học phương Đông (Phật học, Đạo gia) và tâm lý học phương Tây như những công cụ để hiểu mình và sống nhẹ hơn. Bạn không cần theo tôn giáo nào để học.</p></details>
+    <details><summary>Tôi học trên thiết bị nào?</summary><p>Bạn học bằng video tại học viện hoc.leocuong.com, trên điện thoại hoặc máy tính, không cần cài ứng dụng.</p></details>
+    <details><summary>Tôi có phải học đúng 90 ngày không?</summary><p>Không bắt buộc. Lộ trình gợi ý là mỗi tuần 5 bài, nhưng bạn học theo nhịp của mình trong thời gian truy cập 12 tháng.</p></details>
+    <details><summary>Khóa học có thay cho trị liệu tâm lý không?</summary><p>Không. Đây là chương trình học và thực hành. Nếu bạn đang gặp khó khăn nặng về sức khỏe tinh thần, hãy tìm đến bác sĩ hoặc chuyên gia trị liệu.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Đặng Thái Cường · leocuong.com</div>
+    <nav aria-label="Liên kết">
+      <a href="https://www.leocuong.com/">Coach Leo Cường</a>
+      <a href="https://hoc.leocuong.com/">Học viện</a>
+      <a href="https://www.youtube.com/@LeoCuong">YouTube</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

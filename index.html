@@ -150,6 +150,43 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
   .gallery,.tv{grid-template-columns:repeat(2,1fr)}
   section{padding-block:40px}
 }
+
+/* Khối ứng dụng: bảng màu riêng của app (xanh đêm + vàng), cố định ở cả hai chế độ sáng tối */
+.appx{--a-bg:#0A1124;--a-card:#141E3A;--a-line:#26335A;--a-text:#F4EDDF;--a-muted:#A7B0C6;--a-gold:#D2A65A;--a-gold2:#E9C98F;
+  background:radial-gradient(800px 420px at 90% -10%,rgba(210,166,90,.16),transparent 60%),var(--a-bg);color:var(--a-text);padding-block:64px}
+.appx .eyebrow{color:var(--a-gold)}
+.appx h2,.appx h3{font-family:var(--serif);font-weight:600}
+.appx-head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.appx-head h2{font-size:clamp(30px,4.4vw,46px);margin:10px 0 14px}
+.appx-head .lead{color:var(--a-muted);font-size:19px}
+.appx-brand{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.appx-brand img{width:64px;height:64px;border-radius:15px}
+.appx .btn-gold{background:var(--a-gold);color:#0A1124}
+.appx .btn-gold:hover{background:var(--a-gold2)}
+.appx .btn-line{border-color:var(--a-line);color:var(--a-text)}
+.appx .cta-row{margin-top:24px}
+.appx .note{color:var(--a-muted);font-size:15px;margin-top:14px}
+.shots{display:flex;gap:14px;justify-content:center}
+.shots img{width:min(46%,210px);height:auto;border-radius:26px;border:5px solid #1b2647;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.shots img:nth-child(2){margin-top:36px}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.feat div{background:var(--a-card);border:1px solid var(--a-line);border-radius:16px;padding:20px}
+.feat h3{font-size:19px;margin-bottom:6px;color:var(--a-gold2)}
+.feat p{color:var(--a-muted);font-size:16px}
+.kt{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center;margin-top:56px;padding:32px;border:1px solid var(--a-gold);border-radius:20px;background:linear-gradient(180deg,rgba(210,166,90,.10),var(--a-card) 70%)}
+.kt svg{width:100%;height:auto}
+.kt svg .rim,.kt svg circle:not(.hub){stroke:var(--a-gold)}
+.kt svg line{stroke:var(--a-gold);opacity:.7}
+.kt svg text{fill:var(--a-text)}
+.kt svg .hub{fill:var(--a-gold)}
+.kt h3{font-size:clamp(24px,3vw,30px);margin:8px 0 12px}
+.kt p{color:var(--a-muted)}
+.kt ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px}
+.kt li{padding-left:24px;position:relative}
+.kt li::before{content:"";position:absolute;left:4px;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--a-gold)}
+.plans-mini{margin-top:18px;color:var(--a-muted);font-size:16px}
+.plans-mini b{color:var(--a-text)}
+@media (max-width:860px){.appx-head{grid-template-columns:1fr}.feat{grid-template-columns:1fr}.kt{grid-template-columns:1fr;padding:24px}.kt svg{max-width:240px;margin:0 auto}}
 img{max-width:100%}
 </style>
 </head>
@@ -171,7 +208,7 @@ img{max-width:100%}
       <p class="lead">Coach Leo Cường chia sẻ về tâm lý học ứng dụng, kỹ năng sống, kinh doanh và thương hiệu cá nhân, qua video, khóa học và ứng dụng Thiền Khai Tâm. Mỗi bài bắt đầu từ một tình huống đời thường và kết bằng một việc bạn làm được ngay.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://thienkhaitam.com/">Tải ứng dụng</a>
-        <a class="btn btn-ghost" href="#khoa-hoc">Về khóa Khai Tâm</a>
+        <a class="btn btn-ghost" href="#ung-dung">Xem ứng dụng</a>
       </div>
       <p class="note">Phần Bánh Xe Cuộc Đời của khóa Khai Tâm học miễn phí trong ứng dụng, chỉ cần tạo tài khoản. Không cần thẻ.</p>
     </div>
@@ -182,23 +219,34 @@ img{max-width:100%}
   </div>
 </div>
 
-<section id="chu-de">
+<section class="appx" id="ung-dung">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Chủ đề</div>
-      <h2>Ba chủ đề của Coach Leo Cường</h2>
+    <div class="appx-head">
+      <div>
+        <div class="appx-brand"><img src="media/app-thien-khai-tam.png" alt="Biểu tượng ứng dụng Thiền Khai Tâm" width="64" height="64"><div class="eyebrow" style="margin:0">Ứng dụng của Coach Leo Cường</div></div>
+        <h2>Thiền Khai Tâm: dừng lại vài phút, thở và trở về</h2>
+        <p class="lead">Dẫn thiền tiếng Việt, tập thở có giọng dẫn, gõ mõ, chuông xoay và khóa Khai Tâm 90 ngày, trong một ứng dụng nhỏ gọn, dịu mắt, không làm phiền bạn.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="https://thienkhaitam.com/">Xem ứng dụng và cách tải</a>
+          <a class="btn btn-line" href="#khai-tam">Khóa Khai Tâm</a>
+        </div>
+        <p class="note">Sắp ra mắt trên App Store và Google Play. Có phần miễn phí, không cần thẻ.</p>
+      </div>
+      <div class="shots">
+        <img src="media/shot-thien.jpg" alt="Màn hình bài dẫn thiền trong ứng dụng" width="780" height="1688" loading="lazy">
+        <img src="media/shot-tho.jpg" alt="Màn hình tập thở có giọng dẫn" width="780" height="1688" loading="lazy">
+      </div>
     </div>
-    <div class="topics">
-      <div class="topic"><h3>Tâm Lý Học Ứng Dụng</h3><p>Cảm xúc, các mối quan hệ và sự bình an trong lòng, nhìn bằng tâm lý học có bằng chứng, đặt cạnh lời dạy của Đức Phật, Lão Tử và triết học phương Đông.</p></div>
-      <div class="topic"><h3>Kỹ Năng Sống - Kinh Doanh</h3><p>Giao tiếp, bán hàng, đàm phán và cách nghĩ về tiền, cho người đi làm và người kinh doanh.</p></div>
-      <div class="topic"><h3>Thương Hiệu Cá Nhân</h3><p>Xây kênh Facebook, YouTube, TikTok và sản xuất video tự động bằng AI, từ kinh nghiệm làm kênh của chính Coach.</p></div>
+    <div class="feat">
+      <div><h3>Hơn 40 bài dẫn thiền</h3><p>Thư giãn, giấc ngủ, lo âu, cảm xúc, buổi sáng. Mỗi bài từ 10 đến 27 phút, nghe được khi tắt màn hình.</p></div>
+      <div><h3>Tập thở có giọng dẫn</h3><p>Thở ra dài, hít vào dài, thở vuông, thở 4-7-8, có vòng tròn dẫn nhịp và nhạc nền.</p></div>
+      <div><h3>Gõ mõ, chuông xoay</h3><p>Âm thanh thật, có đếm số lần mỗi ngày, để ngồi lại vài phút giữa ngày bận rộn.</p></div>
+      <div><h3>Podcast không quảng cáo</h3><p>Các tập podcast của Đặng Thái Cường, có cả bản video xem ngang toàn màn hình.</p></div>
+      <div><h3>Âm thanh không lời</h3><p>Nhạc thiền, tiếng thiên nhiên, nhạc cụ, phát lặp để ngồi thiền tự do hoặc ngủ.</p></div>
+      <div><h3>Nhắc giờ thực hành</h3><p>Nhắc theo lịch bạn chọn, kèm lời nhắn mỗi ngày. Đăng nhập bằng Apple hoặc Google để lưu tiến độ.</p></div>
     </div>
-  </div>
-</section>
-
-<section class="band" id="khoa-hoc">
-  <div class="wrap gift">
-    <svg class="wheel" viewBox="-50 0 340 240" role="img" aria-label="Bánh xe cuộc đời tám mặt">
+    <div class="kt" id="khai-tam">
+      <svg class="wheel" viewBox="-50 0 340 240" role="img" aria-label="Bánh xe cuộc đời tám mặt">
       <circle class="rim" cx="120" cy="120" r="78" stroke-width="3"/>
       <circle class="rim" cx="120" cy="120" r="46" stroke-width="1" stroke-dasharray="3 5"/>
       <g class="spoke" stroke-width="2">
@@ -215,20 +263,35 @@ img{max-width:100%}
       <text x="36" y="124" text-anchor="end">Việc</text>
       <text x="56" y="54" text-anchor="end">Tiền</text>
     </svg>
-    <div class="gift-body">
-      <div class="eyebrow">Ứng dụng Thiền Khai Tâm · Khóa học 90 ngày</div>
-      <h3>Khai Tâm: khóa học và ứng dụng thiền, gộp làm một</h3>
-      <p>Bạn cố gắng nhiều mà lòng vẫn chưa yên. Có thể bạn không thiếu nỗ lực, mà cái trục của bánh xe đang lệch. Khai Tâm là lộ trình 90 ngày, dùng triết học phương Đông và tâm lý học phương Tây để giúp bạn chỉnh lại cái trục ấy. Khóa học nằm ngay trong ứng dụng Thiền Khai Tâm trên iPhone và Android, cùng với các bài dẫn thiền, bài tập thở, gõ mõ và chuông xoay.</p>
-      <ul class="ticks">
-        <li>Miễn phí: 10 bài Bánh Xe Cuộc Đời, có biểu đồ tám mặt của riêng bạn, cùng hai bài mở đầu của khóa</li>
-        <li>Bảy chặng, 60 bài, trong đó có bảy buổi dẫn thiền</li>
-        <li>Gói hội viên năm mở toàn bộ khóa Khai Tâm</li>
-      </ul>
-      <div class="cta-row"><a class="btn btn-primary" href="https://thienkhaitam.com/">Xem ứng dụng Thiền Khai Tâm</a></div>
-      <p class="note">Sắp ra mắt trên App Store và Google Play. Thông tin tải và giá có tại thienkhaitam.com.</p>
+      <div>
+        <div class="eyebrow">Khóa học trong ứng dụng · 90 ngày</div>
+        <h3>Khai Tâm, bắt đầu từ Bánh Xe Cuộc Đời</h3>
+        <p>Bạn cố gắng nhiều mà lòng vẫn chưa yên. Có thể bạn không thiếu nỗ lực, mà cái trục của bánh xe đang lệch. Khai Tâm dùng triết học phương Đông và tâm lý học phương Tây để giúp bạn chỉnh lại cái trục ấy.</p>
+        <ul>
+          <li><b>Bánh Xe Cuộc Đời, học miễn phí:</b> 10 bài ngắn, tự chấm tám mặt của đời sống và xem thành biểu đồ của riêng bạn</li>
+          <li><b>Khóa Khai Tâm:</b> bảy chặng, 60 bài, trong đó có bảy buổi dẫn thiền; học xong một bài, bấm Hoàn thành để mở bài kế tiếp</li>
+          <li>Học thử miễn phí hai bài mở đầu; gói hội viên năm mở toàn bộ khóa</li>
+        </ul>
+        <p class="plans-mini">Giá và các gói hội viên xem tại <a href="https://thienkhaitam.com/" style="color:var(--a-gold2)">thienkhaitam.com</a>.</p>
+      </div>
     </div>
   </div>
 </section>
+
+<section id="chu-de">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Chủ đề</div>
+      <h2>Ba chủ đề của Coach Leo Cường</h2>
+    </div>
+    <div class="topics">
+      <div class="topic"><h3>Tâm Lý Học Ứng Dụng</h3><p>Cảm xúc, các mối quan hệ và sự bình an trong lòng, nhìn bằng tâm lý học có bằng chứng, đặt cạnh lời dạy của Đức Phật, Lão Tử và triết học phương Đông.</p></div>
+      <div class="topic"><h3>Kỹ Năng Sống - Kinh Doanh</h3><p>Giao tiếp, bán hàng, đàm phán và cách nghĩ về tiền, cho người đi làm và người kinh doanh.</p></div>
+      <div class="topic"><h3>Thương Hiệu Cá Nhân</h3><p>Xây kênh Facebook, YouTube, TikTok và sản xuất video tự động bằng AI, từ kinh nghiệm làm kênh của chính Coach.</p></div>
+    </div>
+  </div>
+</section>
+
 
 <section class="band">
   <div class="wrap">

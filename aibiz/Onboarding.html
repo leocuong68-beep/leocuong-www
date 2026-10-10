@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<meta name="robots" content="noindex">
+<title>AI Biz · Hồ sơ ban đầu</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#F4F5FA;color:#1B1F3B}
+a{color:#1B1F3B;text-decoration:none}a:hover{color:#4F46E5}
+</style>
+
+<style></style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+<div style="min-height: 100vh; background: #F4F5FA; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1B1F3B; display: flex; justify-content: center; padding: 40px 24px; box-sizing: border-box">
+<div style="width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 13px; background: #4F46E5; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px">AB</span><span style="font-size: 19px; font-weight: 800">AI Biz</span></div>
+<div style="font-size: 14px; color: #5A5F7D">{{ stepText }}</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{ bars }}" as="b" hint-placeholder-count="5">
+<div style="height: 6px; border-radius: 3px; background: {{ b.bg }}"></div>
+</sc-for>
+</div>
+<section style="background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px; padding: 28px; gap: 16px">
+<sc-if value="{{ s0 }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700">Bạn làm trong ngành nào?</h1>
+<p style="margin: 0; font-size: 15px; color: #5A5F7D">Trợ lý dùng câu trả lời để chọn mẫu, kiến thức ngành và cách nói chuyện cho đúng với bạn.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ inds }}" as="o" hint-placeholder-count="6">
+<button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ o.bg }}; color: {{ o.fg }}; border: 1px solid {{ o.bd }}">{{ o.label }}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px"><label for="ob-brand" style="font-size: 13px; font-weight: 600">Thương hiệu bạn đang tư vấn (không bắt buộc)</label><input id="ob-brand" type="text" placeholder="Ví dụ: tên hãng mỹ phẩm" style="min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid #D9DCEA; font-family: inherit; font-size: 15px; box-sizing: border-box; width: 100%"></div>
+</div>
+</sc-if>
+<sc-if value="{{ s1 }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700">Bạn bán gì, cho ai?</h1>
+<div style="display: flex; flex-direction: column; gap: 4px"><label for="ob-sell" style="font-size: 13px; font-weight: 600">Sản phẩm hoặc dịch vụ chính</label><input id="ob-sell" type="text" value="Mỹ phẩm Hàn Quốc, tư vấn chăm sóc da" style="min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid #D9DCEA; font-family: inherit; font-size: 15px; box-sizing: border-box; width: 100%"></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><label for="ob-who" style="font-size: 13px; font-weight: 600">Khách chính của bạn là ai?</label><input id="ob-who" type="text" value="Phụ nữ 30 đến 50 tuổi, nhiều người là chủ tiệm nail" style="min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid #D9DCEA; font-family: inherit; font-size: 15px; box-sizing: border-box; width: 100%"></div>
+<div style="font-size: 13px; font-weight: 600">Khách của bạn ở đâu?</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ markets }}" as="o" hint-placeholder-count="5">
+<button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ o.bg }}; color: {{ o.fg }}; border: 1px solid {{ o.bd }}">{{ o.label }}</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ s2 }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700">Bạn đang dùng kênh nào, muốn đạt gì?</h1>
+<div style="font-size: 13px; font-weight: 600">Kênh (chọn nhiều)</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ chans }}" as="o" hint-placeholder-count="6">
+<button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ o.bg }}; color: {{ o.fg }}; border: 1px solid {{ o.bd }}">{{ o.label }}</button>
+</sc-for>
+</div>
+<div style="font-size: 13px; font-weight: 600">Mục tiêu 3 tháng tới (chọn nhiều)</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ goals }}" as="o" hint-placeholder-count="4">
+<button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ o.bg }}; color: {{ o.fg }}; border: 1px solid {{ o.bd }}">{{ o.label }}</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ s3 }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700">Bạn nói chuyện với khách thế nào?</h1>
+<div style="font-size: 13px; font-weight: 600">Xưng hô trong bài viết và tin nhắn</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ prons }}" as="o" hint-placeholder-count="3">
+<button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ o.bg }}; color: {{ o.fg }}; border: 1px solid {{ o.bd }}">{{ o.label }}</button>
+</sc-for>
+</div>
+<div style="font-size: 13px; font-weight: 600">Phong cách</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ tones }}" as="o" hint-placeholder-count="3">
+<button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ o.bg }}; color: {{ o.fg }}; border: 1px solid {{ o.bd }}">{{ o.label }}</button>
+</sc-for>
+</div>
+<div style="padding: 14px 16px; border-radius: 14px; background: #F4F5FA; font-size: 15px; line-height: 1.55">Ví dụ: {{ sample }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ s4 }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700">Trợ lý của bạn</h1>
+<div style="display: flex; flex-direction: column; gap: 4px"><label for="ob-name" style="font-size: 13px; font-weight: 600">Đặt tên cho trợ lý</label><input id="ob-name" type="text" value="{{ aiName }}" onChange="{{ typeName }}" style="min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid #D9DCEA; font-family: inherit; font-size: 15px; box-sizing: border-box; width: 100%"></div>
+<div style="font-size: 13px; font-weight: 600">Trợ lý gọi bạn là gì?</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ calls }}" as="o" hint-placeholder-count="3">
+<button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ o.bg }}; color: {{ o.fg }}; border: 1px solid {{ o.bd }}">{{ o.label }}</button>
+</sc-for>
+</div>
+<div style="padding: 14px 16px; border-radius: 14px; background: #4F46E5; color: #FFFFFF; font-size: 15px; line-height: 1.55">{{ greet }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ s5 }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700">{{ aiName }} đã sẵn sàng</h1>
+<p style="margin: 0; font-size: 15px; color: #5A5F7D">Hồ sơ này nằm trong phần dặn việc của trợ lý. Bạn sửa lại được ở mục Hồ sơ của tôi.</p>
+<sc-for list="{{ summary }}" as="r" hint-placeholder-count="5">
+<div style="display: flex; gap: 12px; padding: 10px 0; border-top: 1px solid #ECEEF5; font-size: 15px"><div style="flex: 0 0 150px; font-weight: 600">{{ r.k }}</div><div style="color: #5A5F7D">{{ r.v }}</div></div>
+</sc-for>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="Main.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; background: #4F46E5; color: #FFFFFF; font-size: 15px; font-weight: 600">Vào làm việc với {{ aiName }}</a>
+<button type="button" onClick="{{ restart }}" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Làm lại</button>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; padding-top: 6px">
+<button type="button" onClick="{{ back }}" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Quay lại</button>
+<button type="button" onClick="{{ next }}" style="min-height: 44px; padding: 0 18px; border-radius: 12px; border: none; background: #4F46E5; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Tiếp tục</button>
+</div>
+</sc-if>
+</section>
+</div>
+</div>
+</template>
+<a href="./" style="position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:#1B1F3B;color:#fff;font:600 13px 'Plus Jakarta Sans',system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(27,31,59,.25)">Danh sách màn hình</a>
+<script src="dc-runtime.js"></script>
+<script>
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { step: 0, ind: 0, market: 1, chans: [0, 1, 2], goals: [0, 1], pron: 0, tone: 0, call: 0, aiName: 'Vy' };
+}
+renderVals() {
+var self = this, st = this.state;
+function chip(on) { return on ? { bg: '#4F46E5', fg: '#FFFFFF', bd: '#4F46E5' } : { bg: '#FFFFFF', fg: '#1B1F3B', bd: '#D9DCEA' }; }
+function single(list, key) { return list.map(function (l, i) { var c = chip(i === st[key]); return { label: l, on: i === st[key], bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { var o = {}; o[key] = i; self.setState(o); } }; }); }
+function multi(list, key) { return list.map(function (l, i) { var on = st[key].indexOf(i) !== -1; var c = chip(on); return { label: l, on: on, bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { var a = self.state[key].slice(); var k = a.indexOf(i); if (k === -1) a.push(i); else a.splice(k, 1); var o = {}; o[key] = a; self.setState(o); } }; }); }
+var inds = ['Mỹ phẩm và làm đẹp', 'Thực phẩm chức năng', 'Bảo hiểm và tài chính', 'Khóa học và đào tạo', 'Coach và chuyên gia', 'Ngành khác'];
+var markets = ['Việt Nam', 'Mỹ', 'Châu Âu', 'Úc', 'Nơi khác'];
+var chans = ['Facebook', 'Instagram', 'TikTok', 'YouTube', 'Zalo', 'Website'];
+var goals = ['Thêm khách mới', 'Chăm khách cũ', 'Tìm người cùng làm', 'Xây thương hiệu cá nhân'];
+var prons = ['Em, gọi chị hoặc anh', 'Mình, gọi bạn', 'Tôi, gọi quý khách'];
+var tones = ['Thân thiện', 'Chuyên gia', 'Truyền cảm hứng'];
+var samples = [
+['Chị ơi, da khô mùa này em hay khuyên chị thêm một bước cấp ẩm trước khi ngủ nha.', 'Da khô mùa này là do thiếu bước cấp ẩm ban đêm. Em gợi ý chị thêm một bước trước khi ngủ.', 'Chỉ năm phút mỗi tối thôi chị, làn da sẽ cảm ơn chị đó.'],
+['Bạn ơi, da khô mùa này mình hay khuyên thêm một bước cấp ẩm trước khi ngủ nhé.', 'Da khô mùa này thường do thiếu bước cấp ẩm ban đêm. Bạn nên thêm một bước trước khi ngủ.', 'Chỉ năm phút mỗi tối thôi, làn da của bạn sẽ khác hẳn.'],
+['Quý khách nên bổ sung một bước cấp ẩm trước khi ngủ trong mùa khô.', 'Da khô mùa này thường do thiếu bước cấp ẩm ban đêm. Tôi khuyên quý khách bổ sung một bước trước khi ngủ.', 'Chỉ năm phút mỗi tối, quý khách sẽ thấy làn da thay đổi rõ.']
+];
+var calls = ['Sếp', 'Chị Minh Anh', 'Minh Anh'];
+var callWord = ['sếp Minh Anh', 'chị Minh Anh', 'Minh Anh'];
+var step = st.step, name = st.aiName || 'Trợ lý';
+function pick(list, idx) { return idx.slice().sort().map(function (i) { return list[i]; }).join(', ') || 'Chưa chọn'; }
+return {
+stepText: step < 5 ? 'Bước ' + (step + 1) + ' trên 5 · ' + ['Ngành nghề', 'Khách hàng', 'Kênh và mục tiêu', 'Giọng thương hiệu', 'Trợ lý của bạn'][step] : 'Hoàn tất',
+bars: [0, 1, 2, 3, 4].map(function (i) { return { bg: i <= step ? '#4F46E5' : '#E6E8F0' }; }),
+s0: step === 0, s1: step === 1, s2: step === 2, s3: step === 3, s4: step === 4, s5: step === 5, showNav: step < 5,
+inds: single(inds, 'ind'), markets: single(markets, 'market'), chans: multi(chans, 'chans'), goals: multi(goals, 'goals'),
+prons: single(prons, 'pron'), tones: single(tones, 'tone'), calls: single(calls, 'call'),
+sample: samples[st.pron][st.tone],
+aiName: name,
+typeName: function (e) { self.setState({ aiName: e.target.value }); },
+greet: 'Chào ' + callWord[st.call] + ', em là ' + name + '. Em đã nắm hồ sơ và sẽ điều phối các phòng Media, Marketing, IT và Chăm sóc khách cho ' + (st.call === 0 ? 'sếp' : 'chị') + '.',
+summary: [
+{ k: 'Ngành', v: inds[st.ind] }, { k: 'Khách ở', v: markets[st.market] }, { k: 'Kênh', v: pick(chans, st.chans) },
+{ k: 'Mục tiêu', v: pick(goals, st.goals) }, { k: 'Giọng', v: prons[st.pron] + ', ' + tones[st.tone].toLowerCase() }, { k: 'Trợ lý gọi bạn', v: calls[st.call] }
+],
+next: function () { self.setState({ step: Math.min(5, self.state.step + 1) }); },
+back: function () { self.setState({ step: Math.max(0, self.state.step - 1) }); },
+restart: function () { self.setState({ step: 0 }); }
+};
+}
+}
+
+__dcStart(Component);
+</script>
+</body>
+</html>

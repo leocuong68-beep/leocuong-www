@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<meta name="robots" content="noindex">
+<title>AI Biz · Phễu bán hàng</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#F4F5FA;color:#1B1F3B}
+a{color:#1B1F3B;text-decoration:none}a:hover{color:#4F46E5}
+</style>
+
+<style></style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1B1F3B; background: #F4F5FA">
+<nav aria-label="Điều hướng" style="flex: 0 0 240px; background: #FFFFFF; border-right: 1px solid #E6E8F0; padding: 22px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px"><span style="width: 40px; height: 40px; border-radius: 13px; background: #4F46E5; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px">AB</span><span style="font-size: 19px; font-weight: 800; color: #1B1F3B; letter-spacing: -0.02em">AI Biz</span></div>
+<a href="Main.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #EEEDFD; color: #4F46E5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg></span>Trợ lý AI</a>
+<a href="Social.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #FDE8EE; color: #E0436B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="9" cy="10" r="1.8"></circle><path d="M21 16l-5-5-8 8"></path></svg></span>Phòng Media</a>
+<a href="Schedule.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #E6EFFE; color: #2F6FE0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"></path><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"></path></svg></span>Phòng Marketing</a>
+<a href="Web.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; background: #EEEDFD; color: #3730A3; font-weight: 700"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #E0F5F1; color: #0F8F7F"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path><path d="M9 8l-2 2 2 2M15 8l2 2-2 2"></path></svg></span>Phòng IT</a>
+<a href="Care.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #FDF1DC; color: #B86E00"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"></path><rect x="3" y="13" width="4" height="6" rx="1.5"></rect><rect x="17" y="13" width="4" height="6" rx="1.5"></rect><path d="M19 19a3 3 0 0 1-3 3h-3"></path></svg></span>Chăm sóc khách</a>
+<div style="height: 1px; background: #E6E8F0; margin: 10px 8px"></div>
+<a href="Plans.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #ECEEF5; color: #1B1F3B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg></span>Gói và credit</a>
+<a href="Onboarding.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #ECEEF5; color: #1B1F3B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span>Hồ sơ của tôi</a>
+<div style="flex-grow: 1; min-height: 20px"></div>
+<a href="Plans.html" style="display: flex; flex-direction: column; gap: 4px; border-radius: 18px; background: #1B1F3B; color: #FFFFFF; padding: 16px; font-size: 13px; line-height: 1.45"><span style="font-size: 15px; font-weight: 700">Bản miễn phí</span><span style="color: #C7CAE0">Nâng cấp để chat và chỉnh mọi thứ theo ý.</span></a>
+</nav>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex: none; background: #E0F5F1; color: #0F8F7F"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path><path d="M9 8l-2 2 2 2M15 8l2 2-2 2"></path></svg></span><h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Phễu bán hàng</h1></div>
+<p style="margin: 0; font-size: 15px; color: #5A5F7D">Mỗi trang chỉ có một việc cho khách làm, rồi dẫn sang bước kế tiếp. Chọn mục tiêu, trợ lý dựng cả chuỗi.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="Web.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #FFFFFF; border: 1px solid #D9DCEA; color: #1B1F3B; font-size: 14px; font-weight: 500">Trang của tôi</a>
+<a href="Funnel.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #4F46E5; border: 1px solid #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 600">Phễu bán hàng</a>
+</div>
+<section style="background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">1. Mục tiêu của phễu</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ goals }}" as="g" hint-placeholder-count="4">
+<button type="button" onClick="{{ g.pick }}" aria-pressed="{{ g.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ g.bg }}; color: {{ g.fg }}; border: 1px solid {{ g.bd }}">{{ g.label }}</button>
+</sc-for>
+</div>
+</section>
+<section style="background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">2. Các bước trong phễu</h2>
+<div style="font-size: 13px; color: #5A5F7D">Số liệu mẫu, 30 ngày gần nhất</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<button type="button" onClick="{{ s.pick }}" aria-pressed="{{ s.on }}" style="min-height: 44px; text-align: left; padding: 14px; border-radius: 14px; font-family: inherit; cursor: pointer; background: #F4F5FA; color: #1B1F3B; border: 2px solid {{ s.bd }}; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; font-weight: 700; color: #3730A3">Bước {{ s.n }}</span>
+<span style="font-size: 15px; font-weight: 600">{{ s.name }}</span>
+<span style="font-size: 13px; line-height: 1.4; color: #5A5F7D">{{ s.job }}</span>
+<span style="font-size: 22px; font-weight: 700">{{ s.count }}</span>
+<span style="font-size: 12px; color: #5A5F7D">{{ s.rate }}</span>
+</button>
+</sc-for>
+</div>
+<div style="font-size: 14px; line-height: 1.5; color: #5A5F7D">{{ leak }}</div>
+</section>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<section style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">Xem trước · {{ pv.name }}</h2>
+<div style="font-size: 13px; color: #5A5F7D">minhanh.[tên miền]/{{ pv.slug }}</div>
+</div>
+<div style="border-radius: 14px; padding: 28px; background: #4F46E5; color: #FFFFFF; display: flex; flex-direction: column; gap: 14px">
+<div style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #C7CAE0">{{ pv.tag }}</div>
+<div style="font-size: 26px; font-weight: 700; line-height: 1.25">{{ pv.headline }}</div>
+<div style="font-size: 15px; line-height: 1.5; color: #C7CAE0">{{ pv.sub }}</div>
+<div style="align-self: flex-start; display: flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 12px; background: #4F46E5; color: #FFFFFF; font-size: 15px; font-weight: 600">{{ pv.cta }}</div>
+</div>
+<div style="font-size: 13px; color: #5A5F7D">Trang không có menu và không có link ra ngoài, chỉ một nút duy nhất.</div>
+</section>
+<section style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">3. Chăm sóc tự động sau khi khách để lại thông tin</h2>
+<sc-for list="{{ mails }}" as="m" hint-placeholder-count="4">
+<div style="display: flex; gap: 12px; align-items: baseline; padding: 10px 14px; border-radius: 14px; background: #F4F5FA">
+<div style="flex: 0 0 64px; font-size: 13px; font-weight: 700; color: #3730A3">{{ m.day }}</div>
+<div style="font-size: 14px; line-height: 1.45">{{ m.text }}</div>
+</div>
+</sc-for>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<button type="button" onClick="{{ publish }}" style="min-height: 44px; padding: 0 18px; border-radius: 12px; border: none; background: #4F46E5; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Bật phễu này</button>
+<a href="Leads.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; border: 1.5px solid #D9DCEA; font-size: 14px; font-weight: 600">Xem khách trong Sổ khách</a>
+</div>
+<sc-if value="{{ live }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 12px 16px; border-radius: 14px; background: #DDF1EC; color: #12584E; font-size: 14px; font-weight: 600">Phễu đang chạy. Link chia sẻ: minhanh.[tên miền]/{{ firstSlug }}</div>
+</sc-if>
+</section>
+</div>
+</main>
+</div>
+</template>
+<a href="./" style="position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:#1B1F3B;color:#fff;font:600 13px 'Plus Jakarta Sans',system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(27,31,59,.25)">Danh sách màn hình</a>
+<script src="dc-runtime.js"></script>
+<script>
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { goal: 0, step: 0, live: false };
+}
+renderVals() {
+var self = this, st = this.state;
+function S(name, slug, job, count, tag, headline, sub, cta) { return { name: name, slug: slug, job: job, count: count, tag: tag, headline: headline, sub: sub, cta: cta }; }
+var goals = [
+{ label: 'Thu khách tiềm năng', steps: [
+S('Trang quà tặng', 'qua-tang', 'Khách để lại tên và email để nhận quà', 1240, 'Tặng miễn phí', 'Cẩm nang 7 ngày dưỡng da tại nhà', 'Bảy bước ngắn, mỗi ngày năm phút. Nhập email để nhận ngay.', 'Gửi cẩm nang cho tôi'),
+S('Trang cảm ơn', 'cam-on', 'Video 2 phút giới thiệu bạn, mời bước tiếp', 186, 'Đã gửi vào email của bạn', 'Trong lúc chờ, xem video 2 phút này', 'Minh Anh kể vì sao bắt đầu và cách dùng cẩm nang hiệu quả nhất.', 'Tôi muốn được tư vấn riêng'),
+S('Trang đặt lịch', 'dat-lich', 'Khách chọn giờ nói chuyện 15 phút', 41, 'Tư vấn 15 phút, miễn phí', 'Chọn giờ nói chuyện với Minh Anh', 'Trả lời ba câu hỏi ngắn về da của bạn, rồi chọn giờ phù hợp.', 'Chọn giờ'),
+S('Trang xác nhận', 'xac-nhan', 'Nhắc lịch và dặn khách chuẩn bị', 33, 'Đã giữ chỗ', 'Hẹn gặp bạn lúc 20:00 thứ Năm', 'Thêm vào lịch để không quên. Bạn sẽ nhận nhắc trước một giờ.', 'Thêm vào lịch')
+] },
+{ label: 'Đặt lịch tư vấn', steps: [
+S('Trang giới thiệu', 'tu-van', 'Nói rõ buổi tư vấn giúp được gì', 620, 'Tư vấn 1-1', 'Tìm đúng cách chăm da cho bạn trong 15 phút', 'Không bán hàng trong buổi này. Bạn nhận một lộ trình viết tay.', 'Xem giờ còn trống'),
+S('Câu hỏi ngắn', 'cau-hoi', 'Ba câu hỏi để chuẩn bị trước', 148, 'Bước 1 trên 2', 'Cho Minh Anh biết đôi chút về da của bạn', 'Ba câu hỏi, mất chưa tới một phút.', 'Tiếp tục'),
+S('Chọn giờ', 'chon-gio', 'Khách tự chọn khung giờ', 96, 'Bước 2 trên 2', 'Chọn giờ phù hợp', 'Các khung giờ tối trong tuần này còn trống.', 'Giữ giờ này'),
+S('Trang xác nhận', 'xac-nhan', 'Nhắc lịch qua email', 81, 'Đã giữ chỗ', 'Hẹn gặp bạn', 'Bạn sẽ nhận nhắc trước một ngày và trước một giờ.', 'Thêm vào lịch')
+] },
+{ label: 'Mời dự buổi chia sẻ', steps: [
+S('Trang đăng ký', 'buoi-chia-se', 'Giới thiệu chủ đề, ngày giờ, giữ chỗ', 910, 'Trực tuyến · 20:00 thứ Bảy', 'Chăm da mùa lạnh: ba lỗi ai cũng mắc', 'Buổi chia sẻ 40 phút qua Zoom, có phần hỏi đáp.', 'Giữ chỗ cho tôi'),
+S('Trang giữ chỗ', 'da-giu-cho', 'Thêm vào lịch, mời bạn bè', 212, 'Đã giữ chỗ', 'Hẹn bạn tối thứ Bảy', 'Thêm vào lịch và rủ thêm một người bạn cùng nghe.', 'Thêm vào lịch'),
+S('Trang xem lại', 'xem-lai', 'Bản ghi cho người vắng mặt, mở 48 giờ', 97, 'Mở trong 48 giờ', 'Xem lại buổi chia sẻ', 'Bản ghi đầy đủ kèm phần hỏi đáp.', 'Tôi muốn hỏi thêm'),
+S('Trang đề nghị', 'de-nghi', 'Mời bước tiếp theo sau buổi chia sẻ', 38, 'Dành cho người đã dự', 'Bước tiếp theo sau buổi chia sẻ', 'Đặt một buổi tư vấn riêng 15 phút với Minh Anh.', 'Đặt lịch tư vấn')
+] },
+{ label: 'Giới thiệu sản phẩm', steps: [
+S('Trang sản phẩm', 'san-pham', 'Một sản phẩm, một lợi ích chính', 780, 'Sản phẩm', '[Tên sản phẩm]', '[Mô tả lấy từ kho kiến thức đã duyệt của ngành]', 'Xem người dùng nói gì'),
+S('Trang cảm nhận', 'cam-nhan', 'Cảm nhận thật, đăng khi khách đồng ý', 264, 'Cảm nhận khách hàng', 'Khách của Minh Anh nói gì', '[Cảm nhận thật của khách, không chỉnh sửa hình ảnh]', 'Tôi muốn dùng thử'),
+S('Trang đặt hàng', 'dat-hang', 'Nút sang trang đặt hàng chính thức', 88, 'Đặt hàng', 'Đặt tại trang chính thức của hãng', 'Bạn thanh toán trực tiếp với hãng. Minh Anh hướng dẫn cách dùng sau khi nhận hàng.', 'Sang trang đặt hàng'),
+S('Trang hướng dẫn', 'huong-dan', 'Hướng dẫn dùng, mời hỏi thêm', 52, 'Cảm ơn bạn', 'Cách dùng trong tuần đầu', 'Lịch dùng bảy ngày và những điều cần tránh.', 'Nhắn Minh Anh')
+] }
+];
+var mailSets = [
+['Gửi quà và link xem video', 'Một mẹo dùng cẩm nang, hỏi khách đang gặp khó ở đâu', 'Câu chuyện của một khách, mời đặt lịch', 'Nhắc lần cuối về buổi tư vấn miễn phí'],
+['Xác nhận giờ hẹn', 'Nhắc lịch trước một ngày', 'Nhắc lịch trước một giờ', 'Gửi lộ trình sau buổi tư vấn'],
+['Xác nhận giữ chỗ', 'Nhắc trước buổi chia sẻ một ngày', 'Gửi link xem lại', 'Mời đặt lịch tư vấn riêng'],
+['Gửi thông tin sản phẩm', 'Cảm nhận của khách khác', 'Hướng dẫn dùng tuần đầu', 'Hỏi thăm sau hai tuần']
+];
+var days = ['Ngay', 'Ngày 2', 'Ngày 4', 'Ngày 7'];
+function chip(on) { return on ? { bg: '#4F46E5', fg: '#FFFFFF', bd: '#4F46E5' } : { bg: '#FFFFFF', fg: '#1B1F3B', bd: '#D9DCEA' }; }
+var steps = goals[st.goal].steps;
+var worst = 1, worstRate = 101;
+var view = steps.map(function (s, i) {
+var r = i === 0 ? null : Math.round(s.count * 100 / steps[i - 1].count);
+if (r !== null && r < worstRate) { worstRate = r; worst = i; }
+return { n: i + 1, name: s.name, job: s.job, count: s.count.toLocaleString('vi-VN'), rate: i === 0 ? 'lượt xem' : r + '% đi tiếp từ bước trước', on: i === st.step, bd: i === st.step ? '#4F46E5' : '#F4F5FA', pick: function () { self.setState({ step: i }); } };
+});
+var p = steps[st.step];
+return {
+goals: goals.map(function (g, i) { var c = chip(i === st.goal); return { label: g.label, on: i === st.goal, bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { self.setState({ goal: i, step: 0, live: false }); } }; }),
+steps: view,
+leak: 'Chỗ rơi khách nhiều nhất: từ bước ' + worst + ' sang bước ' + (worst + 1) + ' (' + worstRate + '% đi tiếp). Trợ lý gợi ý viết lại tiêu đề và nút của bước ' + worst + '.',
+pv: { name: p.name, slug: p.slug, tag: p.tag, headline: p.headline, sub: p.sub, cta: p.cta },
+mails: mailSets[st.goal].map(function (t, i) { return { day: days[i], text: t }; }),
+live: st.live,
+firstSlug: steps[0].slug,
+publish: function () { self.setState({ live: true }); }
+};
+}
+}
+
+__dcStart(Component);
+</script>
+</body>
+</html>

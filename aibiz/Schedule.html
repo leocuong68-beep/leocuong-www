@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<meta name="robots" content="noindex">
+<title>AI Biz · Lịch đăng</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#F4F5FA;color:#1B1F3B}
+a{color:#1B1F3B;text-decoration:none}a:hover{color:#4F46E5}
+</style>
+
+<style></style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1B1F3B; background: #F4F5FA">
+<nav aria-label="Điều hướng" style="flex: 0 0 240px; background: #FFFFFF; border-right: 1px solid #E6E8F0; padding: 22px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px"><span style="width: 40px; height: 40px; border-radius: 13px; background: #4F46E5; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px">AB</span><span style="font-size: 19px; font-weight: 800; color: #1B1F3B; letter-spacing: -0.02em">AI Biz</span></div>
+<a href="Main.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #EEEDFD; color: #4F46E5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg></span>Trợ lý AI</a>
+<a href="Social.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #FDE8EE; color: #E0436B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="9" cy="10" r="1.8"></circle><path d="M21 16l-5-5-8 8"></path></svg></span>Phòng Media</a>
+<a href="Schedule.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; background: #EEEDFD; color: #3730A3; font-weight: 700"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #E6EFFE; color: #2F6FE0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"></path><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"></path></svg></span>Phòng Marketing</a>
+<a href="Web.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #E0F5F1; color: #0F8F7F"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path><path d="M9 8l-2 2 2 2M15 8l2 2-2 2"></path></svg></span>Phòng IT</a>
+<a href="Care.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #FDF1DC; color: #B86E00"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"></path><rect x="3" y="13" width="4" height="6" rx="1.5"></rect><rect x="17" y="13" width="4" height="6" rx="1.5"></rect><path d="M19 19a3 3 0 0 1-3 3h-3"></path></svg></span>Chăm sóc khách</a>
+<div style="height: 1px; background: #E6E8F0; margin: 10px 8px"></div>
+<a href="Plans.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #ECEEF5; color: #1B1F3B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg></span>Gói và credit</a>
+<a href="Onboarding.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #ECEEF5; color: #1B1F3B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span>Hồ sơ của tôi</a>
+<div style="flex-grow: 1; min-height: 20px"></div>
+<a href="Plans.html" style="display: flex; flex-direction: column; gap: 4px; border-radius: 18px; background: #1B1F3B; color: #FFFFFF; padding: 16px; font-size: 13px; line-height: 1.45"><span style="font-size: 15px; font-weight: 700">Bản miễn phí</span><span style="color: #C7CAE0">Nâng cấp để chat và chỉnh mọi thứ theo ý.</span></a>
+</nav>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex: none; background: #E6EFFE; color: #2F6FE0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"></path><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"></path></svg></span><h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Lịch đăng</h1></div>
+<p style="margin: 0; font-size: 15px; color: #5A5F7D">Trợ lý soạn bài cho cả tuần, bạn duyệt một lần, hệ thống tự đăng đúng giờ.</p>
+</div>
+<div style="font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: #EEEDFD; color: #3730A3">Gói Max</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="Schedule.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #4F46E5; border: 1px solid #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 600">Lịch đăng</a>
+<a href="Marketing.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #FFFFFF; border: 1px solid #D9DCEA; color: #1B1F3B; font-size: 14px; font-weight: 500">Xu hướng và báo cáo</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<section style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600">Tự động lên lịch</h2>
+<div style="font-size: 13px; font-weight: 600; color: #5A5F7D">Số bài mỗi tuần</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ freqs }}" as="f" hint-placeholder-count="3">
+<button type="button" onClick="{{ f.pick }}" aria-pressed="{{ f.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ f.bg }}; color: {{ f.fg }}; border: 1px solid {{ f.bd }}">{{ f.label }}</button>
+</sc-for>
+</div>
+<div style="font-size: 13px; font-weight: 600; color: #5A5F7D">Giờ đăng</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ slots }}" as="s" hint-placeholder-count="3">
+<button type="button" onClick="{{ s.pick }}" aria-pressed="{{ s.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ s.bg }}; color: {{ s.fg }}; border: 1px solid {{ s.bd }}">{{ s.label }}</button>
+</sc-for>
+</div>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.45; min-height: 44px"><input type="checkbox" checked="{{ review }}" onChange="{{ toggleReview }}" style="width: 20px; height: 20px">Tôi duyệt từng bài trước khi đăng</label>
+<div style="font-size: 13px; color: #5A5F7D">Trợ lý xoay vòng sáu loại nội dung: kiến thức, câu chuyện, sản phẩm, cảm nhận khách, lời mời, hỏi đáp.</div>
+<button type="button" onClick="{{ plan }}" style="align-self: flex-start; min-height: 44px; padding: 0 18px; border-radius: 12px; border: none; background: #4F46E5; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Lên lịch tuần này</button>
+</section>
+<section style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600">Kênh đăng</h2>
+<sc-for list="{{ channels }}" as="c" hint-placeholder-count="5">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; padding: 8px 14px; border-radius: 14px; background: #F4F5FA">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 15px; font-weight: 600">{{ c.name }}</div>
+<div style="font-size: 13px; color: {{ c.stFg }}">{{ c.status }}</div>
+</div>
+<button type="button" onClick="{{ c.toggle }}" aria-pressed="{{ c.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">{{ c.btn }}</button>
+</div>
+</sc-for>
+<div style="font-size: 13px; line-height: 1.5; color: #5A5F7D">Kết nối một lần bằng cách đăng nhập kênh của bạn. Trang cá nhân Facebook và Zalo cá nhân không cho đăng tự động: đến giờ, bạn nhận nhắc và bấm Chia sẻ một chạm.</div>
+</section>
+</div>
+<section style="background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600">Tuần 12/10 đến 18/10</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+<div style="font-size: 14px; color: #5A5F7D">{{ summary }}</div>
+<sc-if value="{{ hasWait }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ approveAll }}" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Duyệt tất cả</button>
+</sc-if>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+<div style="padding: 10px 8px; border-radius: 12px; background: {{ d.bg }}; color: {{ d.fg }}; text-align: center; display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 13px; font-weight: 600">{{ d.name }}</div>
+<div style="font-size: 12px">{{ d.count }}</div>
+</div>
+</sc-for>
+</div>
+<sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 10px 14px; border-radius: 14px; background: #F4F5FA">
+<div style="flex: 0 0 110px; font-size: 14px; font-weight: 600">{{ p.when }}</div>
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 15px; font-weight: 600">{{ p.title }}</div>
+<div style="font-size: 13px; color: #5A5F7D">{{ p.meta }}</div>
+</div>
+<div style="font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: {{ p.tagBg }}; color: {{ p.tagFg }}">{{ p.tag }}</div>
+<sc-if value="{{ p.wait }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" onClick="{{ p.approve }}" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: none; background: #4F46E5; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Duyệt</button>
+<button type="button" onClick="{{ p.drop }}" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Bỏ</button>
+</div>
+</sc-if>
+<sc-if value="{{ p.set }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ p.drop }}" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Hủy hẹn</button>
+</sc-if>
+</div>
+</sc-for>
+</section>
+</main>
+</div>
+</template>
+<a href="./" style="position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:#1B1F3B;color:#fff;font:600 13px 'Plus Jakarta Sans',system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(27,31,59,.25)">Danh sách màn hình</a>
+<script src="dc-runtime.js"></script>
+<script>
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { freq: 1, slot: 2, review: true, on: [true, true, false, false, false], seq: 3, posts: [
+{ id: 1, day: 0, time: '20:00', title: '3 bước dưỡng da buổi tối', kind: 'Ảnh 4:5', status: 'done' },
+{ id: 2, day: 2, time: '20:00', title: 'Da dầu có cần dưỡng ẩm?', kind: 'Clip 30 giây', status: 'set' }
+] };
+}
+renderVals() {
+var self = this, st = this.state;
+var freqs = [{ label: '3 bài', days: [1, 3, 5] }, { label: '5 bài', days: [1, 3, 4, 5, 6] }, { label: '7 bài', days: [0, 1, 2, 3, 4, 5, 6] }];
+var slots = [{ label: 'Sáng 7:30', time: '07:30' }, { label: 'Trưa 12:00', time: '12:00' }, { label: 'Tối 20:00', time: '20:00' }];
+var chNames = ['Facebook Page', 'Instagram', 'TikTok', 'YouTube', 'Threads'];
+var dayNames = ['T2 12/10', 'T3 13/10', 'T4 14/10', 'T5 15/10', 'T6 16/10', 'T7 17/10', 'CN 18/10'];
+var drafts = [
+{ title: 'Vì sao tôi bắt đầu', kind: 'Ảnh 4:5' },
+{ title: 'Chọn kem chống nắng cho da nhạy cảm', kind: 'Clip 30 giây' },
+{ title: '[Tên sản phẩm]', kind: 'Carousel 5 ảnh' },
+{ title: 'Khách nói gì', kind: 'Ảnh 4:5' },
+{ title: 'Cùng làm với tôi', kind: 'Clip 30 giây' },
+{ title: 'Rửa mặt mấy lần một ngày là đủ?', kind: 'Ảnh 4:5' },
+{ title: 'Thói quen buổi sáng của tôi', kind: 'Clip 30 giây' }
+];
+function chip(on) { return on ? { bg: '#4F46E5', fg: '#FFFFFF', bd: '#4F46E5' } : { bg: '#FFFFFF', fg: '#1B1F3B', bd: '#D9DCEA' }; }
+var connected = chNames.filter(function (n, i) { return st.on[i]; });
+var where = connected.length ? 'Đăng lên: ' + connected.join(', ') : 'Chưa kết nối kênh nào';
+var tags = { wait: { tag: 'Chờ duyệt', bg: '#EEEDFD', fg: '#3730A3' }, set: { tag: 'Đã hẹn giờ', bg: '#E6EFFE', fg: '#1B1F3B' }, done: { tag: 'Đã đăng', bg: '#DDF1EC', fg: '#12584E' } };
+var sorted = st.posts.slice().sort(function (a, b) { return a.day - b.day || (a.time < b.time ? -1 : 1); });
+function setStatus(id, status) { self.setState({ posts: self.state.posts.map(function (p) { return p.id === id ? Object.assign({}, p, { status: status }) : p; }) }); }
+var nWait = st.posts.filter(function (p) { return p.status === 'wait'; }).length;
+var nSet = st.posts.filter(function (p) { return p.status === 'set'; }).length;
+return {
+freqs: freqs.map(function (f, i) { var c = chip(i === st.freq); return { label: f.label, on: i === st.freq, bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { self.setState({ freq: i }); } }; }),
+slots: slots.map(function (s, i) { var c = chip(i === st.slot); return { label: s.label, on: i === st.slot, bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { self.setState({ slot: i }); } }; }),
+review: st.review,
+toggleReview: function (e) { self.setState({ review: e.target.checked }); },
+plan: function () {
+var seq = self.state.seq;
+var kept = self.state.posts.filter(function (p) { return !p.auto; });
+var made = freqs[self.state.freq].days.map(function (d, i) { var x = drafts[i % drafts.length]; return { id: seq++, day: d, time: slots[self.state.slot].time, title: x.title, kind: x.kind, status: self.state.review ? 'wait' : 'set', auto: true }; });
+self.setState({ posts: kept.concat(made), seq: seq });
+},
+channels: chNames.map(function (n, i) { var on = st.on[i]; return { name: n, on: on, status: on ? 'Đã kết nối' : 'Chưa kết nối', stFg: on ? '#12584E' : '#5A5F7D', btn: on ? 'Ngắt' : 'Kết nối', toggle: function () { var a = self.state.on.slice(); a[i] = !a[i]; self.setState({ on: a }); } }; }),
+summary: nWait + ' bài chờ duyệt · ' + nSet + ' bài đã hẹn giờ',
+hasWait: nWait > 0,
+approveAll: function () { self.setState({ posts: self.state.posts.map(function (p) { return p.status === 'wait' ? Object.assign({}, p, { status: 'set' }) : p; }) }); },
+days: dayNames.map(function (n, i) { var k = st.posts.filter(function (p) { return p.day === i; }).length; return { name: n, count: k ? k + ' bài' : 'Trống', bg: k ? '#1B1F3B' : '#F4F5FA', fg: k ? '#FFFFFF' : '#5A5F7D' }; }),
+posts: sorted.map(function (p) { var t = tags[p.status]; return { when: dayNames[p.day].split(' ')[0] + ' · ' + p.time, title: p.title, meta: p.kind + ' · ' + where, tag: t.tag, tagBg: t.bg, tagFg: t.fg, wait: p.status === 'wait', set: p.status === 'set', approve: function () { setStatus(p.id, 'set'); }, drop: function () { self.setState({ posts: self.state.posts.filter(function (q) { return q.id !== p.id; }) }); } }; })
+};
+}
+}
+
+__dcStart(Component);
+</script>
+</body>
+</html>

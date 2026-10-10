@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<meta name="robots" content="noindex">
+<title>AI Biz · Phòng IT</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#F4F5FA;color:#1B1F3B}
+a{color:#1B1F3B;text-decoration:none}a:hover{color:#4F46E5}
+</style>
+
+<style></style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1B1F3B; background: #F4F5FA">
+<nav aria-label="Điều hướng" style="flex: 0 0 240px; background: #FFFFFF; border-right: 1px solid #E6E8F0; padding: 22px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px"><span style="width: 40px; height: 40px; border-radius: 13px; background: #4F46E5; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px">AB</span><span style="font-size: 19px; font-weight: 800; color: #1B1F3B; letter-spacing: -0.02em">AI Biz</span></div>
+<a href="Main.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #EEEDFD; color: #4F46E5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg></span>Trợ lý AI</a>
+<a href="Social.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #FDE8EE; color: #E0436B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="9" cy="10" r="1.8"></circle><path d="M21 16l-5-5-8 8"></path></svg></span>Phòng Media</a>
+<a href="Schedule.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #E6EFFE; color: #2F6FE0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"></path><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"></path></svg></span>Phòng Marketing</a>
+<a href="Web.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; background: #EEEDFD; color: #3730A3; font-weight: 700"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #E0F5F1; color: #0F8F7F"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path><path d="M9 8l-2 2 2 2M15 8l2 2-2 2"></path></svg></span>Phòng IT</a>
+<a href="Care.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #FDF1DC; color: #B86E00"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"></path><rect x="3" y="13" width="4" height="6" rx="1.5"></rect><rect x="17" y="13" width="4" height="6" rx="1.5"></rect><path d="M19 19a3 3 0 0 1-3 3h-3"></path></svg></span>Chăm sóc khách</a>
+<div style="height: 1px; background: #E6E8F0; margin: 10px 8px"></div>
+<a href="Plans.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #ECEEF5; color: #1B1F3B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg></span>Gói và credit</a>
+<a href="Onboarding.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #ECEEF5; color: #1B1F3B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span>Hồ sơ của tôi</a>
+<div style="flex-grow: 1; min-height: 20px"></div>
+<a href="Plans.html" style="display: flex; flex-direction: column; gap: 4px; border-radius: 18px; background: #1B1F3B; color: #FFFFFF; padding: 16px; font-size: 13px; line-height: 1.45"><span style="font-size: 15px; font-weight: 700">Bản miễn phí</span><span style="color: #C7CAE0">Nâng cấp để chat và chỉnh mọi thứ theo ý.</span></a>
+</nav>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex: none; background: #E0F5F1; color: #0F8F7F"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path><path d="M9 8l-2 2 2 2M15 8l2 2-2 2"></path></svg></span><h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Phòng IT</h1></div>
+<p style="margin: 0; font-size: 15px; color: #5A5F7D">Trang đã dựng sẵn từ hồ sơ. Sửa bằng lời ở bên trái, xem kết quả ở bên phải.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="Web.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #4F46E5; border: 1px solid #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 600">Trang của tôi</a>
+<a href="Funnel.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #FFFFFF; border: 1px solid #D9DCEA; color: #1B1F3B; font-size: 14px; font-weight: 500">Phễu bán hàng</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<section style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600">Sửa bằng lời</h2>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{ log }}" as="m" hint-placeholder-count="1">
+<div style="padding: 12px 14px; border-radius: 14px; font-size: 14px; line-height: 1.5; background: {{ m.bg }}">
+<div style="font-size: 12px; font-weight: 600; color: #5A5F7D">{{ m.who }}</div>
+<div>{{ m.text }}</div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<button type="button" onClick="{{ makeShort }}" style="min-height: 44px; padding: 8px 14px; border-radius: 12px; border: 1px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 500; text-align: left; cursor: pointer">Viết phần giới thiệu ngắn hơn</button>
+<button type="button" onClick="{{ makeLong }}" style="min-height: 44px; padding: 8px 14px; border-radius: 12px; border: 1px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 500; text-align: left; cursor: pointer">Viết lại bản đầy đủ</button>
+<button type="button" onClick="{{ toggleReviews }}" style="min-height: 44px; padding: 8px 14px; border-radius: 12px; border: 1px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 500; text-align: left; cursor: pointer">Thêm hoặc bỏ mục cảm nhận khách hàng</button>
+</div>
+<label for="web-edit" style="font-size: 13px; color: #5A5F7D">Hoặc gõ yêu cầu sửa</label>
+<input id="web-edit" type="text" placeholder="Ví dụ: đổi ảnh đại diện" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1px solid #D9DCEA; font-family: inherit; font-size: 14px; box-sizing: border-box; width: 100%">
+</section>
+<section style="flex: 2 1 420px; min-width: 0; background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; padding: 12px 20px; background: #ECEEF5; font-size: 13px">
+<div style="font-weight: 600">minhanh.[tên miền]</div>
+<div style="padding: 4px 10px; border-radius: 999px; background: #EEEDFD; color: #3730A3; font-weight: 600">Bản miễn phí · còn hiện 9 ngày</div>
+</div>
+<div style="padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center">
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #C7CAE0; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #5A5F7D; text-align: center">Ảnh của bạn</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-size: 28px; font-weight: 700">Minh Anh</h2>
+<div style="font-size: 16px; color: #5A5F7D">Tư vấn chăm sóc da tại nhà</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.6">{{ intro }}</p>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">Tôi giúp gì</h3>
+<ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.7; color: #5A5F7D">
+<li>Chọn quy trình dưỡng da theo loại da</li>
+<li>Hướng dẫn dùng sản phẩm đúng cách</li>
+<li>Theo dõi và điều chỉnh sau 30 ngày</li>
+</ul>
+</div>
+<sc-if value="{{ reviews }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 16px; border-radius: 14px; background: #F4F5FA; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600">Cảm nhận khách hàng</h3>
+<div style="font-size: 15px; color: #5A5F7D">[Cảm nhận thật của khách, thêm khi khách đồng ý]</div>
+</div>
+</sc-if>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between">
+<a href="Landing.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; background: #4F46E5; color: #FFFFFF; font-size: 15px; font-weight: 600">Xem bản khách nhìn thấy</a>
+<div style="font-size: 13px; color: #5A5F7D">Tạo bằng AI Biz</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</template>
+<a href="./" style="position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:#1B1F3B;color:#fff;font:600 13px 'Plus Jakarta Sans',system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(27,31,59,.25)">Danh sách màn hình</a>
+<script src="dc-runtime.js"></script>
+<script>
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { short: false, reviews: false, log: [{ who: 'Trợ lý', text: 'Trang của bạn đã dựng xong từ hồ sơ. Muốn sửa gì, bấm một lệnh bên dưới.' }] };
+}
+add(you, reply, patch) {
+var log = this.state.log.concat([{ who: 'Bạn', text: you }, { who: 'Trợ lý', text: reply }]).slice(-5);
+this.setState(Object.assign({ log: log }, patch));
+}
+renderVals() {
+var self = this;
+var long = 'Tôi là Minh Anh, tư vấn chăm sóc da tại nhà. Sau ba năm tự tìm hiểu để chăm làn da khô của chính mình, tôi giúp các chị chọn quy trình dưỡng da đơn giản, hợp túi tiền và làm được mỗi ngày.';
+var short = 'Tôi là Minh Anh, tư vấn chăm sóc da tại nhà. Tôi giúp các chị chọn quy trình dưỡng da đơn giản, làm được mỗi ngày.';
+return {
+intro: this.state.short ? short : long,
+reviews: this.state.reviews,
+log: this.state.log.map(function (m) { return { who: m.who, text: m.text, bg: m.who === 'Bạn' ? '#EEEDFD' : '#F4F5FA' }; }),
+makeShort: function () { self.add('Viết phần giới thiệu ngắn hơn', 'Đã rút phần giới thiệu còn hai câu. Xem bên phải.', { short: true }); },
+makeLong: function () { self.add('Viết lại bản đầy đủ', 'Đã đưa lại bản giới thiệu đầy đủ.', { short: false }); },
+toggleReviews: function () {
+var on = !self.state.reviews;
+self.add(on ? 'Thêm mục cảm nhận khách hàng' : 'Bỏ mục cảm nhận khách hàng', on ? 'Đã thêm mục cảm nhận, đang chờ nội dung thật từ khách.' : 'Đã bỏ mục cảm nhận.', { reviews: on });
+}
+};
+}
+}
+
+__dcStart(Component);
+</script>
+</body>
+</html>

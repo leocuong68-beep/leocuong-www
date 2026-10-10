@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<meta name="robots" content="noindex">
+<title>AI Biz · Tạo video</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#F4F5FA;color:#1B1F3B}
+a{color:#1B1F3B;text-decoration:none}a:hover{color:#4F46E5}
+</style>
+
+<style></style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1B1F3B; background: #F4F5FA">
+<nav aria-label="Điều hướng" style="flex: 0 0 240px; background: #FFFFFF; border-right: 1px solid #E6E8F0; padding: 22px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px"><span style="width: 40px; height: 40px; border-radius: 13px; background: #4F46E5; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px">AB</span><span style="font-size: 19px; font-weight: 800; color: #1B1F3B; letter-spacing: -0.02em">AI Biz</span></div>
+<a href="Main.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #EEEDFD; color: #4F46E5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg></span>Trợ lý AI</a>
+<a href="Social.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; background: #EEEDFD; color: #3730A3; font-weight: 700"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #FDE8EE; color: #E0436B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="9" cy="10" r="1.8"></circle><path d="M21 16l-5-5-8 8"></path></svg></span>Phòng Media</a>
+<a href="Schedule.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #E6EFFE; color: #2F6FE0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"></path><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"></path></svg></span>Phòng Marketing</a>
+<a href="Web.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #E0F5F1; color: #0F8F7F"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path><path d="M9 8l-2 2 2 2M15 8l2 2-2 2"></path></svg></span>Phòng IT</a>
+<a href="Care.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #FDF1DC; color: #B86E00"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"></path><rect x="3" y="13" width="4" height="6" rx="1.5"></rect><rect x="17" y="13" width="4" height="6" rx="1.5"></rect><path d="M19 19a3 3 0 0 1-3 3h-3"></path></svg></span>Chăm sóc khách</a>
+<div style="height: 1px; background: #E6E8F0; margin: 10px 8px"></div>
+<a href="Plans.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #ECEEF5; color: #1B1F3B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg></span>Gói và credit</a>
+<a href="Onboarding.html" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 10px; border-radius: 14px; font-size: 15px; color: #3A3F5C; font-weight: 500"><span style="width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; background: #ECEEF5; color: #1B1F3B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span>Hồ sơ của tôi</a>
+<div style="flex-grow: 1; min-height: 20px"></div>
+<a href="Plans.html" style="display: flex; flex-direction: column; gap: 4px; border-radius: 18px; background: #1B1F3B; color: #FFFFFF; padding: 16px; font-size: 13px; line-height: 1.45"><span style="font-size: 15px; font-weight: 700">Bản miễn phí</span><span style="color: #C7CAE0">Nâng cấp để chat và chỉnh mọi thứ theo ý.</span></a>
+</nav>
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 14px"><span style="width: 48px; height: 48px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex: none; background: #FDE8EE; color: #E0436B"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="9" cy="10" r="1.8"></circle><path d="M21 16l-5-5-8 8"></path></svg></span><h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Tạo video</h1></div>
+<p style="margin: 0; font-size: 15px; color: #5A5F7D">Ba lựa chọn rồi bấm một nút: hệ thống lo kịch bản, giọng đọc, phụ đề, hình và nhạc.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="Social.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #FFFFFF; border: 1px solid #D9DCEA; color: #1B1F3B; font-size: 14px; font-weight: 500">Bài viết</a>
+<a href="Photo.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #FFFFFF; border: 1px solid #D9DCEA; color: #1B1F3B; font-size: 14px; font-weight: 500">Công cụ ảnh</a>
+<a href="Video.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #4F46E5; border: 1px solid #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 600">Tạo video</a>
+<a href="Voice.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #FFFFFF; border: 1px solid #D9DCEA; color: #1B1F3B; font-size: 14px; font-weight: 500">Giọng đọc</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<section style="flex: 2 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">1. Nội dung lấy từ đâu</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ sources }}" as="s" hint-placeholder-count="3">
+<button type="button" onClick="{{ s.pick }}" aria-pressed="{{ s.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ s.bg }}; color: {{ s.fg }}; border: 1px solid {{ s.bd }}">{{ s.label }}</button>
+</sc-for>
+</div>
+<div style="padding: 12px 16px; border-radius: 14px; background: #F4F5FA; font-size: 14px; line-height: 1.5">{{ sourceNote }}</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">2. Mẫu video</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px">
+<sc-for list="{{ templates }}" as="t" hint-placeholder-count="6">
+<button type="button" onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" style="padding: 10px; border-radius: 14px; font-family: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; color: #1B1F3B; border: 2px solid {{ t.bd }}">
+<span style="display: flex; align-items: flex-end; height: 84px; border-radius: 8px; padding: 8px; box-sizing: border-box; font-size: 11px; font-weight: 600; background: {{ t.sw }}; color: {{ t.swFg }}">{{ t.hint }}</span>
+<span style="font-size: 14px; font-weight: 600; line-height: 1.3">{{ t.label }}</span>
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: {{ t.tagBg }}; color: {{ t.tagFg }}">{{ t.plan }}</span>
+</button>
+</sc-for>
+</div>
+<sc-if value="{{ needUpgrade }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: 14px; background: #EEEDFD; font-size: 14px">
+<div>{{ upgradeNote }}</div>
+<a href="Plans.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #D9DCEA; font-weight: 600">Xem gói</a>
+</div>
+</sc-if>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">3. Giọng đọc</h2>
+<a href="Voice.html" style="display: flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600; text-decoration: underline">Quản lý giọng</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ voices }}" as="v" hint-placeholder-count="5">
+<button type="button" onClick="{{ v.pick }}" aria-pressed="{{ v.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; background: {{ v.bg }}; color: {{ v.fg }}; border: 1px solid {{ v.bd }}">{{ v.label }}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between">
+<div style="font-size: 14px; color: #5A5F7D">Dựng hình không tính credit. Giọng đọc và kịch bản: 1 lượt video.</div>
+<button type="button" onClick="{{ make }}" style="min-height: 48px; padding: 0 24px; border-radius: 14px; border: none; background: #4F46E5; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Tạo clip</button>
+</div>
+</section>
+<section style="flex: 1 1 280px; min-width: 0; background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 14px; align-items: center">
+<div style="align-self: stretch; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">Xem trước</h2>
+<div style="font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: {{ status.bg }}; color: {{ status.fg }}">{{ status.text }}</div>
+</div>
+<div style="width: 100%; max-width: 270px; aspect-ratio: 9 / 16; border-radius: 18px; padding: 22px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; background: {{ pv.bg }}; color: {{ pv.fg }}">
+<div style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase">{{ pv.kind }}</div>
+<div style="font-size: 26px; font-weight: 700; line-height: 1.2">3 bước dưỡng da buổi tối</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 15px; font-weight: 600; line-height: 1.4; text-align: center">Bước một là <span style="background: #FFFFFF; color: #1B1F3B; padding: 0 4px; border-radius: 4px">làm sạch</span> thật nhẹ</div>
+<div style="font-size: 12px; text-align: center">Giọng: {{ pv.voice }}</div>
+</div>
+</div>
+<sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+<div style="align-self: stretch; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center">
+<button type="button" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: none; background: #4F46E5; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Tải về</button>
+<button type="button" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Chia sẻ một chạm</button>
+<a href="Schedule.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #D9DCEA; font-size: 14px; font-weight: 600">Hẹn giờ đăng</a>
+</div>
+</sc-if>
+</section>
+</div>
+</main>
+</div>
+</template>
+<a href="./" style="position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:#1B1F3B;color:#fff;font:600 13px 'Plus Jakarta Sans',system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(27,31,59,.25)">Danh sách màn hình</a>
+<script src="dc-runtime.js"></script>
+<script>
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { source: 0, tpl: 0, voice: 0, stage: 0 };
+}
+componentWillUnmount() {
+if (this.timer) clearTimeout(this.timer);
+}
+renderVals() {
+var self = this;
+function chip(on) { return on ? { bg: '#4F46E5', fg: '#FFFFFF', bd: '#4F46E5' } : { bg: '#FFFFFF', fg: '#1B1F3B', bd: '#D9DCEA' }; }
+function set(patch) { if (self.timer) clearTimeout(self.timer); patch.stage = 0; self.setState(patch); }
+var sources = [
+{ label: 'Từ bài đã tạo', note: 'Bài đang chọn: "3 bước dưỡng da buổi tối". Trợ lý rút thành kịch bản 30 giây.' },
+{ label: 'Nói vào điện thoại', note: 'Bạn ghi âm khoảng 30 giây. Hệ thống dùng chính giọng bạn, tự thêm phụ đề và hình.' },
+{ label: 'Dán link hoặc PDF', note: 'Dán link trang sản phẩm hoặc tải file PDF của công ty bạn. Chỉ dùng tài liệu bạn có quyền dùng.' }
+];
+var templates = [
+{ label: 'Chữ động', plan: 'Miễn phí', free: true, sw: '#1B1F3B', swFg: '#FFFFFF', hint: 'Chữ lớn' },
+{ label: 'Sơ đồ quyết định', plan: 'Miễn phí', free: true, sw: '#ECEEF5', swFg: '#1B1F3B', hint: 'Nếu, thì' },
+{ label: 'So sánh A và B', plan: 'Basic', free: false, sw: '#1F6F64', swFg: '#FFFFFF', hint: 'A với B' },
+{ label: 'Biểu đồ số liệu', plan: 'Pro', free: false, sw: '#FBF7EC', swFg: '#1B1F3B', hint: 'Số liệu' },
+{ label: 'Có người dẫn', plan: 'Pro', free: false, sw: '#6B5646', swFg: '#FFFFFF', hint: 'Bạn quay mặt' },
+{ label: 'Video AI', plan: 'Max', free: false, sw: '#3B2F4A', swFg: '#FFFFFF', hint: 'AI sinh cảnh' }
+];
+var voices = ['Mai · nữ miền Bắc', 'Linh · nữ miền Nam', 'Quân · nam miền Bắc', 'Huy · nam miền Nam', 'Giọng của tôi'];
+var t = templates[this.state.tpl];
+var stage = this.state.stage;
+var status = stage === 2 ? { text: 'Clip đã xong · 30 giây', bg: '#DDF1EC', fg: '#12584E' } : stage === 1 ? { text: 'Đang dựng', bg: '#EEEDFD', fg: '#3730A3' } : { text: 'Bản xem trước', bg: '#ECEEF5', fg: '#1B1F3B' };
+return {
+sources: sources.map(function (s, i) { var c = chip(i === self.state.source); return { label: s.label, on: i === self.state.source, bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { set({ source: i }); } }; }),
+sourceNote: sources[this.state.source].note,
+templates: templates.map(function (x, i) {
+return { label: x.label, plan: x.plan, hint: x.hint, sw: x.sw, swFg: x.swFg, on: i === self.state.tpl, bd: i === self.state.tpl ? '#4F46E5' : '#E6E8F0', tagBg: x.free ? '#DDF1EC' : '#EEEDFD', tagFg: x.free ? '#12584E' : '#3730A3', pick: function () { set({ tpl: i }); } };
+}),
+needUpgrade: !t.free,
+upgradeNote: 'Mẫu "' + t.label + '" thuộc gói ' + t.plan + '. Bạn vẫn xem trước được.',
+voices: voices.map(function (label, i) { var c = chip(i === self.state.voice); return { label: label, on: i === self.state.voice, bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { set({ voice: i }); } }; }),
+pv: { bg: t.sw, fg: t.swFg, kind: t.label, voice: this.state.source === 1 ? 'giọng thật của bạn' : voices[this.state.voice] },
+status: status,
+done: stage === 2,
+make: function () {
+if (self.timer) clearTimeout(self.timer);
+self.setState({ stage: 1 });
+self.timer = setTimeout(function () { self.setState({ stage: 2 }); }, 1500);
+}
+};
+}
+}
+
+__dcStart(Component);
+</script>
+</body>
+</html>

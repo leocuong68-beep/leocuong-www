@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AI Biz · Đăng nhanh</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#F4F5FA;color:#1B1F3B}
+a{color:#1B1F3B;text-decoration:none}
+</style>
+
+<style>body{background:#ECEEF5}#dc-root>div{margin:0 auto}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+<div style="width: 390px; min-height: 1060px; box-sizing: border-box; background: #F4F5FA; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1B1F3B; display: flex; flex-direction: column">
+<div style="padding: 18px 18px 12px; display: flex; flex-direction: column; gap: 14px; background: #FFFFFF; border-bottom: 1px solid #E6E8F0">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 36px; height: 36px; border-radius: 12px; background: #4F46E5; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px">AB</span><span style="font-size: 20px; font-weight: 800; letter-spacing: -0.02em">Đăng nhanh</span></div>
+<span style="font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #EEEDFD; color: #3730A3">Còn {{ credit }} credit</span>
+</div>
+<div role="tablist" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; border-radius: 14px; background: #F4F5FA">
+<button type="button" role="tab" aria-selected="{{ isSelf }}" onClick="{{ toSelf }}" style="min-height: 44px; border: none; border-radius: 11px; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; background: {{ selfBg }}; color: {{ selfFg }}">Tự làm</button>
+<button type="button" role="tab" aria-selected="{{ isAuto }}" onClick="{{ toAuto }}" style="min-height: 44px; border: none; border-radius: 11px; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; background: {{ autoBg }}; color: {{ autoFg }}">Auto · AI làm hết</button>
+</div>
+<div style="font-size: 13px; line-height: 1.45; color: #5A5F7D">{{ modeNote }}</div>
+</div>
+
+<sc-if value="{{ isSelf }}" hint-placeholder-val="{{ true }}">
+<div style="padding: 16px 18px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 14px; font-weight: 700">1. Chọn ảnh hoặc video</div>
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px">
+<button type="button" style="aspect-ratio: 1; border-radius: 14px; border: 1.5px dashed #B9BCD4; background: #FFFFFF; color: #4F46E5; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer">Chụp</button>
+<sc-for list="{{ photos }}" as="p" hint-placeholder-count="3">
+<button type="button" onClick="{{ p.pick }}" aria-pressed="{{ p.on }}" style="aspect-ratio: 1; border-radius: 14px; border: 3px solid {{ p.bd }}; background: {{ p.bg }}; color: #FFFFFF; font-family: inherit; font-size: 11px; font-weight: 700; cursor: pointer; padding: 4px">{{ p.label }}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 14px; font-weight: 700">2. Bấm một mẫu</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
+<sc-for list="{{ tpls }}" as="t" hint-placeholder-count="4">
+<button type="button" onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" style="min-height: 56px; padding: 8px 12px; border-radius: 14px; text-align: left; font-family: inherit; cursor: pointer; background: {{ t.bg }}; color: {{ t.fg }}; border: 1.5px solid {{ t.bd }}; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 700">{{ t.label }}</span><span style="font-size: 12px; opacity: 0.8">{{ t.cost }}</span></button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 14px; font-weight: 700">Xem trước</div>
+<div style="aspect-ratio: 4 / 5; border-radius: 18px; background: {{ pv.bg }}; color: #FFFFFF; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,0.22)">{{ pv.kind }}</span>
+<div style="font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em">{{ pv.head }}</div>
+<div style="font-size: 13px; font-weight: 600">Minh Anh · Tư vấn chăm sóc da</div>
+</div>
+<label for="qp-cap" style="font-size: 13px; font-weight: 600; color: #5A5F7D">Chú thích AI gợi ý, sửa được</label>
+<textarea id="qp-cap" rows="3" style="border-radius: 14px; border: 1.5px solid #D9DCEA; padding: 10px 12px; font-family: inherit; font-size: 14px; line-height: 1.5; resize: none">{{ pv.cap }}</textarea>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 14px; font-weight: 700">3. Khi nào đăng?</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ whens }}" as="w" hint-placeholder-count="3">
+<button type="button" onClick="{{ w.pick }}" aria-pressed="{{ w.on }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: {{ w.bg }}; color: {{ w.fg }}; border: 1.5px solid {{ w.bd }}">{{ w.label }}</button>
+</sc-for>
+</div>
+<div style="font-size: 13px; color: #5A5F7D">Đăng lên: Facebook Page, Instagram, TikTok</div>
+</div>
+<sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ schedule }}" style="min-height: 52px; border-radius: 16px; border: none; background: #4F46E5; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 800; cursor: pointer">Lên lịch tự đăng</button>
+</sc-if>
+<sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 14px 16px; border-radius: 16px; background: #DDF1EC; color: #12584E; font-size: 15px; font-weight: 700; line-height: 1.45">{{ doneText }}</div>
+<button type="button" onClick="{{ again }}" style="min-height: 48px; border-radius: 14px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">Làm bài khác</button>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ isAuto }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 16px 18px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-size: 14px; font-weight: 700">Mỗi tuần AI làm bao nhiêu bài?</div>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px">
+<sc-for list="{{ freqs }}" as="f" hint-placeholder-count="3">
+<button type="button" onClick="{{ f.pick }}" aria-pressed="{{ f.on }}" style="min-height: 44px; border-radius: 12px; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; background: {{ f.bg }}; color: {{ f.fg }}; border: 1.5px solid {{ f.bd }}">{{ f.label }}</button>
+</sc-for>
+</div>
+<div style="font-size: 13px; line-height: 1.5; color: #5A5F7D">AI tự chọn đề tài theo ngành và xu hướng, viết chú thích, làm ảnh và video từ kho ảnh của bạn, chọn giờ đẹp theo nước bạn ở.</div>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.45; min-height: 44px"><input type="checkbox" checked="{{ review }}" onChange="{{ toggleReview }}" style="width: 20px; height: 20px">Cho tôi xem trước khi đăng</label>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-radius: 12px; background: #F4F5FA; font-size: 13px"><span>Dự kiến mỗi tuần</span><b>{{ autoCost }} credit</b></div>
+<sc-if value="{{ autoOff }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ turnOn }}" style="min-height: 52px; border-radius: 16px; border: none; background: #4F46E5; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 800; cursor: pointer">Bật Auto</button>
+</sc-if>
+</div>
+<sc-if value="{{ autoOn }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<div style="font-size: 15px; font-weight: 800">AI đã làm cho tuần này</div>
+<sc-if value="{{ hasWait }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ approveAll }}" style="min-height: 40px; padding: 0 12px; border-radius: 12px; border: none; background: #4F46E5; color: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer">Duyệt tất cả</button>
+</sc-if>
+</div>
+<sc-for list="{{ autoPosts }}" as="a" hint-placeholder-count="3">
+<div style="display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E6E8F0">
+<div style="width: 56px; height: 70px; border-radius: 10px; flex: none; background: {{ a.bg }}; color: #FFFFFF; font-size: 10px; font-weight: 700; display: flex; align-items: flex-end; padding: 5px; box-sizing: border-box">{{ a.kind }}</div>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 14px; font-weight: 700; line-height: 1.3">{{ a.title }}</div>
+<div style="font-size: 12px; color: #5A5F7D">{{ a.when }}</div>
+</div>
+<sc-if value="{{ a.wait }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ a.approve }}" style="min-height: 40px; padding: 0 12px; border-radius: 12px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer">Duyệt</button>
+</sc-if>
+<sc-if value="{{ a.set }}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 12px; font-weight: 700; color: #12584E">Đã hẹn</span>
+</sc-if>
+</div>
+</sc-for>
+<button type="button" onClick="{{ turnOff }}" style="min-height: 44px; border-radius: 14px; border: 1.5px solid #D9DCEA; background: #FFFFFF; color: #1B1F3B; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Tạm dừng Auto</button>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<div style="flex-grow: 1"></div>
+<nav aria-label="Điều hướng" style="display: grid; grid-template-columns: repeat(4, 1fr); background: #FFFFFF; border-top: 1px solid #E6E8F0; padding: 6px 6px 10px">
+<a href="QuickPost.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 52px; justify-content: center; font-size: 12px; font-weight: 700; color: #4F46E5"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Đăng nhanh</a>
+<a href="Schedule.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 52px; justify-content: center; font-size: 12px; font-weight: 600; color: #5A5F7D"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Lịch đăng</a>
+<a href="Care.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 52px; justify-content: center; font-size: 12px; font-weight: 600; color: #5A5F7D"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12z"></path></svg>Khách</a>
+<a href="Main.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 52px; justify-content: center; font-size: 12px; font-weight: 600; color: #5A5F7D"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"></path></svg>Trợ lý AI</a>
+</nav>
+</div>
+</template>
+<a href="./" style="position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:#1B1F3B;color:#fff;font:600 13px 'Plus Jakarta Sans',system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(27,31,59,.25)">Danh sách màn hình</a>
+<script src="dc-runtime.js"></script>
+<script>
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { mode: 'self', photo: 0, tpl: 0, when: 0, done: false, credit: 120, freq: 1, review: true, autoOn: false, ok: [] };
+}
+renderVals() {
+var self = this, st = this.state;
+function chip(on) { return on ? { bg: '#4F46E5', fg: '#FFFFFF', bd: '#4F46E5' } : { bg: '#FFFFFF', fg: '#1B1F3B', bd: '#D9DCEA' }; }
+var photos = [{ label: 'Sản phẩm', bg: '#C2627A' }, { label: 'Ảnh của tôi', bg: '#6B5646' }, { label: 'Khách dùng', bg: '#2F6F86' }];
+var tpls = [
+{ label: 'Ảnh giới thiệu', cost: '1 credit', c: 1, kind: 'Ảnh 4:5', head: 'Bí quyết da căng mịn mùa thu', cap: 'Da khô mùa này? Thêm một bước cấp ẩm trước khi ngủ là thấy khác liền. Nhắn em để được tư vấn riêng nha.' },
+{ label: 'Video 15 giây', cost: '2 credit', c: 2, kind: 'Video 15 giây', head: '3 bước dưỡng da buổi tối', cap: 'Ba bước, năm phút mỗi tối. Lưu lại để làm theo nha. Cần tư vấn chọn sản phẩm thì nhắn em.' },
+{ label: 'Thiệp chúc mừng', cost: '1 credit', c: 1, kind: 'Thiệp', head: 'Chúc chị một tuần thật xinh', cap: 'Chúc cả nhà một tuần mới nhiều niềm vui. Cảm ơn mọi người luôn ủng hộ em.' },
+{ label: 'Mời tìm hiểu', cost: '1 credit', c: 1, kind: 'Ảnh 4:5', head: 'Cùng làm đẹp, cùng kết nối', cap: 'Em đang tìm vài bạn yêu làm đẹp muốn tìm hiểu thêm. Nhắn em để nói chuyện nhé.' }
+];
+var whens = [{ label: 'Giờ đẹp nhất (AI chọn)', t: 'tối nay 20:00' }, { label: 'Đăng ngay', t: 'ngay bây giờ' }, { label: 'Sáng mai 7:30', t: 'sáng mai 7:30' }];
+var freqs = [{ label: '3 bài', n: 3 }, { label: '5 bài', n: 5 }, { label: '7 bài', n: 7 }];
+var autoList = [
+{ title: 'Da khô mùa thu: 3 lỗi hay gặp', kind: 'Video', bg: '#4F46E5', when: 'T2 · 20:00' },
+{ title: 'Chị Lan nói gì sau 30 ngày', kind: 'Ảnh', bg: '#C2627A', when: 'T3 · 12:00' },
+{ title: 'Hỏi đáp: kem chống nắng trong nhà', kind: 'Video', bg: '#2F6F86', when: 'T4 · 20:00' },
+{ title: 'Chúc mừng ngày Phụ nữ', kind: 'Thiệp', bg: '#B86E00', when: 'T5 · 7:30' },
+{ title: 'Quy trình 3 bước cho người bận', kind: 'Ảnh', bg: '#6B5646', when: 'T6 · 20:00' },
+{ title: 'Thói quen buổi sáng của tôi', kind: 'Video', bg: '#0F8F7F', when: 'T7 · 9:00' },
+{ title: 'Cuối tuần thư giãn cùng mặt nạ', kind: 'Ảnh', bg: '#E0436B', when: 'CN · 19:00' }
+];
+var n = freqs[st.freq].n, t = tpls[st.tpl], p = photos[st.photo];
+var posts = autoList.slice(0, n).map(function (a, i) { var ok = !st.review || st.ok.indexOf(i) !== -1; return { title: a.title, kind: a.kind, bg: a.bg, when: a.when, wait: !ok, set: ok, approve: function () { self.setState({ ok: self.state.ok.concat([i]) }); } }; });
+var isSelf = st.mode === 'self';
+return {
+credit: st.credit,
+isSelf: isSelf, isAuto: !isSelf,
+selfBg: isSelf ? '#FFFFFF' : 'transparent', selfFg: isSelf ? '#4F46E5' : '#5A5F7D',
+autoBg: !isSelf ? '#FFFFFF' : 'transparent', autoFg: !isSelf ? '#4F46E5' : '#5A5F7D',
+modeNote: isSelf ? 'Bạn chọn ảnh và mẫu, AI chỉ giúp viết chú thích. Tốn ít credit nhất.' : 'AI tự nghĩ đề tài, làm ảnh và video, tự xếp lịch cả tuần. Tốn credit hơn vì AI làm nhiều việc hơn.',
+toSelf: function () { self.setState({ mode: 'self' }); },
+toAuto: function () { self.setState({ mode: 'auto' }); },
+photos: photos.map(function (x, i) { return { label: x.label, bg: x.bg, on: i === st.photo, bd: i === st.photo ? '#4F46E5' : 'transparent', pick: function () { self.setState({ photo: i, done: false }); } }; }),
+tpls: tpls.map(function (x, i) { var c = chip(i === st.tpl); return { label: x.label, cost: x.cost, on: i === st.tpl, bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { self.setState({ tpl: i, done: false }); } }; }),
+pv: { bg: p.bg, kind: t.kind, head: t.head, cap: t.cap },
+whens: whens.map(function (x, i) { var c = chip(i === st.when); return { label: x.label, on: i === st.when, bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { self.setState({ when: i, done: false }); } }; }),
+notDone: !st.done, done: st.done,
+doneText: 'Xong! Bài sẽ tự đăng ' + whens[st.when].t + ' lên Facebook Page, Instagram và TikTok. Đã trừ ' + t.c + ' credit.',
+schedule: function () { self.setState({ done: true, credit: self.state.credit - t.c }); },
+again: function () { self.setState({ done: false }); },
+freqs: freqs.map(function (x, i) { var c = chip(i === st.freq); return { label: x.label, on: i === st.freq, bg: c.bg, fg: c.fg, bd: c.bd, pick: function () { self.setState({ freq: i, ok: [] }); } }; }),
+review: st.review,
+toggleReview: function (e) { self.setState({ review: e.target.checked }); },
+autoCost: n * 5,
+autoOn: st.autoOn, autoOff: !st.autoOn,
+turnOn: function () { self.setState({ autoOn: true, ok: [] }); },
+turnOff: function () { self.setState({ autoOn: false }); },
+autoPosts: posts,
+hasWait: posts.some(function (x) { return x.wait; }),
+approveAll: function () { self.setState({ ok: [0, 1, 2, 3, 4, 5, 6] }); }
+};
+}
+}
+
+__dcStart(Component);
+</script>
+</body>
+</html>

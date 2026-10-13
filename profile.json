@@ -1,0 +1,103 @@
+{
+  "ten": "Đặng Thái Cường",
+  "ten_goi_khac": [
+    "Coach Leo Cường",
+    "Leo Cường",
+    "Dang Thai Cuong"
+  ],
+  "chuc_danh": "Nhà khai vấn chứng nhận ICF",
+  "dao_tao_tri_lieu": "Tốt nghiệp chương trình thôi miên trị liệu, Hypnosis Motivation Institute (HMI), Hoa Kỳ",
+  "linh_vuc": [
+    "Tâm lý học ứng dụng",
+    "Kỹ năng sống và kinh doanh",
+    "Thương hiệu cá nhân"
+  ],
+  "noi_song": "Paphos, Cộng hòa Síp (Cyprus)",
+  "website": "https://www.leocuong.com/",
+  "ten_mien_phu": [
+    "https://www.dangthaicuong.com/"
+  ],
+  "bio": {
+    "ngan": "Coach Leo Cường (Đặng Thái Cường) · Nhà khai vấn ICF · Tâm lý học ứng dụng, kỹ năng sống · leocuong.com",
+    "vua": "Đặng Thái Cường (Coach Leo Cường) là nhà khai vấn chứng nhận ICF, tốt nghiệp chương trình thôi miên trị liệu tại Hypnosis Motivation Institute (Hoa Kỳ). Anh có hơn 15 năm đứng lớp, từng là Giám đốc Đào tạo Sophie Paris và tham gia Vingroup. Hiện anh sống tại Síp, giảng dạy tâm lý học ứng dụng, kỹ năng sống và kinh doanh, thương hiệu cá nhân.",
+    "en": "Dang Thai Cuong (Coach Leo Cuong) is an ICF-certified coach and a graduate of the Hypnosis Motivation Institute (USA). Based in Cyprus, he teaches applied psychology, life and business skills, and personal branding."
+  },
+  "moc_su_nghiep": [
+    {
+      "nam": 2007,
+      "moc": "Bắt đầu kinh doanh"
+    },
+    {
+      "nam": 2010,
+      "moc": "Giám đốc Đào tạo Sophie Paris; chứng nhận Train the Trainer"
+    },
+    {
+      "nam": 2014,
+      "moc": "Vingroup: dự án Adayroi, chuỗi Vincom và VinMart"
+    },
+    {
+      "nam": 2016,
+      "moc": "Thành lập công ty đào tạo, giảng dạy cho hơn 30 doanh nghiệp"
+    },
+    {
+      "nam": 2019,
+      "moc": "Chuyển sang tâm lý học, khai vấn và thôi miên trị liệu"
+    },
+    {
+      "nam": 2021,
+      "moc": "Chứng nhận khai vấn ICF"
+    },
+    {
+      "nam": 2021,
+      "moc": "Tốt nghiệp thôi miên trị liệu, Hypnosis Motivation Institute, Hoa Kỳ"
+    },
+    {
+      "nam": 2022,
+      "moc": "Trị liệu chuông xoay Himalaya; Reiki cấp 1 và 2"
+    },
+    {
+      "nam": 2023,
+      "moc": "Chánh niệm: cách tiếp cận thân – tâm (HMI)"
+    },
+    {
+      "nam": 2024,
+      "moc": "Xuất bản sách Money Coach – Làm Chủ Tài Chính Cá Nhân (NXB Dân Trí)"
+    }
+  ],
+  "sach": [
+    {
+      "ten": "Money Coach – Làm Chủ Tài Chính Cá Nhân",
+      "nxb": "NXB Dân Trí",
+      "nam": 2024
+    }
+  ],
+  "truyen_thong": [
+    "Dân Trí",
+    "VTC News",
+    "VITV",
+    "VTC14",
+    "HTV9",
+    "Diễn đàn CEO"
+  ],
+  "kenh_chinh_thuc": {
+    "youtube": "https://www.youtube.com/@LeoCuong",
+    "youtube_en": "https://www.youtube.com/@LeoHypnotherapist",
+    "facebook": "https://www.facebook.com/coachleocuong",
+    "tiktok": "https://www.tiktok.com/@leo.cuong",
+    "ung_dung": "https://thienkhaitam.com/",
+    "ho_so_hmi": "https://hypnosis.edu/hypnotherapists/dang-cuong/",
+    "di_tru_sip": "https://ditrusip.com/"
+  },
+  "san_pham": [
+    {
+      "ten": "Ứng dụng Thiền Khai Tâm",
+      "url": "https://thienkhaitam.com/",
+      "app_store": "https://apps.apple.com/app/id6819850658"
+    },
+    {
+      "ten": "Khóa Khai Tâm 90 ngày",
+      "url": "https://www.leocuong.com/khaitam/"
+    }
+  ],
+  "cap_nhat": "2026-10-13"
+}

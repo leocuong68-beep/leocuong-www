@@ -12,6 +12,8 @@
 
 ## Trang chính
 
+- [Hồ sơ chuẩn dạng JSON](https://www.leocuong.com/profile.json)
+
 - [Trang chủ](https://www.leocuong.com/): giới thiệu giảng viên, chủ đề, khóa học
 - [Khai Tâm](https://www.leocuong.com/khaitam/): khóa Khai Tâm 90 ngày và Bánh Xe Cuộc Đời
 - [Ứng dụng Thiền Khai Tâm](https://thienkhaitam.com/): dẫn thiền tiếng Việt, tập thở, podcast

@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0D0913">
+<title>AI Biz · App (neon)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&family=Patrick+Hand&display=swap">
+<style>
+:root{--ink:#F6EEF9;--mut:#A897BA;--line:#2C2140;--line2:#3D2F55;--bg:#0D0913;--card:#160F20;--card2:#1E1529;--pri:#FF3E9A;--pri2:rgba(255,62,154,.14);--glow:0 0 22px rgba(255,62,154,.45);--pink:#FF6FB5;--pinkS:rgba(255,111,181,.13);--blue:#7FB0FF;--blueS:rgba(127,176,255,.13);--teal:#43E6CC;--tealS:rgba(67,230,204,.12);--amb:#FFC453;--ambS:rgba(255,196,83,.13);--ok:#5EF0B8;--okS:rgba(94,240,184,.12)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--ink);background:radial-gradient(1200px 600px at 70% -10%,#3A0E2C,#07050B 60%)}
+button{font-family:inherit;cursor:pointer;color:var(--ink)}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #FF9ACB;outline-offset:2px}
+.stage{min-height:100%;display:flex;align-items:flex-start;justify-content:center;gap:48px;padding:28px 16px}
+.phone{width:390px;height:844px;background:var(--bg);border-radius:44px;box-shadow:0 0 0 10px #241A30,0 0 60px rgba(255,62,154,.25),0 30px 60px rgba(0,0,0,.6);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.side{max-width:340px;padding-top:40px}
+.side h1{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:0 0 12px}
+.side p{color:var(--mut);line-height:1.6;margin:0 0 12px}
+.side a{color:var(--pri);font-weight:700}
+@media (max-width:820px){.stage{padding:0;display:block}.side{display:none}.phone{width:100%;height:100vh;height:100dvh;border-radius:0;box-shadow:none}}
+.top{padding:14px 18px 10px;background:var(--card);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;min-height:60px}
+.top .back{width:40px;height:40px;border-radius:12px;border:none;background:var(--bg);display:flex;align-items:center;justify-content:center}
+.top h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.02em;flex:1}
+.chipc{font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:var(--pri2);color:#FF9ACB}
+.scroll{flex:1;overflow-y:auto;padding:16px 16px 24px;display:flex;flex-direction:column;gap:14px}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);background:var(--card);border-top:1px solid var(--line);padding:6px 4px calc(10px + env(safe-area-inset-bottom))}
+.tab{border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:600;color:var(--mut);min-height:52px;justify-content:center}
+.tab.on{color:var(--pri);font-weight:800}
+.tab .plus{width:46px;height:46px;border-radius:16px;background:var(--pri);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:-6px;box-shadow:0 6px 14px rgba(79,70,229,.35)}
+.scroll>*{flex-shrink:0}
+.post .prod{font-size:clamp(7px,2.4vw,11px)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.h{font-size:15px;font-weight:800;margin:0}
+.sub{font-size:13px;color:var(--mut);line-height:1.5;margin:0}
+.btn{min-height:50px;border-radius:16px;border:none;background:var(--pri);color:#fff;font-size:16px;font-weight:800;width:100%}
+.btn2{min-height:44px;border-radius:14px;border:1.5px solid var(--line2);background:var(--card);color:var(--ink);font-size:14px;font-weight:700;padding:0 14px}
+.row{display:flex;align-items:center;gap:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pill{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line2);background:var(--card);font-size:13.5px;font-weight:600;color:var(--ink)}
+.pill.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.tag{font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.ico{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex:none}
+.big{border:none;text-align:left;border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:6px;color:var(--ink)}
+.big b{font-size:17px}
+.big span{font-size:13px;line-height:1.45;color:#CDBFD9}
+.thumb{border-radius:12px;flex:none;display:flex;align-items:flex-end;padding:6px;color:#fff;font-size:10px;font-weight:700}
+.prog{height:8px;border-radius:4px;background:#2A2036;overflow:hidden}.prog i{display:block;height:100%;background:var(--pri);border-radius:4px;transition:width .4s}
+.step{display:flex;gap:10px;align-items:center;font-size:14px;padding:6px 0}
+.dot{width:22px;height:22px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.chat{display:flex;flex-direction:column;gap:8px}
+.me{align-self:flex-end;background:var(--pri);color:#fff;padding:10px 14px;border-radius:18px 18px 6px 18px;font-size:14.5px;max-width:85%}
+.ai{align-self:flex-start;background:var(--card);border:1px solid var(--line);padding:10px 14px;border-radius:18px 18px 18px 6px;font-size:14.5px;line-height:1.5;max-width:88%}
+.inp{display:flex;gap:8px;align-items:center;background:var(--card);border:1.5px solid var(--line2);border-radius:16px;padding:5px 5px 5px 14px}
+.inp input{flex:1;border:none;outline:none;font:inherit;font-size:15px;min-height:42px;background:transparent}
+.sq{width:42px;height:42px;border-radius:13px;border:none;display:flex;align-items:center;justify-content:center}
+.toggle{width:46px;height:28px;border-radius:14px;border:none;position:relative;flex:none}
+.toggle i{position:absolute;top:3px;width:22px;height:22px;border-radius:50%;background:var(--card);transition:left .2s}
+textarea{width:100%;border-radius:14px;border:1.5px solid var(--line2);padding:10px 12px;font:inherit;font-size:14px;line-height:1.5;resize:none}
+.teleprompter{background:#111428;color:#fff;border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:12px;min-height:420px;position:relative;overflow:hidden}
+.tp-text{font-size:22px;line-height:1.5;font-weight:700}
+.tp-text .done{color:#7C80A8}
+.rec{width:74px;height:74px;border-radius:50%;border:5px solid #fff;background:#E0436B;align-self:center}
+.rec.on{border-radius:22px;width:64px;height:64px;margin:5px}
+.post{aspect-ratio:4/5;border-radius:18px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+.prod{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:38%;aspect-ratio:1/1.6;border-radius:18px 18px 12px 12px;background:linear-gradient(160deg,#fff,#E9E4F5);box-shadow:0 18px 30px rgba(0,0,0,.18);display:flex;align-items:flex-end;justify-content:center;padding-bottom:16%;font-size:11px;font-weight:800;color:#7A6F96;letter-spacing:.04em}
+.prod:before{content:"";position:absolute;top:-14%;left:28%;width:44%;height:16%;border-radius:8px 8px 2px 2px;background:#C9C2DE}
+.cap{position:relative;padding:16px;color:#fff}
+.cap b{display:block;font-size:22px;line-height:1.15;letter-spacing:-.02em}
+.cap span{font-size:12px;font-weight:600;opacity:.9}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:14px;background:var(--bg)}
+.seg button{min-height:40px;border:none;border-radius:11px;background:transparent;color:var(--mut);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+.seg button .n{width:20px;height:20px;border-radius:50%;background:var(--line2);color:#fff;font-size:11px;display:inline-flex;align-items:center;justify-content:center}
+.seg button.on{background:var(--card);color:var(--pri);box-shadow:0 1px 3px rgba(255,62,154,.35)}.seg button.on .n{background:var(--pri)}
+.seg2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.seg2 button{min-height:44px;border-radius:14px;border:1.5px solid var(--line2);background:var(--card);font-weight:700;font-size:14px;color:var(--ink)}
+.seg2 button.on{border-color:var(--pri);background:var(--pri2);color:#FF9ACB}
+.sb{background:var(--bg);border-radius:12px;padding:10px 12px;font-size:14.5px;line-height:1.5}.sb span{display:block;font-size:11.5px;font-weight:800;color:var(--pri);margin-bottom:2px}
+.ntw{display:block;aspect-ratio:4/5;overflow:hidden;border-radius:12px}
+.nt{aspect-ratio:4/5;border-radius:18px;padding:8%;display:flex;flex-direction:column;gap:.55em;font-size:15px;line-height:1.45;overflow:hidden}
+.nt b{font-size:1.35em;line-height:1.2}
+.nd{font-size:.75em;opacity:.6;margin-top:auto}
+.n0{background:#fff;color:#1B1F3B;border:1px solid var(--line)}.n0 .nh{color:#D49B00;font-weight:800;font-size:.85em}
+.n1{background:#FFE98A;color:#3B3000;font-family:'Patrick Hand',cursive;font-size:17px;transform:rotate(-1.2deg);box-shadow:0 8px 16px rgba(0,0,0,.12)}
+.n2{background:#EAF1FF;justify-content:center}.n2 .q{align-self:flex-end;background:#2F6FE0;color:#fff;border-radius:16px 16px 4px 16px;padding:.6em .8em;font-weight:700}.n2 .a{background:#fff;color:#1B1F3B;border-radius:16px 16px 16px 4px;padding:.6em .8em}
+.n3{background:#fff;color:#111;border:1px solid var(--line)}.n3 .av{width:2.2em;height:2.2em;border-radius:50%;background:#C2627A;color:#fff;font-weight:800;font-size:.8em;display:flex;align-items:center;justify-content:center;flex:none}
+.n4{background:#1F3A2E;color:#F1F5EC;font-family:'Patrick Hand',cursive;font-size:17px}
+
+.top h2,.disp,.big b,.h2d{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em}
+.top h2{font-size:25px;font-weight:800}
+.top{background:rgba(22,15,32,.92)!important}
+.disp{font-size:44px;font-weight:800;line-height:.95}
+.disp em{font-style:normal;color:var(--pri);text-shadow:0 0 18px rgba(255,62,154,.65)}
+.btn{box-shadow:var(--glow);text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;font-size:20px;letter-spacing:.03em}
+.pill.on,.seg2 button.on{box-shadow:0 0 14px rgba(255,62,154,.35)}
+.seg2 button.on{color:#fff;background:var(--pri2)}
+.card{border-color:var(--line);background:linear-gradient(180deg,#1A1225,#140E1C)!important}
+.tab .plus{box-shadow:0 0 22px rgba(255,62,154,.65)}
+.tabs{background:#120C1A!important}
+.big b{font-size:22px;font-weight:800}
+.hero{background:linear-gradient(135deg,#FF3E9A,#8B2BE2)!important;box-shadow:0 0 30px rgba(255,62,154,.4)}
+.seg button .n{width:auto;height:auto;background:none!important;font-family:'Barlow Condensed';font-size:22px;font-weight:800;color:transparent;-webkit-text-stroke:1.2px var(--mut)}
+.seg button.on .n{-webkit-text-stroke:1.2px var(--pri);text-shadow:0 0 12px rgba(255,62,154,.6)}
+.seg button{font-family:'Barlow Condensed';text-transform:uppercase;font-size:17px}
+.sb span{color:var(--pri)}
+.side h1{font-family:'Barlow Condensed';text-transform:uppercase;font-size:44px;line-height:.95}
+.side h1 em{font-style:normal;color:var(--pri);text-shadow:0 0 18px rgba(255,62,154,.6)}
+textarea{background:#0F0A16;color:var(--ink)}
+.inp{background:var(--card)}
+
+.toast{position:absolute;left:16px;right:16px;bottom:96px;background:#2A1B38;border:1px solid var(--pri);box-shadow:var(--glow);color:#fff;border-radius:16px;padding:12px 14px;font-size:14px;font-weight:600;z-index:5}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="phone" id="app" aria-live="polite"></div>
+<div class="side">
+<h1>AI Biz<br><em>app điện thoại</em></h1>
+<p>Bản xem trước để bấm thử. Dữ liệu mẫu, chưa nối AI thật.</p>
+<p>Bấm nút <b>+</b> để tạo bài theo 3 bước: AI soạn kịch bản, gợi ý đăng bài viết, ảnh hay video, rồi đăng ngay hoặc lên lịch.</p>
+<p><a href="./">Xem các màn bản máy tính</a></p>
+</div>
+</div>
+<script>
+(function(){
+var I={
+home:'<path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+plus:'<path d="M12 5v14M5 12h14"/>',
+msg:'<path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12z"/>',
+ai:'<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
+cam:'<path d="M3 8a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/>',
+img:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-8 8"/>',
+auto:'<path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/>',
+back:'<path d="M15 6l-6 6 6 6"/>',
+send:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
+shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>',
+chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+bulb:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',
+check:'<path d="M5 12l5 5 9-10"/>'
+};
+function sv(n,s,w){return '<svg width="'+(s||22)+'" height="'+(s||22)+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+(w||2)+'" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+I[n]+'</svg>'}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+var CH=[['Facebook','#1877F2'],['Instagram','#D6249F'],['TikTok','#111111'],['YouTube','#FF0000'],['Threads','#333333'],['LinkedIn','#0A66C2']];
+var STYLES=[
+ {n:'Sang trọng',bg:'linear-gradient(160deg,#1E1B2E,#3B2F4A 60%,#8C6A3F)',fg:'#F3E6C8',head:'Làn da khỏe từ bên trong'},
+ {n:'Tối giản',bg:'linear-gradient(180deg,#F6F4F0,#E8E4DC)',fg:'#1B1F3B',head:'Ít bước, đều đặn'},
+ {n:'Tươi tắn',bg:'linear-gradient(160deg,#FFD6E0,#FFF1C9)',fg:'#7A1F3D',head:'Da căng mọng mùa thu'},
+ {n:'Tạp chí',bg:'linear-gradient(180deg,#0E3B43,#0E3B43 55%,#E9DCC7 55%)',fg:'#FFFFFF',head:'Bí quyết của chuyên gia'},
+ {n:'Thiên nhiên',bg:'linear-gradient(160deg,#DDEBDC,#9DC3A0)',fg:'#16372A',head:'Lành tính, dịu nhẹ'},
+ {n:'Lễ hội',bg:'linear-gradient(160deg,#B3123A,#E2574C 60%,#F7C873)',fg:'#FFFFFF',head:'Quà tặng mùa lễ'}
+];
+var PHOTOS=[{n:'Sản phẩm',c:'#C2627A'},{n:'Ảnh của tôi',c:'#6B5646'},{n:'Ở tiệm',c:'#2F6F86'},{n:'Khách dùng',c:'#B86E00'}];
+var SIZES=[['4:5','Bài đăng'],['1:1','Vuông'],['9:16','Story, Reels']];
+
+var S={tab:'home',view:null,credit:120,
+ vid:{step:0,sel:1,note:'',rec:false,sec:0,prog:0},
+ im:{step:0,photo:0,style:0,size:0,idea:'',pick:0},
+ auto:{n:5,review:true,on:false,ok:[]},
+ sched:[{d:'T2',t:'19:00',title:'Da khô mùa thu: 3 lỗi hay gặp',k:'Video',c:'#4F46E5',st:'set'},{d:'T3',t:'11:30',title:'Bộ ảnh sản phẩm mới',k:'Ảnh',c:'#C2627A',st:'set'},{d:'T4',t:'20:00',title:'Hỏi đáp: kem chống nắng trong nhà',k:'Video',c:'#2F6F86',st:'wait'}],
+ day:0,
+ inbox:'cm',
+ cmts:[{n:'Thu Trang',ch:'Facebook',t:'Giá bộ này bao nhiêu vậy em?',r:'Dạ chị Trang, em gửi bảng giá vào tin nhắn cho chị rồi nha.',s:'hot'},{n:'Lan Phạm',ch:'Instagram',t:'Da dầu dùng được không bạn?',r:'Dùng được chị ơi, em có bài hướng dẫn riêng cho da dầu ở đây.',s:'open'},{n:'Hồng Nhung',ch:'TikTok',t:'Mua ở đâu vậy?',r:'Chị để lại thông tin, em nhắn cách mua và ưu đãi tuần này nha.',s:'hot'}],
+ blocked:[{n:'Kh*** L***',why:'Nhắn bậy'},{n:'H*** P***',why:'Lừa đảo'},{n:'Tr*** M***',why:'Chửi bới'}],
+ scope:[['Giá, cách mua, giờ làm việc',true],['Kiến thức chăm sóc da chung',true],['Tư vấn bệnh da cụ thể',false],['Hứa hẹn thu nhập, kiếm tiền',false]],
+ autoReply:true,bouncer:true,
+ chat:[{w:'ai',t:'Chào sếp Minh Anh, em là Vy. Sếp cần gì cứ nói hoặc gõ cho em nhé.'}],
+ ideas:['Vì sao da khô hơn khi trời lạnh','Kể chuyện khách đầu tiên của tôi','So sánh kem dưỡng ngày và đêm'],
+ toast:''
+};
+function set(p){for(var k in p)S[k]=p[k];render()}
+function toast(t){S.toast=t;render();clearTimeout(toast._t);toast._t=setTimeout(function(){S.toast='';render()},2200)}
+
+function top(title,back,right){return '<div class="top">'+(back?'<button class="back" data-a="back" aria-label="Quay lại">'+sv('back',20)+'</button>':'<span style="width:36px;height:36px;border-radius:12px;background:var(--pri);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">AB</span>')+'<h2>'+title+'</h2>'+(right||'<span class="chipc">'+S.credit+' credit</span>')+'</div>'}
+function tabs(){var t=[['home','home','Hôm nay'],['cal','cal','Lịch'],['new','plus',''],['inbox','msg','Khách'],['ai','ai','Trợ lý']];return '<nav class="tabs" aria-label="Điều hướng">'+t.map(function(x){if(x[0]==='new')return '<button class="tab" data-a="tab" data-v="new" aria-label="Tạo bài mới"><span class="plus">'+sv('plus',24,2.5)+'</span></button>';return '<button class="tab'+(S.tab===x[0]&&!S.view?' on':'')+'" data-a="tab" data-v="'+x[0]+'">'+sv(x[1])+x[2]+'</button>'}).join('')+'</nav>'}
+function tg(on,act,v){return '<button class="toggle" data-a="'+act+'" '+(v!=null?'data-v="'+v+'"':'')+' role="switch" aria-checked="'+on+'" style="background:'+(on?'var(--pri)':'#3A2C4E')+'"><i style="left:'+(on?'21px':'3px')+'"></i></button>'}
+function chips(){return '<div class="row" style="gap:4px;flex-wrap:wrap">'+CH.map(function(c){return '<span title="'+c[0]+'" style="width:22px;height:22px;border-radius:7px;background:'+c[1]+';color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center">'+c[0][0]+'</span>'}).join('')+'</div>'}
+function postCard(st,photo,head,size,small){var ar=size===1?'1/1':size===2?'9/16':'4/5';var dark=st.fg==='#1B1F3B'||st.fg==='#16372A'||st.fg==='#7A1F3D';return '<div class="post" style="aspect-ratio:'+ar+';background:'+st.bg+'"><div class="prod" style="background:linear-gradient(160deg,#fff,'+photo.c+'33)">'+photo.n.toUpperCase()+'</div><div class="cap" style="'+(small?'padding:8px;':'')+'color:'+st.fg+(dark?'':';background:linear-gradient(transparent,rgba(0,0,0,.35))')+'"><b'+(small?' style="font-size:12px"':'')+'>'+esc(head)+'</b>'+(small?'':'<span>Minh Anh · Tư vấn chăm sóc da</span>')+'</div></div>'}
+
+// ---------- screens ----------
+function home(){
+ var waiting=S.sched.filter(function(x){return x.st==='wait'}).length;
+ var hot=S.cmts.filter(function(c){return c.s==='hot'}).length;
+ return top('Hôm nay')+'<div class="scroll">'+
+ '<div><div class="disp">Chào sếp<br><em>Minh Anh</em></div><p class="sub">Tuần này đã lên 9 bài trên 6 kênh. Còn '+waiting+' bài chờ sếp duyệt.</p></div>'+
+ '<button class="big hero" data-a="go" data-v="script" style="color:#fff"><b style="color:#fff">Viết kịch bản với AI</b><span style="color:#DCD9FF">Nói một ý, AI soạn kịch bản hoàn chỉnh rồi gợi ý nên đăng bài viết, ảnh hay video.</span></button>'+
+ '<div class="grid2"><button class="big" data-a="go" data-v="img" style="background:var(--pinkS)"><span class="ico" style="background:var(--card);color:var(--pink)">'+sv('img')+'</span><b>Tạo ảnh</b><span>Ảnh có nhân vật, ảnh ghi chú</span></button><button class="big" data-a="go" data-v="auto" style="background:var(--tealS)"><span class="ico" style="background:var(--card);color:var(--teal)">'+sv('auto')+'</span><b>Auto</b><span>AI tự làm cả tuần</span></button></div>'+
+ '<div class="card"><div class="row"><span class="ico" style="background:var(--ambS);color:var(--amb)">'+sv('msg')+'</span><div style="flex:1"><p class="h">'+hot+' khách hỏi mua</p><p class="sub">AI đã mời vào tin nhắn, chờ sếp chốt</p></div><button class="btn2" data-a="tab" data-v="inbox">Xem</button></div></div>'+
+ '<div class="card"><p class="h">7 ngày qua</p><div class="grid3">'+[['25.6K','Lượt xem'],['612','Tương tác'],['23','Khách hỏi']].map(function(k){return '<div style="background:var(--bg);border-radius:14px;padding:10px"><div style="font-size:20px;font-weight:800">'+k[0]+'</div><div class="sub">'+k[1]+'</div></div>'}).join('')+'</div><button class="btn2" data-a="go" data-v="report">Báo cáo và gợi ý tuần sau</button></div>'+
+ '</div>'+tabs();
+}
+// ===== Create workspace: Kịch bản -> Ảnh / Video / Bài viết -> Đăng
+var TOPICS=[
+ {n:'Mẹo trong nghề',title:'3 lỗi khiến da khô hơn khi trời lạnh',hook:'Trời chuyển lạnh mà da chị khô căng, bong tróc? Có thể chị đang mắc 1 trong 3 lỗi này.',pts:['Rửa mặt bằng nước quá nóng làm mất lớp dầu bảo vệ.','Bỏ bước dưỡng ẩm buổi tối, lúc da phục hồi mạnh nhất.','Quên kem chống nắng khi trời âm u, tia UV vẫn còn.'],cta:'Lưu lại để làm theo. Cần tư vấn riêng cho da mình thì nhắn em nha.',rec:['vid','faceless'],why:'Nội dung dạng danh sách 3 ý, hợp video ngắn chữ động không cần lộ mặt.'},
+ {n:'Hỏi đáp khách hay hỏi',title:'Da dầu có cần dưỡng ẩm không?',hook:'Câu em được hỏi nhiều nhất tuần này: da dầu có cần dưỡng ẩm không?',pts:['Có. Thiếu nước, da càng tiết nhiều dầu hơn.','Chọn dạng gel hoặc lotion mỏng nhẹ.','Thoa lượng bằng hạt đậu, sáng và tối.'],cta:'Còn câu hỏi nào, chị bình luận em trả lời nha.',rec:['img','note'],why:'Hỏi đáp ngắn hợp ảnh dạng ghi chú, dễ được lưu và chia sẻ.'},
+ {n:'Câu chuyện của tôi',title:'Vì sao tôi bắt đầu làm tư vấn da',hook:'Hai năm trước, em vẫn là dân văn phòng với làn da khô và mệt mỏi.',pts:['Em thử đủ cách mà da vẫn không khá hơn.','Rồi em học lại từ đầu cách chăm da đúng.','Giờ em muốn giúp những người giống em ngày đó.'],cta:'Chị nào đang loay hoay với làn da, cứ nhắn em nói chuyện nha.',rec:['vid','self'],why:'Câu chuyện cá nhân nên tự quay, người xem tin hơn khi thấy mặt bạn.'},
+ {n:'Giới thiệu sản phẩm',title:'[Tên sản phẩm] cho da khô mùa lạnh',hook:'Da khô mùa lạnh, đây là món em hay gợi ý cho khách.',pts:['Kết cấu mỏng, thấm nhanh.','Dùng được sáng và tối.','[Thông tin lấy từ tài liệu đã duyệt của hãng]'],cta:'Nhắn em để xem có hợp với da chị không nha.',rec:['img','char'],why:'Giới thiệu sản phẩm nên dùng ảnh thật: ảnh sản phẩm hoặc ảnh bạn cầm sản phẩm.'},
+ {n:'Theo xu hướng tuần này',title:'Thử thách 7 ngày cấp ẩm',hook:'Tuần này nhiều người làm thử thách 7 ngày cấp ẩm, em làm cùng nha.',pts:['Ngày 1 đến 3: uống đủ nước, dưỡng ẩm 2 lần.','Ngày 4 đến 5: thêm mặt nạ cấp ẩm.','Ngày 6 đến 7: ghi lại cảm nhận của chính mình.'],cta:'Ai làm cùng em thì bình luận "Tham gia" nha.',rec:['vid','faceless'],why:'Thử thách theo ngày hợp video chữ động, có thể làm thành chuỗi.'}
+];
+var GOALS=['Bán hàng','Tăng tương tác','Tìm người cùng làm'];
+var LENS=['30 giây','60 giây','2 phút'];
+var NOTES=[{n:'Ghi chú điện thoại'},{n:'Giấy note'},{n:'Tin nhắn'},{n:'Bài Threads'},{n:'Bảng đen'}];
+var FACELESS=[{n:'Chữ động',c:'linear-gradient(160deg,#4F46E5,#8B5CF6)',d:'Chữ to chạy theo giọng đọc'},{n:'B-roll và giọng đọc',c:'linear-gradient(160deg,#2F6F86,#16374A)',d:'Cảnh minh họa có sẵn'},{n:'Vẽ tay giải thích',c:'linear-gradient(160deg,#F7F4EC,#E2DCCB)',d:'Hình vẽ trên nền trắng',dark:1},{n:'Slide số liệu',c:'linear-gradient(160deg,#0F8F7F,#0B5E54)',d:'Biểu đồ, con số'},{n:'Ảnh sản phẩm chuyển cảnh',c:'linear-gradient(160deg,#C2627A,#7A2E45)',d:'Từ ảnh bạn tải lên'},{n:'Podcast sóng âm',c:'linear-gradient(160deg,#1B1F3B,#3B3F6B)',d:'Giọng nói và sóng âm'}];
+var VOICES=['Mai · nữ Bắc','Linh · nữ Nam','Quân · nam Bắc','Huy · nam Nam','Giọng của tôi'];
+
+function cs(){return S.cr}
+function scriptText(sc){return sc.hook+'\n\n'+sc.pts.map(function(p,i){return (i+1)+'. '+p}).join('\n')+'\n\n'+sc.cta}
+function crTabs(){var c=cs();var t=[['script','1','Kịch bản'],['img','2','Ảnh'],['vid','3','Video']];return '<div class="seg" role="tablist">'+t.map(function(x){var on=c.tab===x[0];return '<button role="tab" aria-selected="'+on+'" data-a="ctab" data-v="'+x[0]+'" class="'+(on?'on':'')+'"><span class="n">'+('0'+x[1])+'</span>'+x[2]+'</button>'}).join('')+'</div>'}
+function scriptMini(){var sc=cs().sc;if(!sc)return '<div class="card" style="background:var(--pri2);border-color:#5A2446"><p class="sub" style="color:#FF9ACB"><b>Chưa có kịch bản.</b> Làm ở tab Kịch bản trước để AI dùng nội dung đó, hoặc làm luôn với nội dung tự nhập.</p><button class="btn2" data-a="ctab" data-v="script">Viết kịch bản</button></div>';return '<div class="card" style="gap:4px"><span class="tag" style="align-self:flex-start;background:var(--pri2);color:#FF9ACB">Dùng kịch bản</span><b style="font-size:15px">'+esc(sc.title)+'</b><p class="sub">'+sc.pts.length+' ý · '+esc(sc.len)+'</p></div>'}
+
+function scriptTab(){
+ var c=cs(),sc=c.sc;
+ if(!sc){
+  return '<div class="card"><label class="h" for="topic">Bạn muốn nói về gì?</label><textarea id="topic" rows="2" data-in="topic" placeholder="Ví dụ: vì sao da khô hơn khi trời lạnh">'+esc(c.topic)+'</textarea><p class="sub">Hoặc chọn nhanh:</p><div class="row" style="flex-wrap:wrap;gap:6px">'+TOPICS.map(function(t,i){return '<button class="pill'+(c.ti===i?' on':'')+'" data-a="cti" data-v="'+i+'">'+t.n+'</button>'}).join('')+'</div></div>'+
+  '<div class="card"><p class="h">Mục tiêu</p><div class="row" style="flex-wrap:wrap;gap:6px">'+GOALS.map(function(g,i){return '<button class="pill'+(c.goal===i?' on':'')+'" data-a="cgoal" data-v="'+i+'">'+g+'</button>'}).join('')+'</div><p class="h">Độ dài</p><div class="row" style="flex-wrap:wrap;gap:6px">'+LENS.map(function(g,i){return '<button class="pill'+(c.len===i?' on':'')+'" data-a="clen" data-v="'+i+'">'+g+'</button>'}).join('')+'</div></div>'+
+  '<button class="btn" data-a="cwrite">AI soạn kịch bản · 1 credit</button>';
+ }
+ var r=sc.rec;var recLabel=r[0]==='vid'?(r[1]==='self'?'Video tự quay':'Video faceless'):(r[1]==='note'?'Ảnh ghi chú':'Ảnh có nhân vật');
+ return '<div class="card"><div class="row"><span class="tag" style="background:var(--okS);color:var(--ok)">Kịch bản hoàn chỉnh</span><span class="sub" style="margin-left:auto">'+esc(sc.len)+' · '+esc(GOALS[c.goal])+'</span></div>'+
+ '<b style="font-size:19px;line-height:1.3">'+esc(sc.title)+'</b>'+
+ '<div class="sb"><span>Mở đầu</span>'+esc(sc.hook)+'</div>'+sc.pts.map(function(p,i){return '<div class="sb"><span>Ý '+(i+1)+'</span>'+esc(p)+'</div>'}).join('')+'<div class="sb"><span>Kêu gọi</span>'+esc(sc.cta)+'</div>'+
+ '<div class="row"><button class="btn2" style="flex:1" data-a="cagain">Viết lại</button><button class="btn2" style="flex:1" data-a="cnew">Chủ đề khác</button></div></div>'+
+ '<div class="card" style="border:2px solid var(--pri)"><p class="h">AI gợi ý: '+recLabel+'</p><p class="sub">'+esc(sc.why)+'</p><button class="btn" data-a="cfmt" data-v="'+r[0]+':'+r[1]+'">Làm '+recLabel.toLowerCase()+'</button><p class="sub" style="text-align:center">Hoặc chọn dạng khác</p><div class="grid3">'+
+ [['post:','Bài viết','msg'],['img:'+(r[0]==='img'?r[1]:'note'),'Ảnh','img'],['vid:'+(r[0]==='vid'?r[1]:'faceless'),'Video','cam']].map(function(x){return '<button class="btn2" data-a="cfmt" data-v="'+x[0]+'" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;min-height:64px">'+sv(x[2],20)+x[1]+'</button>'}).join('')+'</div></div>';
+}
+
+function noteCard(i,sc,small){
+ var t=sc?sc.title:'Ghi chú của bạn',pts=sc?sc.pts:['Ý thứ nhất','Ý thứ hai','Ý thứ ba'];var fs=small?'font-size:8px;':'';
+ if(i===0)return '<div class="nt n0" style="'+fs+'"><div class="nh">Ghi chú</div><b>'+esc(t)+'</b>'+pts.map(function(p){return '<div>• '+esc(p)+'</div>'}).join('')+'<div class="nd">15 tháng 10 · Minh Anh</div></div>';
+ if(i===1)return '<div class="nt n1" style="'+fs+'"><b>'+esc(t)+'</b>'+pts.map(function(p,k){return '<div>'+(k+1)+'. '+esc(p)+'</div>'}).join('')+'</div>';
+ if(i===2)return '<div class="nt n2" style="'+fs+'"><div class="q">'+esc(t)+'</div><div class="a">'+esc(pts.join(' '))+'</div><div class="nd">Minh Anh trả lời khách</div></div>';
+ if(i===3)return '<div class="nt n3" style="'+fs+'"><div class="row" style="gap:8px"><span class="av">MA</span><div><b style="font-size:1.05em">minhanh.skin</b><div class="nd" style="margin:0">Tư vấn chăm sóc da</div></div></div><div style="font-weight:700">'+esc(t)+'</div>'+pts.map(function(p){return '<div>→ '+esc(p)+'</div>'}).join('')+'</div>';
+ return '<div class="nt n4" style="'+fs+'"><b>'+esc(t)+'</b>'+pts.map(function(p){return '<div>✓ '+esc(p)+'</div>'}).join('')+'</div>';
+}
+function imgTab(){
+ var c=cs(),sc=c.sc,body=scriptMini();
+ body+='<div class="seg2">'+[['char','Ảnh có nhân vật'],['note','Ảnh ghi chú (viral)']].map(function(x){return '<button data-a="cimode" data-v="'+x[0]+'" class="'+(c.imode===x[0]?'on':'')+'">'+x[1]+'</button>'}).join('')+'</div>';
+ if(c.istep===1){
+  var prev=c.imode==='note'?noteCard(c.note,sc):postCard(STYLES[S.im.style],PHOTOS[S.im.photo],sc?sc.title:STYLES[S.im.style].head,S.im.size);
+  return body+'<p class="h">Ảnh đã xong</p>'+prev+'<div class="row"><button class="btn2" style="flex:1" data-a="cimake">Làm lại</button><button class="btn2" style="flex:1" data-a="cistep">Đổi kiểu</button></div>'+finish('img');
+ }
+ if(c.imode==='char'){
+  var m=S.im;
+  body+='<div class="card"><p class="h">1. Tải ảnh có nhân vật hoặc sản phẩm</p><div class="grid2" style="grid-template-columns:repeat(5,1fr);gap:8px"><button class="thumb" style="aspect-ratio:1;border:1.5px dashed #5B4870;background:var(--card);color:var(--pri);justify-content:center;align-items:center" aria-label="Tải ảnh lên">'+sv('plus',20)+'</button>'+PHOTOS.map(function(p,i){var on=m.photo===i;return '<button class="thumb" data-a="iph" data-v="'+i+'" aria-pressed="'+on+'" style="aspect-ratio:1;background:'+p.c+';border:3px solid '+(on?'var(--pri)':'transparent')+'">'+p.n+'</button>'}).join('')+'</div><p class="sub">AI giữ nguyên khuôn mặt và sản phẩm thật, chỉ đổi nền, ánh sáng, bố cục và thêm chữ.</p></div>'+
+  '<div class="card"><p class="h">2. Phong cách</p><div class="grid3">'+STYLES.map(function(s,i){var on=m.style===i;return '<button data-a="ist" data-v="'+i+'" aria-pressed="'+on+'" style="border:3px solid '+(on?'var(--pri)':'transparent')+';border-radius:16px;padding:0;background:none;display:flex;flex-direction:column;gap:4px;align-items:stretch"><span style="aspect-ratio:4/5;border-radius:12px;background:'+s.bg+'"></span><span style="font-size:12.5px;font-weight:700;padding:0 2px 4px">'+s.n+'</span></button>'}).join('')+'</div><p class="h">3. Khổ</p><div class="row" style="flex-wrap:wrap;gap:6px">'+SIZES.map(function(z,i){return '<button class="pill'+(m.size===i?' on':'')+'" data-a="isz" data-v="'+i+'">'+z[0]+' · '+z[1]+'</button>'}).join('')+'</div></div>';
+ } else {
+  body+='<div class="card"><p class="h">Chọn mẫu ghi chú</p><p class="sub">Dạng ảnh chữ như ghi chú điện thoại, giấy note, tin nhắn: dễ được lưu và chia sẻ. Chữ lấy từ kịch bản, sửa được.</p><div class="grid3">'+NOTES.map(function(n,i){var on=c.note===i;return '<button data-a="cnote" data-v="'+i+'" aria-pressed="'+on+'" style="border:3px solid '+(on?'var(--pri)':'transparent')+';border-radius:16px;padding:0;background:none;display:flex;flex-direction:column;gap:4px;align-items:stretch"><span class="ntw">'+noteCard(i,sc,true)+'</span><span style="font-size:12px;font-weight:700;padding:0 2px 4px">'+n.n+'</span></button>'}).join('')+'</div><div class="row" style="gap:6px"><button class="pill'+(c.caro?'':' on')+'" data-a="ccaro" data-v="0">1 ảnh</button><button class="pill'+(c.caro?' on':'')+'" data-a="ccaro" data-v="1">Carousel 4 trang</button></div></div>';
+ }
+ return body+'<button class="btn" data-a="cimake">Tạo ảnh · 1 credit</button>';
+}
+function vidTab(){
+ var c=cs(),sc=c.sc,body=scriptMini();
+ body+='<div class="seg2">'+[['self','Tự quay'],['faceless','Faceless']].map(function(x){return '<button data-a="cvmode" data-v="'+x[0]+'" class="'+(c.vmode===x[0]?'on':'')+'">'+x[1]+'</button>'}).join('')+'</div>';
+ if(c.vstep===2){
+  var steps=c.vmode==='self'?['Cắt chỗ vấp và khoảng lặng','Phụ đề','Chữ nổi ý chính','Hình giải thích','Nhạc nền','Kiểm duyệt trước khi đăng']:['Đọc kịch bản bằng giọng '+VOICES[c.voice].split(' ·')[0],'Dựng cảnh theo phong cách '+FACELESS[c.fs].n,'Phụ đề và chữ nổi','Nhạc nền','Kiểm duyệt trước khi đăng'];
+  var done=Math.floor(c.prog/100*steps.length);
+  return body+'<div class="card"><p class="h">AI đang dựng video</p><div class="prog"><i style="width:'+c.prog+'%"></i></div>'+steps.map(function(s,i){var ok=i<done;return '<div class="step"><span class="dot" style="background:'+(ok?'var(--okS)':'var(--bg)')+';color:var(--ok)">'+(ok?sv('check',14,3):'')+'</span><span style="color:'+(ok?'var(--ink)':'var(--mut)')+'">'+s+'</span></div>'}).join('')+'</div>';
+ }
+ if(c.vstep===3){
+  var f=FACELESS[c.fs],bg=c.vmode==='self'?'linear-gradient(180deg,#6B5646,#2B2420)':f.c,dk=c.vmode!=='self'&&f.dark;
+  return body+'<div style="aspect-ratio:9/14;border-radius:20px;background:'+bg+';position:relative;overflow:hidden;color:'+(dk?'#1B1F3B':'#fff')+';display:flex;flex-direction:column;justify-content:space-between;padding:16px"><span class="tag" style="align-self:flex-start;background:rgba(255,255,255,.25)">'+(c.vmode==='self'?'Tự quay':'Faceless · '+f.n)+' · đã dựng</span><div style="background:rgba(255,255,255,.95);color:#1B1F3B;border-radius:14px;padding:12px;font-weight:800;font-size:18px;line-height:1.25">'+esc(sc?sc.title:'Video của bạn')+'</div><div style="text-align:center;font-weight:700;font-size:15px">'+esc(sc?sc.pts[0]:'')+'</div></div><div class="row"><button class="btn2" style="flex:1" data-a="cvredo">Dựng lại</button><button class="btn2" style="flex:1" data-a="cvback">Đổi kiểu</button></div>'+finish('vid');
+ }
+ if(c.vmode==='self'){
+  var lines=sc?[sc.hook].concat(sc.pts,[sc.cta]):['Chào cả nhà, em là Minh Anh.','Hôm nay em nói về một điều trong nghề.','Nói tự nhiên như đang nói chuyện với khách.'];
+  var line=Math.min(lines.length-1,Math.floor(c.sec/2));
+  return body+'<div class="teleprompter"><div class="row" style="justify-content:space-between"><span class="tag" style="background:#2A2E52;color:#fff">Chữ chạy theo giọng</span><span style="font-weight:800">0:'+(c.sec<10?'0':'')+c.sec+'</span></div><div class="tp-text" style="font-size:20px">'+lines.map(function(s,i){return '<div class="'+(c.rec&&i<line?'done':'')+'">'+esc(s)+'</div>'}).join('')+'</div><div style="flex:1"></div><button class="rec'+(c.rec?' on':'')+'" data-a="crec" aria-label="'+(c.rec?'Dừng quay':'Bắt đầu quay')+'"></button><p class="sub" style="color:#A7AACB;text-align:center">'+(c.rec?'Đang quay, bấm để dừng':'Bấm nút đỏ để quay, đọc theo chữ chạy')+'</p></div><button class="btn2" data-a="cvbuild">Dùng video đã quay sẵn</button>';
+ }
+ return body+'<div class="card"><p class="h">Phong cách có sẵn</p><div class="grid2">'+FACELESS.map(function(f,i){var on=c.fs===i;return '<button data-a="cfs" data-v="'+i+'" aria-pressed="'+on+'" style="border:3px solid '+(on?'var(--pri)':'transparent')+';border-radius:16px;padding:0;background:var(--card);text-align:left;overflow:hidden"><span style="display:block;aspect-ratio:16/10;background:'+f.c+'"></span><span style="display:block;padding:6px 8px"><b style="font-size:13px">'+f.n+'</b><br><span class="sub" style="font-size:11.5px">'+f.d+'</span></span></button>'}).join('')+'</div></div>'+
+ '<div class="card"><p class="h">Giọng đọc</p><div class="row" style="flex-wrap:wrap;gap:6px">'+VOICES.map(function(v,i){return '<button class="pill'+(c.voice===i?' on':'')+'" data-a="cvoice" data-v="'+i+'">'+v+'</button>'}).join('')+'</div></div>'+
+ '<button class="btn" data-a="cvbuild">Tạo video · 4 credit</button>';
+}
+function postTab(){
+ var sc=cs().sc;
+ return '<div class="card"><span class="tag" style="align-self:flex-start;background:var(--blueS);color:var(--blue)">Bài viết</span><b style="font-size:17px">'+esc(sc.title)+'</b><textarea rows="9">'+esc(scriptText(sc))+'</textarea></div><button class="btn2" data-a="ctab" data-v="script">Quay lại kịch bản</button>'+finish('post');
+}
+function finish(kind){
+ var c=cs(),sc=c.sc;var cap=sc?sc.hook+' '+sc.cta:'Nhắn em để được tư vấn riêng nha.';
+ return '<div class="card"><label class="h" for="cap">Chú thích, mỗi kênh AI viết riêng</label><textarea id="cap" rows="3">'+esc(cap)+'</textarea><div class="row" style="justify-content:space-between"><span class="sub">Đăng lên 6 kênh</span>'+chips()+'</div></div>'+
+ (c.when?'<div class="card"><p class="h">Chọn giờ đăng</p><div class="row" style="flex-wrap:wrap;gap:6px">'+['Giờ đẹp nhất (AI chọn)','Tối nay 19:00','Sáng mai 7:30','Thứ Bảy 9:00'].map(function(w,i){return '<button class="pill'+(c.wi===i?' on':'')+'" data-a="cwi" data-v="'+i+'">'+w+'</button>'}).join('')+'</div><button class="btn" data-a="cpub" data-v="sched:'+kind+'">Lên lịch</button></div>':
+ '<div class="grid2"><button class="btn2" data-a="cpub" data-v="now:'+kind+'">Đăng ngay</button><button class="btn" style="min-height:44px;font-size:14px" data-a="cwhen">Lên lịch</button></div>');
+}
+function create(){
+ var c=cs(),body;
+ if(c.tab==='post')body=postTab();else if(c.tab==='img')body=imgTab();else if(c.tab==='vid')body=vidTab();else body=scriptTab();
+ return top('Tạo bài',true)+'<div style="background:var(--card);padding:0 16px 10px;border-bottom:1px solid var(--line)">'+crTabs()+'</div><div class="scroll">'+body+'</div>'+tabs();
+}
+function openCreate(tab,topic){S.cr={tab:tab||'script',sc:S.cr&&S.cr.sc&&!topic?S.cr.sc:null,topic:topic||'',ti:-1,goal:0,len:1,imode:'char',note:0,caro:false,istep:0,vmode:'faceless',fs:0,voice:0,vstep:0,rec:false,sec:0,prog:0,when:false,wi:0};S.view='create'}
+
+// ----- auto
+function auto(){
+ var a=S.auto, list=[['Da khô mùa thu: 3 lỗi hay gặp','Video','#4F46E5','T2 · 19:00'],['Chị Lan nói gì sau 30 ngày','Ảnh','#C2627A','T3 · 11:30'],['Hỏi đáp: kem chống nắng trong nhà','Video','#2F6F86','T4 · 20:00'],['Chúc mừng ngày Phụ nữ','Ảnh','#B86E00','T5 · 7:30'],['Quy trình 3 bước cho người bận','Ảnh','#6B5646','T6 · 20:00'],['Thói quen buổi sáng của tôi','Video','#0F8F7F','T7 · 9:00'],['Cuối tuần thư giãn cùng mặt nạ','Ảnh','#E0436B','CN · 19:00']].slice(0,a.n);
+ return top('Auto',true)+'<div class="scroll">'+
+ '<div class="card"><p class="h">Mỗi tuần AI làm bao nhiêu bài?</p><div class="grid3">'+[3,5,7].map(function(n){return '<button class="pill'+(a.n===n?' on':'')+'" data-a="an" data-v="'+n+'">'+n+' bài</button>'}).join('')+'</div><p class="sub">AI chọn đề tài theo ngành và xu hướng, dùng kho ảnh và video của sếp, đăng giờ đẹp theo nước sếp ở.</p><div class="row" style="justify-content:space-between"><span style="font-size:14px;font-weight:600">Cho tôi duyệt trước khi đăng</span>'+tg(a.review,'arev')+'</div><div class="row" style="justify-content:space-between;background:var(--bg);border-radius:12px;padding:10px 12px;font-size:13px"><span>Dự kiến mỗi tuần</span><b>'+a.n*5+' credit</b></div>'+(a.on?'':'<button class="btn" data-a="aon">Bật Auto</button>')+'</div>'+
+ (a.on?'<div class="row" style="justify-content:space-between"><p class="h">AI đã làm cho tuần này</p><button class="btn2" data-a="aall">Duyệt tất cả</button></div>'+list.map(function(x,i){var ok=!a.review||a.ok.indexOf(i)>-1;return '<div class="card" style="flex-direction:row;align-items:center;padding:10px"><span class="thumb" style="width:52px;height:64px;background:'+x[2]+'">'+x[1]+'</span><div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:700;line-height:1.3">'+x[0]+'</div><div class="sub">'+x[3]+'</div></div>'+(ok?'<span class="tag" style="background:var(--okS);color:var(--ok)">Đã hẹn</span>':'<button class="btn2" style="min-height:38px" data-a="aok" data-v="'+i+'">Duyệt</button>')+'</div>'}).join('')+'<button class="btn2" data-a="aoff">Tạm dừng Auto</button>':'')+
+ '</div>'+tabs();
+}
+// ----- calendar
+function cal(){
+ var days=['T2','T3','T4','T5','T6','T7','CN'],dates=[19,20,21,22,23,24,25];
+ var items=S.sched.filter(function(x){return x.d===days[S.day]});
+ return top('Lịch đăng')+'<div class="scroll">'+
+ '<div class="row" style="justify-content:space-between"><p class="h">Tuần 19/10 đến 25/10</p><span class="sub">'+S.sched.length+' bài</span></div>'+
+ '<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">'+days.map(function(d,i){var on=S.day===i,has=S.sched.some(function(x){return x.d===d});return '<button data-a="day" data-v="'+i+'" aria-pressed="'+on+'" style="border:none;border-radius:14px;padding:8px 0;background:'+(on?'var(--pri)':'var(--card)')+';color:'+(on?'#fff':'var(--ink)')+';display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font-size:11px;font-weight:600">'+d+'</span><b style="font-size:17px">'+dates[i]+'</b><span style="width:6px;height:6px;border-radius:50%;background:'+(has?(on?'#fff':'var(--pri)'):'transparent')+'"></span></button>'}).join('')+'</div>'+
+ (items.length?items.map(function(x){var i=S.sched.indexOf(x);return '<div class="card"><div class="row"><div style="font-size:24px;font-weight:800;width:74px">'+x.t+'</div><span class="thumb" style="width:46px;height:58px;background:'+x.c+'">'+x.k+'</span><div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:700;line-height:1.3">'+x.title+'</div>'+chips()+'</div></div>'+(x.st==='wait'?'<div class="row"><span class="tag" style="background:var(--ambS);color:var(--amb)">Chờ duyệt</span><span style="flex:1"></span><button class="btn2" style="min-height:38px" data-a="sok" data-v="'+i+'">Duyệt</button></div>':'<span class="tag" style="align-self:flex-start;background:var(--okS);color:var(--ok)">Đã hẹn giờ, tự đăng 6 kênh</span>')+'</div>'}).join(''):'<div class="card" style="align-items:center;text-align:center"><p class="h">Ngày này chưa có bài</p><p class="sub">Tạo một bài mới hoặc bật Auto để AI xếp giúp.</p><button class="btn2" data-a="tab" data-v="new">Tạo bài</button></div>')+
+ '</div>'+tabs();
+}
+// ----- inbox
+function inbox(){
+ var t=S.inbox, body='';
+ var seg='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:14px;background:var(--card);border:1px solid var(--line)">'+[['cm','Bình luận'],['hot','Chú ý'],['guard','Bảo vệ']].map(function(x){return '<button data-a="ib" data-v="'+x[0]+'" style="min-height:40px;border:none;border-radius:11px;font-weight:700;font-size:14px;background:'+(t===x[0]?'var(--pri)':'transparent')+';color:'+(t===x[0]?'#fff':'var(--mut)')+'">'+x[1]+'</button>'}).join('')+'</div>';
+ if(t==='cm'||t==='hot'){
+  var list=S.cmts.filter(function(c){return t==='cm'||c.s==='hot'});
+  body=(t==='cm'?'<div class="card" style="flex-direction:row;align-items:center"><div style="flex:1"><p class="h">AI tự trả lời</p><p class="sub">Bình luận và tin nhắn, kể cả ngoài giờ</p></div>'+tg(S.autoReply,'ar')+'</div>':'<p class="sub">Khách hỏi giá, hỏi mua. AI đã mời vào tin nhắn, sếp vào chốt.</p>')+
+  list.map(function(c){var i=S.cmts.indexOf(c);return '<div class="card"><div class="row"><b style="font-size:14px">'+c.n+'</b><span class="sub">· '+c.ch+'</span><span style="flex:1"></span>'+(c.s==='hot'?'<span class="tag" style="background:var(--ambS);color:var(--amb)">Hỏi mua</span>':c.s==='done'?'<span class="tag" style="background:var(--okS);color:var(--ok)">Đã trả lời</span>':'')+'</div><div style="font-size:15px">“'+c.t+'”</div><div style="background:var(--bg);border-radius:12px;padding:10px;font-size:13.5px;line-height:1.5"><b style="color:var(--pri)">AI trả lời:</b> '+c.r+'</div>'+(c.s!=='done'?'<div class="row"><button class="btn2" style="flex:1" data-a="cdone" data-v="'+i+'">'+(c.s==='hot'?'Nhắn chốt đơn':'Gửi')+'</button></div>':'')+'</div>'}).join('');
+ } else {
+  body='<div class="card"><div class="row"><span class="ico" style="background:var(--pinkS);color:var(--pink)">'+sv('shield')+'</span><div style="flex:1"><p class="h">Chặn bình luận xấu</p><p class="sub">Tự ẩn bình luận chửi bới, lừa đảo, spam</p></div>'+tg(S.bouncer,'bo')+'</div><div class="row" style="gap:16px"><div><div style="font-size:30px;font-weight:800">214</div><div class="sub">đã chặn</div></div><div><div style="font-size:30px;font-weight:800">14</div><div class="sub">tuần này</div></div></div>'+S.blocked.map(function(b){return '<div class="row" style="border-top:1px solid var(--line);padding-top:8px"><span style="flex:1;font-size:14px;font-weight:600">'+b.n+'</span><span class="sub">'+b.why+'</span><span class="tag" style="background:var(--pinkS);color:var(--pink)">Đã ẩn</span></div>'}).join('')+'</div>'+
+  '<div class="card"><p class="h">Phạm vi AI được trả lời</p><p class="sub">Ngoài phạm vi, AI mời khách nhắn trực tiếp cho sếp.</p>'+S.scope.map(function(s,i){return '<div class="row" style="justify-content:space-between;border-top:1px solid var(--line);padding-top:8px"><span style="font-size:14px;font-weight:600">'+s[0]+'</span>'+tg(s[1],'sc',i)+'</div>'}).join('')+'</div>';
+ }
+ return top('Khách')+'<div class="scroll">'+seg+body+'</div>'+tabs();
+}
+// ----- assistant
+function ai(){
+ return top('Trợ lý Vy')+'<div class="scroll">'+
+ '<div class="row" style="gap:8px;flex-wrap:wrap">'+[['go','report','chart','Báo cáo'],['go','ideas','bulb','Kho ý tưởng']].map(function(x){return '<button class="pill" data-a="'+x[0]+'" data-v="'+x[1]+'" style="display:flex;align-items:center;gap:6px">'+sv(x[2],16)+x[3]+'</button>'}).join('')+'</div>'+
+ '<div class="chat">'+S.chat.map(function(m){return '<div class="'+(m.w==='me'?'me':'ai')+'">'+m.t+'</div>'}).join('')+'</div>'+
+ '<div class="row" style="gap:6px;flex-wrap:wrap">'+['Tuần sau nên làm video gì?','Viết tin hỏi thăm khách cũ','Khách chê giá thì nói sao?'].map(function(q,i){return '<button class="pill" data-a="ask" data-v="'+i+'">'+q+'</button>'}).join('')+'</div>'+
+ '</div><div style="padding:8px 16px;background:var(--bg)"><div class="inp"><label class="sr" for="aiin">Nhắn Vy</label><input id="aiin" placeholder="Nói hoặc gõ việc cho Vy"><button class="sq" style="background:var(--pri2);color:var(--pri)" aria-label="Nói">'+sv('mic',20)+'</button><button class="sq" style="background:var(--pri);color:#fff" data-a="send" aria-label="Gửi">'+sv('send',20)+'</button></div></div>'+tabs();
+}
+var ANS=['Số liệu tuần này cho thấy video hỏi đáp được xem nhiều gấp đôi. Tuần sau em đề xuất 3 video: kem chống nắng trong nhà, da dầu mùa lạnh, thói quen buổi tối. Sếp quay 1 ý mỗi ngày là đủ.','Chị Lan ơi, em Minh Anh đây. Chị dùng bộ dưỡng được 30 ngày rồi, da chị dạo này thế nào ạ? Cần em gợi ý thêm gì chị cứ nhắn nha.','Đừng giảm giá ngay sếp ạ. Hỏi khách đang so với sản phẩm nào, nói rõ khác nhau ở thành phần và cách dùng, rồi gợi ý bắt đầu bằng món nhỏ nhất.'];
+function report(){
+ var bars=[['Facebook',9800],['TikTok',8200],['YouTube',3900],['Instagram',2400],['Threads',800],['LinkedIn',500]];
+ return top('Báo cáo',true)+'<div class="scroll">'+
+ '<div class="grid2">'+[['25.6K','Lượt xem, tăng 18%'],['+340','Người theo dõi mới'],['612','Bình luận'],['23','Khách hỏi mua']].map(function(k){return '<div class="card" style="gap:2px"><div style="font-size:24px;font-weight:800">'+k[0]+'</div><div class="sub">'+k[1]+'</div></div>'}).join('')+'</div>'+
+ '<div class="card"><p class="h">Lượt xem theo kênh</p>'+bars.map(function(b){return '<div class="row" style="font-size:13px"><span style="width:76px">'+b[0]+'</span><span style="flex:1;height:10px;border-radius:5px;background:#2A2036"><i style="display:block;height:100%;border-radius:5px;background:var(--pri);width:'+Math.round(b[1]/98)+'%"></i></span><b style="width:44px;text-align:right">'+(b[1]/1000).toFixed(1)+'K</b></div>'}).join('')+'</div>'+
+ '<div class="card"><p class="h">Gợi ý cho tuần sau</p>'+['Video hỏi đáp được xem gấp đôi video giới thiệu sản phẩm. Làm thêm 2 video hỏi đáp.','Khung 19:00 có nhiều khách hỏi mua nhất. Giữ giờ này.','Khách hay hỏi về da dầu. Nên quay 1 ý về chủ đề này.'].map(function(t){return '<div style="background:var(--bg);border-radius:12px;padding:10px;font-size:14px;line-height:1.5">'+t+'</div>'}).join('')+'<button class="btn" data-a="go" data-v="script" data-t="Da dầu mùa lạnh">Viết kịch bản theo gợi ý</button></div>'+
+ '</div>'+tabs();
+}
+function ideas(){
+ return top('Kho ý tưởng',true)+'<div class="scroll"><p class="sub">Nghĩ ra gì thì nói vào đây. Vy ghi lại, sắp xếp, và nhắc sếp quay khi tới lịch.</p>'+
+ S.ideas.map(function(t){return '<div class="card" style="flex-direction:row;align-items:center"><span class="ico" style="background:var(--ambS);color:var(--amb)">'+sv('bulb',20)+'</span><span style="flex:1;font-size:14.5px;font-weight:600">'+esc(t)+'</span><button class="btn2" style="min-height:38px" data-a="go" data-v="script" data-t="'+esc(t)+'">Viết</button></div>'}).join('')+
+ '<button class="btn" data-a="idea" style="display:flex;align-items:center;justify-content:center;gap:8px">'+sv('mic',20)+'Nói ý tưởng mới</button></div>'+tabs();
+}
+
+function render(){
+ var v=S.view, h;
+ if(v==='create')h=create();else if(v==='auto')h=auto();else if(v==='report')h=report();else if(v==='ideas')h=ideas();
+ else h={home:home,cal:cal,inbox:inbox,ai:ai}[S.tab]();
+ var app=document.getElementById('app');
+ var key=v==='create'?'create:'+S.cr.tab+S.cr.imode+S.cr.vmode+S.cr.vstep+S.cr.istep+(S.cr.sc?1:0):(v||S.tab);var sc=app.querySelector('.scroll'),y=sc?sc.scrollTop:0,same=render._v===key;
+ app.innerHTML=h+(S.toast?'<div class="toast" role="status">'+S.toast+'</div>':'');
+ if(same){var n=app.querySelector('.scroll');if(n)n.scrollTop=y}
+ render._v=key;
+}
+var timer=null;
+function startBuild(){var c=S.cr;clearInterval(timer);c.vstep=2;c.prog=0;c.when=false;S.credit-=4;render();timer=setInterval(function(){c.prog+=10;if(c.prog>=100){clearInterval(timer);c.vstep=3}render()},300)}
+document.addEventListener('input',function(e){var k=e.target.getAttribute('data-in');if(k==='topic'){S.cr.topic=e.target.value;S.cr.ti=-1}if(k==='vnote')S.vid.note=e.target.value;if(k==='idea')S.im.idea=e.target.value});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.id==='aiin'){document.querySelector('[data-a=send]').click()}});
+document.addEventListener('click',function(e){
+ var b=e.target.closest('[data-a]');if(!b)return;var a=b.getAttribute('data-a'),v=b.getAttribute('data-v');
+ if(a==='tab'){if(v==='new'){openCreate('script');return render()}return set({tab:v,view:null})}
+ if(a==='back'){clearInterval(timer);return set({view:null})}
+ if(a==='go'){if(v==='script'||v==='img'||v==='vid'){openCreate(v==='script'?'script':v,b.getAttribute('data-t')||'');if(b.getAttribute('data-t')){S.cr.ti=0}return render()}return set({view:v})}
+ var c=S.cr;
+ if(a==='ctab'){c.tab=v;c.when=false;return render()}
+ if(a==='cti'){c.ti=+v;c.topic='';return render()}
+ if(a==='cgoal'){c.goal=+v;return render()}
+ if(a==='clen'){c.len=+v;return render()}
+ if(a==='cwrite'||a==='cagain'){var t=TOPICS[c.ti>=0?c.ti:0],typed=(c.topic||'').trim();var k=a==='cagain'?Math.floor(Math.random()*TOPICS.length):-1;if(k>=0)t=TOPICS[k];c.sc={title:typed&&a==='cwrite'?typed.charAt(0).toUpperCase()+typed.slice(1):t.title,hook:t.hook,pts:t.pts.slice(),cta:t.cta,rec:t.rec,why:t.why,len:LENS[c.len]};S.credit-=1;return toast('AI đã soạn xong kịch bản')}
+ if(a==='cnew'){c.sc=null;c.ti=-1;c.topic='';return render()}
+ if(a==='cfmt'){var f=v.split(':');if(f[0]==='post'){c.tab='post'}else if(f[0]==='img'){c.tab='img';c.imode=f[1]||'note';c.istep=0}else{c.tab='vid';c.vmode=f[1]||'faceless';c.vstep=0}c.when=false;return render()}
+ if(a==='cimode'){c.imode=v;c.istep=0;return render()}
+ if(a==='cnote'){c.note=+v;return render()}
+ if(a==='ccaro'){c.caro=v==='1';return render()}
+ if(a==='cimake'){c.istep=1;c.when=false;S.credit-=1;return toast('Ảnh đã xong')}
+ if(a==='cistep'){c.istep=0;return render()}
+ if(a==='cvmode'){c.vmode=v;c.vstep=0;c.rec=false;clearInterval(timer);return render()}
+ if(a==='iph'){S.im.photo=+v;return render()}
+ if(a==='ist'){S.im.style=+v;return render()}
+ if(a==='isz'){S.im.size=+v;return render()}
+ if(a==='cfs'){c.fs=+v;return render()}
+ if(a==='cvoice'){c.voice=+v;return render()}
+ if(a==='crec'){if(!c.rec){c.rec=true;c.sec=0;timer=setInterval(function(){c.sec++;if(c.sec>=14){clearInterval(timer);c.rec=false;startBuild()}render()},1000)}else{clearInterval(timer);c.rec=false;return startBuild()}return render()}
+ if(a==='cvbuild')return startBuild();
+ if(a==='cvredo')return startBuild();
+ if(a==='cvback'){c.vstep=0;return render()}
+ if(a==='cwhen'){c.when=true;return render()}
+ if(a==='cwi'){c.wi=+v;return render()}
+ if(a==='cpub'){var p=v.split(':'),kind=p[1],title=c.sc?c.sc.title:(kind==='img'?'Ảnh mới':'Video mới');var col=kind==='img'?'#C2627A':kind==='vid'?'#2F6F86':'#2F6FE0',kk=kind==='img'?'Ảnh':kind==='vid'?'Video':'Bài';var times=['19:00','19:00','7:30','9:00'],days=['T5','T5','T6','T7'];S.sched.push({d:p[0]==='now'?'T5':days[c.wi],t:p[0]==='now'?'Ngay':times[c.wi],title:title,k:kk,c:col,st:'set'});S.view=null;S.tab='cal';S.day=p[0]==='now'?3:[3,3,4,5][c.wi];return toast(p[0]==='now'?'Đang đăng lên 6 kênh':'Đã lên lịch, tự đăng 6 kênh')}
+ if(a==='an'){S.auto.n=+v;S.auto.ok=[];return render()}
+ if(a==='arev'){S.auto.review=!S.auto.review;return render()}
+ if(a==='aon'){S.auto.on=true;S.auto.ok=[];return toast('AI đã làm '+S.auto.n+' bài cho tuần này')}
+ if(a==='aoff'){S.auto.on=false;return render()}
+ if(a==='aok'){S.auto.ok.push(+v);return render()}
+ if(a==='aall'){S.auto.ok=[0,1,2,3,4,5,6];return toast('Đã duyệt, các bài sẽ tự đăng đúng giờ')}
+ if(a==='day'){S.day=+v;return render()}
+ if(a==='sok'){S.sched[+v].st='set';return toast('Đã duyệt bài')}
+ if(a==='ib'){S.inbox=v;return render()}
+ if(a==='ar'){S.autoReply=!S.autoReply;return render()}
+ if(a==='bo'){S.bouncer=!S.bouncer;return render()}
+ if(a==='sc'){S.scope[+v][1]=!S.scope[+v][1];return render()}
+ if(a==='cdone'){var c=S.cmts[+v];var wasHot=c.s==='hot';c.s='done';return toast(wasHot?'Đã mở tin nhắn với '+c.n:'Đã gửi trả lời')}
+ if(a==='ask'){S.chat.push({w:'me',t:b.textContent},{w:'ai',t:ANS[+v]});return render()}
+ if(a==='send'){var inp=document.getElementById('aiin'),q=(inp.value||'').trim();if(!q)return;S.chat.push({w:'me',t:esc(q)},{w:'ai',t:'Đây là bản xem trước nên em chỉ trả lời các câu bấm sẵn. Bản thật em sẽ làm theo yêu cầu của sếp.'});return render()}
+ if(a==='idea'){S.ideas.unshift('Ý tưởng mới: cách chọn sữa rửa mặt cho da nhạy cảm');return toast('Vy đã ghi lại ý tưởng')}
+});
+render();
+})();
+</script>
+</body>
+</html>
